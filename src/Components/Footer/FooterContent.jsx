@@ -1,24 +1,25 @@
-import { Box, Button, Grid, TextField, Typography } from '@mui/material';
+import { Box, Button, Divider, Grid,  Link,   TextField, Typography } from '@mui/material';
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-
-
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import TwitterIcon from '@mui/icons-material/Twitter';
 export default function FooterContent({ LogoFooter, AppStore, PlayStore }) {
     const { t } = useTranslation();
 
     return (
-        <>
+        <>                                                                                                          
           
             <Box position="relative">
                 <Box
                     sx={{
                         position: "absolute",
-                        bottom: "-30px",
+                        bottom: "-20px",
                         left: 0,
                         width: "100%",
-                        height: "550px",
+                        height: "600px",
                         bgcolor: "white",
-                        borderTopLeftRadius: { md: "150px", xs: "0" },
+                        borderTopLeftRadius: { md: "140px", xs: "0" },
                         zIndex: 1,
                     }}
                 />
@@ -51,6 +52,18 @@ export default function FooterContent({ LogoFooter, AppStore, PlayStore }) {
                             <Typography sx={{ fontSize: "14px",     lineHeight: "1.5rem",color: "#333", "&:hover": { color: "#FFBA21" } }}>
                                 info@mapit.sa
                             </Typography>
+                            <Box sx={{pt:'1.5rem' , display:"flex" , gap: '1rem' }}>
+                               <Link href='https://x.com/mapit_sa'   target="_blank"  >
+                               <TwitterIcon sx={{color:"black" , "&:hover": { color: "#FFBA21" }}}/>
+                               
+                               </Link> 
+                                <Link href="https://www.linkedin.com/company/mapit-sa/" target="_blank" >
+                                <LinkedInIcon sx={{ color:"black" ,"&:hover": { color: "#FFBA21" }}}/>
+                                </Link>
+                               <Link href='https://api.whatsapp.com/send/?phone=966581849999' target="_blank" >
+                               <WhatsAppIcon sx={{color:"black" , "&:hover": { color: "#FFBA21" }}}/>
+                               </Link> 
+                            </Box>
                         </Grid>
 
                         <Grid item xs={6} sm={6} md={3} sx={{ display: "flex", flexDirection: "column", mt: '2rem' , pb: "1rem", pl: {md:"60px"} }}>
@@ -135,15 +148,20 @@ export default function FooterContent({ LogoFooter, AppStore, PlayStore }) {
                                 {t("Download Mapit App")}
                             </Typography>
                             <Box display="flex" gap={2} pt={'0.5rem'}>
+                                <Link href="https://apps.apple.com/ba/app/mapit-last-mile-solutions/id1587487704"   target="_blank" >
                                 <Box
                                     component="img"
                                     src={AppStore}
                                     alt="App Store"
                                     sx={{ width: "120px", cursor: "pointer", pr: "0.5rem" }}
                                 />
-                                <Box component="img" src={PlayStore} alt="Play Store" sx={{ width: "120px", cursor: "pointer" }} />
+                                </Link>
+                               <Link href="https://play.google.com/store/apps/details?id=com.mapit.mapitdriver"   target="_blank" >
+                               <Box component="img" src={PlayStore} alt="Play Store" sx={{ width: "120px", cursor: "pointer" }} />
+                               </Link> 
                             </Box>
                         </Grid>
+                     <Divider variant="middle" sx={{width:"100%" , pt:"2rem"}} />
                     </Grid>
 
 

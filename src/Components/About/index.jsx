@@ -1,24 +1,23 @@
 import React from 'react';
-import { Box, Typography, Grid, Button } from '@mui/material';
+import { Box, Typography, Grid, Button, useMediaQuery } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import SectionContainer from '../../Theme/SectionContainer';
 import BackgroundAbout from '../../assets/logo-gradient.a7269bf1.svg';
 import { Trans, useTranslation } from 'react-i18next';
 
 export default function About() {
- const {t} = useTranslation()
- 
-
+    const { t } = useTranslation()
+    const isSmallScreen = useMediaQuery('(max-width:800px)');
     return (
         <Box sx={{ bgcolor: '#FAFAFA', py: '3rem', position: 'relative' }}>
-           
+
             <Box
                 sx={{
                     position: 'absolute',
                     top: '15%',
                     left: 0,
-                    width: {md:'20%' , xs:"10%"},
-                    height: {md:'100%' , xs:"50%"},
+                    width: { md: '20%', xs: "10%" },
+                    height: { md: '100%', xs: "50%" },
                     backgroundImage: `url(${BackgroundAbout})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
@@ -42,21 +41,22 @@ export default function About() {
                             }}
                         >
                             <iframe
-                                src="https://www.youtube.com/embed/gUW0V-yvZk0"
-                                title="YouTube video player"
-                                style={{
-                                    position: 'absolute',
-                                    top: 0,
-                                    left: 0,
-                                    width: '85%',
-                                    height: '100%',
-                                    border: 'none',
-                                    marginLeft: '2rem',
-                                    paddingLeft: '8rem',
-                                }}
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            ></iframe>
+                src="https://www.youtube.com/embed/gUW0V-yvZk0"
+                title="YouTube video player"
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: isSmallScreen ? '100%' : '85%', 
+                    height: '100%',
+                    border: 'none',
+                    marginLeft: isSmallScreen ? 0 : '2rem',
+                    paddingLeft: isSmallScreen ? 0 : '8rem',
+                }}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+            ></iframe>
+
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={6}>
@@ -65,7 +65,7 @@ export default function About() {
                                 component="span"
                                 sx={{ color: 'rgb(0, 71, 171)', fontWeight: 500, mb: 2, display: 'block' }}
                             >
-                            {t("About Mapit")} 
+                                {t("About Mapit")}
                             </Typography>
                             <Typography
                                 variant="h3"
@@ -74,12 +74,12 @@ export default function About() {
                                 <Trans>
                                     {t("Revolutionising Delivery Management")}
                                 </Trans>
-                              
+
                             </Typography>
                             <Typography sx={{ color: 'text.secondary', mb: 2, fontSize: "14px" }}>
-                        <Trans>
-                                {t("Mapit is a system specialized in managing and automating first and last-mile delivery operations to enhance operational efficiency and increase customer satisfaction. Our platform enhances operational efficiency and customer satisfaction through innovative solutions, auto sorting, fleet management, route optimization, and real-time tracking. By automating key processes, Mapit empowers businesses to streamline their delivery operations, reduce costs, and meet the demands of modern logistics. Our technology ensures timely, efficient service with full visibility throughout the delivery journey, transforming how companies manage and execute their deliveries.")}
-                        </Trans>
+                                <Trans>
+                                    {t("Mapit is a system specialized in managing and automating first and last-mile delivery operations to enhance operational efficiency and increase customer satisfaction. Our platform enhances operational efficiency and customer satisfaction through innovative solutions, auto sorting, fleet management, route optimization, and real-time tracking. By automating key processes, Mapit empowers businesses to streamline their delivery operations, reduce costs, and meet the demands of modern logistics. Our technology ensures timely, efficient service with full visibility throughout the delivery journey, transforming how companies manage and execute their deliveries.")}
+                                </Trans>
                             </Typography>
                             <Button
                                 size="small"

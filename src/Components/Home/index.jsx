@@ -1,5 +1,5 @@
 
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, Link, Typography } from '@mui/material';
 import React from 'react';
 import HomeBackground from '../../assets/hero.mp4'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -50,16 +50,20 @@ export default function Home() {
             mb: "1.5rem"
           }}
         >
+          <Link href="https://www.youtube.com/watch?v=HC2qmLWao0w" target="_blank"   underline="none">
           <Typography
             sx={{
               display: 'flex',
               alignItems: 'center',
               fontSize: '12px',
+              fontWeight:600,
               mr: 2,
+              color:"white"
             }}
           >
             {t('Mapit New Updates | Watch Video')}
           </Typography>
+          </Link>
           <ArrowForwardIcon sx={{ fontSize: '23px', pl: "0.4rem" }} />
         </Box>
         <Typography
@@ -77,11 +81,12 @@ export default function Home() {
           </Trans>
         </Typography>
         <Typography
-          variant="inherit"
           textAlign="center"
           sx={{
             color: 'white',
-            mb: "1.4rem"
+            mb: "1.4rem",
+            fontSize:"19px",
+            fontWeight:200
           }}
         >
           <Trans>
@@ -90,12 +95,16 @@ export default function Home() {
           </Trans>
         </Typography>
         <Box>
+          <Link href="https://www.mapit.sa/free-demo">
           <Button sx={{ background: "#FFBA21", color: "black", fontSize: "10px", textTransform: "none", mr: "1rem" }}>
             {t("Get a Demo for Free")}
           </Button>
+          </Link>
+        <Link href="https://www.mapit.sa/features"   target="_blank" >
           <Button sx={{ color: "white", textTransform: "none", fontSize: '12px' }}>
             {t("Explore Mapit")}
           </Button>
+        </Link>
         </Box>
       </Box>
 

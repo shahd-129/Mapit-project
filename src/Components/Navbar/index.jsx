@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { Container, Tooltip, Menu, Button } from '@mui/material';
+import { Container, Tooltip, Menu, Button, Link } from '@mui/material';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import { LogoMapit, IconLogin, ENImage, ARImage } from '../../assets';
@@ -83,7 +83,7 @@ function ResponsiveAppBar() {
             component="img"
             src={LogoMapit}
             sx={{
-              width: { xs: '130px', md: '100px' },
+              width: { xs: '130px', md: '120px' },
               display: 'flex',
             }}
           />
@@ -101,7 +101,7 @@ function ResponsiveAppBar() {
                 sx={{
                   color: 'white',
                   textTransform: 'none',
-                  fontSize: "12px",
+                  fontSize: "14px",
                   fontWeight: 600,
                   padding: "0.4rem",
                   '&:hover': {
@@ -210,8 +210,8 @@ function ResponsiveAppBar() {
               <Box
                 component="img"
                 src={IconLogin}
-                width="35px"
-                height="35px"
+                width="40px"
+                height="40px"
                 sx={{
                   background: '#0B6296',
                   borderRadius: '50%',
@@ -221,13 +221,14 @@ function ResponsiveAppBar() {
                 }}
               />
             </Tooltip>
+            <Link href="https://www.mapit.sa/free-demo" underline="none">
             <Button
               sx={{
                 background: '#FFBA21',
                 textTransform: 'none',
                 color: 'black',
                 fontSize: '12px',
-                fontWeight: 500,
+                fontWeight: 600,
                 padding: 2,
                 py: "0.4rem",
                 px: "1rem",
@@ -237,6 +238,7 @@ function ResponsiveAppBar() {
             >
               {t('Get a Dome')}
             </Button>
+            </Link>
           </Box>
 
           <Drawer
