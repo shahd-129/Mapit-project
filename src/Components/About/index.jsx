@@ -26,10 +26,7 @@ export default function About() {
                 }}
             ></Box>
 
-            <SectionContainer mlOnly={true} sx={{
-                position: 'relative',
-                overflow: 'hidden',
-            }}>
+            <SectionContainer mlOnly={true}>
                 <Grid container spacing={2} alignItems="center" sx={{ gap: '0rem' }}>
                     <Grid item xs={12} md={6}>
                         <Box

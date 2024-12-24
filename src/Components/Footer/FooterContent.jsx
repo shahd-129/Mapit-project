@@ -120,7 +120,7 @@ export default function FooterContent({ LogoFooter, AppStore, PlayStore }) {
                                     size="small"
                                     sx={{
                                         flex: 1,
-                                        width: "250px",
+                                        width: "200px",
                                          height: "30px",
                                         backgroundColor: "white",
                                         "& .MuiOutlinedInput-root": {
@@ -137,7 +137,8 @@ export default function FooterContent({ LogoFooter, AppStore, PlayStore }) {
                                         height: "40px",
                                         fontWeight: 300,
                                         ml: "0.7rem",
-                                        padding: "0.5rem 1rem",
+                                        p: "1rem",
+                                        mt:"0.5rem",
                                         "&:hover": { background: "#FFBA21" },
                                     }}
                                 >

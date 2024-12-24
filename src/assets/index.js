@@ -26,3 +26,4 @@ export { default as LogoMapit } from "../assets/logo-light.svg";
 export { default as IconLogin } from "../assets/login.9b2f5272 (1).svg";
 export { default as ENImage } from "../assets/en-US.9acbcf10.svg";
 export { default as ARImage } from "../assets/ar-SA.5c9dda39.svg";
+export { default as ButtonShadow} from '../assets/button-shadow.png'
