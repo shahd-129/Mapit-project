@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import React from 'react';
 import SectionContainer from '../../Theme/SectionContainer';
 import Ezpay from '../../assets/ezpay.png';
@@ -31,7 +31,7 @@ export default function Solutions() {
    
   return (
     <Box>
-      <SectionContainer>
+      <SectionContainer pxOnly={true} mxNone={true}>
         <Typography sx={{ textAlign: 'center', fontSize:"13px" ,pt: '2rem', mb: '1rem' }}>
           {t("In Collaboration with Industry Leaders")}
         </Typography>

@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Grid,  Link,   TextField, Typography } from '@mui/material';
+import { Box, Button, Divider, Grid, Link, TextField, Typography } from '@mui/material';
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -8,8 +8,8 @@ export default function FooterContent({ LogoFooter, AppStore, PlayStore }) {
     const { t } = useTranslation();
 
     return (
-        <>                                                                                                          
-          
+        <>
+
             <Box position="relative">
                 <Box
                     sx={{
@@ -21,6 +21,7 @@ export default function FooterContent({ LogoFooter, AppStore, PlayStore }) {
                         bgcolor: "white",
                         borderTopLeftRadius: { md: "140px", xs: "0" },
                         zIndex: 1,
+                        overflow:"hidden"
                     }}
                 />
 
@@ -28,45 +29,46 @@ export default function FooterContent({ LogoFooter, AppStore, PlayStore }) {
                     sx={{
                         position: "relative",
                         zIndex: 2,
-                        px:{md: "30px"} ,
+                        px: { md: "30px" },
                         pb: "1rem",
-                        mx: {md: "4.5rem"},
-                        transform: {md:"translateY(-190px)" , xs:"translateY(-50px)"},
+                        mx: { md: "4.5rem" },
+                        // overflow:"hidden",
+                        transform: { md: "translateY(-190px)", xs: "translateY(-50px)" },
                     }}
                 >
                     <Grid
                         container
                         spacing={0}
-                        sx={{ p: {md:"2rem" , xs:"0.5rem"} }}
-                                                    
-                    >
-                        <Grid item xs={12} sm={12} md={3} sx={{ display: "flex", flexDirection: "column", mb: 2, pb: "1rem", pl: {md:"10px"} }}>
+                        sx={{ p: { md: "2rem", xs: "0.5rem" } }}
 
-                            <Box component="img" src={LogoFooter} sx={{ width: "100px", mb: 3, ml:{xs:'0'} }} />
-                            <Typography sx={{ fontSize: "15px", color: "#333", mb: 1 ,    lineHeight: "1.5rem", }}>
-                                <Trans>{t("AT TAKHASSUSI RD. - AL NAKHEEL DIS.Riyadh")}</Trans>
+                    >
+                        <Grid item xs={12} sm={12} md={3} sx={{ display: "flex", flexDirection: "column", mb: 2, pb: "1rem", pl: { md: "10px" } }}>
+
+                            <Box component="img" src={LogoFooter} sx={{ width: "100px", mb: 3, ml: { xs: '0' } }} />
+                            <Typography sx={{ fontSize: "15px", color: "#333", mb: 1, lineHeight: "1.5rem", }}>
+                            {t("AT TAKHASSUSI RD. - AL NAKHEEL DIS.Riyadh")}
                             </Typography>
-                            <Typography sx={{ fontSize: "14px",    lineHeight: "1.5rem", mb: 1, "&:hover": { color: "#FFBA21" } }}>
+                            <Typography sx={{ fontSize: "14px", lineHeight: "1.5rem", mb: 1, "&:hover": { color: "#FFBA21" } }}>
                                 {t('+966 58 184 9999')}
                             </Typography>
-                            <Typography sx={{ fontSize: "14px",     lineHeight: "1.5rem",color: "#333", "&:hover": { color: "#FFBA21" } }}>
+                            <Typography sx={{ fontSize: "14px", lineHeight: "1.5rem", color: "#333", "&:hover": { color: "#FFBA21" } }}>
                                 info@mapit.sa
                             </Typography>
-                            <Box sx={{pt:'1.5rem' , display:"flex" , gap: '1rem' }}>
-                               <Link href='https://x.com/mapit_sa'   target="_blank"  >
-                               <TwitterIcon sx={{color:"black" , "&:hover": { color: "#FFBA21" }}}/>
-                               
-                               </Link> 
-                                <Link href="https://www.linkedin.com/company/mapit-sa/" target="_blank" >
-                                <LinkedInIcon sx={{ color:"black" ,"&:hover": { color: "#FFBA21" }}}/>
+                            <Box sx={{ pt: '1.5rem', display: "flex", gap: '1rem' }}>
+                                <Link href='https://x.com/mapit_sa' target="_blank"  >
+                                    <TwitterIcon sx={{ color: "black", "&:hover": { color: "#FFBA21" } }} />
+
                                 </Link>
-                               <Link href='https://api.whatsapp.com/send/?phone=966581849999' target="_blank" >
-                               <WhatsAppIcon sx={{color:"black" , "&:hover": { color: "#FFBA21" }}}/>
-                               </Link> 
+                                <Link href="https://www.linkedin.com/company/mapit-sa/" target="_blank" >
+                                    <LinkedInIcon sx={{ color: "black", "&:hover": { color: "#FFBA21" } }} />
+                                </Link>
+                                <Link href='https://api.whatsapp.com/send/?phone=966581849999' target="_blank" >
+                                    <WhatsAppIcon sx={{ color: "black", "&:hover": { color: "#FFBA21" } }} />
+                                </Link>
                             </Box>
                         </Grid>
 
-                        <Grid item xs={6} sm={6} md={3} sx={{ display: "flex", flexDirection: "column", mt: '2rem' , pb: "1rem", pl: {md:"60px"} }}>
+                        <Grid item xs={6} sm={6} md={3} sx={{ display: "flex", flexDirection: "column", mt: '2rem', pb: "1rem", pl: { md: "60px" } }}>
                             <Typography sx={{ fontSize: "16px", fontWeight: "600", color: "#01588C", mb: 2 }}>
                                 {t('Mapit')}
                             </Typography>
@@ -100,7 +102,7 @@ export default function FooterContent({ LogoFooter, AppStore, PlayStore }) {
                                         fontSize: "14px",
                                         color: "#333",
                                         mb: 1,
-                                         lineHeight: "1.5rem",
+                                        lineHeight: "1.5rem",
                                         p: "0.2rem",
                                         cursor: "pointer",
                                         "&:hover": { color: "#FFBA21" },
@@ -112,7 +114,7 @@ export default function FooterContent({ LogoFooter, AppStore, PlayStore }) {
                         </Grid>
 
 
-                        <Grid item xs={12} sm={6} md={3} sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start" , mt: '2rem' }}>
+                        <Grid item xs={12} sm={6} md={3} sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", mt: '2rem' }}>
                             <Typography sx={{ fontSize: "13px", pb: '0.5rem' }}>{t("Stay up to date")}</Typography>
                             <Box display="flex" alignItems="center" gap={1} mb={2}>
                                 <TextField
@@ -121,7 +123,7 @@ export default function FooterContent({ LogoFooter, AppStore, PlayStore }) {
                                     sx={{
                                         flex: 1,
                                         width: "200px",
-                                         height: "30px",
+                                        height: "30px",
                                         backgroundColor: "white",
                                         "& .MuiOutlinedInput-root": {
                                             "& fieldset": { borderColor: "#C4C4C4" },
@@ -138,7 +140,7 @@ export default function FooterContent({ LogoFooter, AppStore, PlayStore }) {
                                         fontWeight: 300,
                                         ml: "0.7rem",
                                         p: "1rem",
-                                        mt:"0.5rem",
+                                        mt: "0.5rem",
                                         "&:hover": { background: "#FFBA21" },
                                     }}
                                 >
@@ -149,20 +151,31 @@ export default function FooterContent({ LogoFooter, AppStore, PlayStore }) {
                                 {t("Download Mapit App")}
                             </Typography>
                             <Box display="flex" gap={2} pt={'0.5rem'}>
-                                <Link href="https://apps.apple.com/ba/app/mapit-last-mile-solutions/id1587487704"   target="_blank" >
-                                <Box
-                                    component="img"
-                                    src={AppStore}
-                                    alt="App Store"
-                                    sx={{ width: "120px", cursor: "pointer", pr: "0.5rem" }}
-                                />
+                                <Link href="https://apps.apple.com/ba/app/mapit-last-mile-solutions/id1587487704" target="_blank" >
+                                    <Box
+                                        component="img"
+                                        src={AppStore}
+                                        alt="App Store"
+                                        sx={{ width: "120px", cursor: "pointer", pr: "0.5rem" }}
+                                    />
                                 </Link>
-                               <Link href="https://play.google.com/store/apps/details?id=com.mapit.mapitdriver"   target="_blank" >
-                               <Box component="img" src={PlayStore} alt="Play Store" sx={{ width: "120px", cursor: "pointer" }} />
-                               </Link> 
+                                <Link href="https://play.google.com/store/apps/details?id=com.mapit.mapitdriver" target="_blank" >
+                                    <Box component="img" src={PlayStore} alt="Play Store" sx={{ width: "120px", cursor: "pointer" }} />
+                                </Link>
                             </Box>
                         </Grid>
-                     <Divider variant="middle" sx={{width:"100%" , pt:"2rem"}} />
+                        <Divider variant="middle" sx={{ width: "100%" }} />
+                        {/* <Box display={ 'flex'} justifyContent={'center'} flexDirection={{xs:"column"}}>
+
+                        <Typography sx={{fontSize:"14px" , mt:"1rem"}} >
+                            {t('©2024 mapit. All rights reserved.')}
+                        </Typography>
+                        <Box sx={{ display:"flex" , flexDirection:"row"}}>
+                            <Typography mr={'1rem'}>Privacy Policy</Typography>
+                            <Typography>Documentation</Typography>
+                        </Box>
+                        </Box> */}
+
                     </Grid>
 
 
@@ -172,26 +185,5 @@ export default function FooterContent({ LogoFooter, AppStore, PlayStore }) {
         </>
     );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

@@ -14,7 +14,7 @@ export default function FAQs() {
 
     const contentAccordion = [
         {
-            Typography: t("Is there a free trial available?"), TypographyContent: t("Yes, Mapit offers a 30-day free trial for new users. This trial includes full access to our logistics management platform, allowing you to experience the benefits of streamlined delivery operations firsthand.No credit card required.")
+            Typography: t("Is there a free trial available?"), TypographyContent: t("Yes, Mapit offers a 30-day free trial for new users. This trial includes full access to our logistics management platform, allowing you to experience the benefits of streamlined delivery operations firsthand. No credit card required.")
         },
         {
             Typography: t("Can I change my plan later?"), TypographyContent: t("Absolutely! You can upgrade or downgrade your plan at any time based on your needs. Changes will be reflected in the next billing cycle.")
@@ -30,18 +30,18 @@ export default function FAQs() {
     return (
         <>
             <Box>
-                <SectionContainer>
+                <SectionContainer >
                     <Grid container spacing={3} justifyContent="center">
 
                         <Grid item md={6} xs={12} sx={{ ml: '-5rem' }}>
-                            <Typography sx={{ fontSize: "35px", fontWeight: 600, textAlign: 'center' }}>
+                            <Typography sx={{ fontSize: "35px", fontWeight: 600, textAlign: {md:'center' , xs:"left"} , pl:{xs:"2rem"} }}>
                                 {t("FAQs")}
                             </Typography>
                         </Grid>
 
 
                         <Grid item md={6} xs={12} display={'flex'} alignItems={'center'} justifyContent={'center'}>
-                            <Box sx={{ width: '100%', ml: '5rem' }}>
+                            <Box sx={{ width: '100%', ml: '1rem' }}>
                                 {contentAccordion.map((content, index) => (
                                     <Accordion
                                         key={index}
@@ -49,7 +49,7 @@ export default function FAQs() {
                                         sx={{
                                             marginRight: '1rem',
                                             BorderBottom: "none",
-                                            pr: "6.4rem",
+                                            pr: "2rem",
                                             '&::before': {
                                                 display: 'none',
                                             },
@@ -70,7 +70,7 @@ export default function FAQs() {
                                             aria-controls={`panel${index}bh-content`}
                                             id={`panel${index}bh-header`}
                                         >
-                                            <Typography sx={{ width: '100%', flexShrink: 0, fontSize: "17px", fontWeight: 500 }}>
+                                            <Typography sx={{ width: '100%', flexShrink: 0, fontSize: "19px", fontWeight: 500 }}>
                                                 {t(content.Typography)}
                                             </Typography>
                                         </AccordionSummary>

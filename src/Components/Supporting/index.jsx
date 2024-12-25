@@ -22,7 +22,7 @@ export default function Supporting() {
                 {t('Supporting Industries')}
             </Typography>
 
-            <SectionContainer>
+            <SectionContainer pxOnly={true}>
                 <Grid
                     container
                     spacing={0} 

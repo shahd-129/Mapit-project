@@ -1,11 +1,12 @@
 import { Box, Button, Typography } from "@mui/material";
 import { AppStore, FooterImage, FooterImage2, LogoFooter, PlayStore } from "../../assets";
 import FooterContent from "./FooterContent";
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 
 export default function Footer() {
-    const { t } = useTranslation()
+    const { t, i18n } = useTranslation()
+    const isRtl = i18n.dir() === "rtl";
     return (
         <>
             <Box
@@ -13,12 +14,14 @@ export default function Footer() {
                     display: "flex",
                     flexDirection: { xs: "column" },
                     bgcolor: "#01588C",
-                    minHeight: { md: "500px", xs: "200px" },
+                    minHeight: { md: "480px", xs: "200px" },
                     position: "relative",
                     overflow: "hidden",
                     borderTopLeftRadius: { md: "200px", xs: "0" },
                     pb: "3rem",
                     my: "4rem",
+                    width:"100%",
+                     boxSizing: "border-box"
                 }}
             >
                 <Box
@@ -29,6 +32,7 @@ export default function Footer() {
                         alignItems: "center",
                         justifyContent: "center",
                         bgcolor: "#01588C",
+                        width:"100%"
                     }}
                 >
 
@@ -40,18 +44,25 @@ export default function Footer() {
                         src={FooterImage}
                         alt="Background Image Right"
                         right={0}
+                        sx={{
+                            transform: isRtl ? 'scaleX(-1)' : "none",
+                            zIndex:{xs:999}
+                        }}
+
                     />
 
                     <Box
                         component={"img"}
                         left={0}
                         sx={{
-                            width: { xs: "100%" , md:"350px" },
+                            width: { xs: "100%", md: "350px" },
                             maxHeight: { md: "400px", xs: "250px" },
                             objectFit: 'cover',
-                            top:{md:"1%"},
-                            maxWidth:{md:"100%"},
-                            position: { xs: "static", md: "absolute" }
+                            top: { md: "1%" },
+                            maxWidth: { md: "100%" },
+                            position: { xs: "static", md: "absolute" },
+                            transform: isRtl ? 'scaleX(-1)' : "none",
+
                         }}
                         src={FooterImage2}
                         alt="Background Image Left"
@@ -62,39 +73,43 @@ export default function Footer() {
                     sx={{
                         flex: 3,
                         textAlign: "center",
-                        // width:{xs:"300px"},
-                        py: {md:"5rem"},
-                        px: {md:"2rem" },
-                        // mx:{xs:"5rem" },
+                        py: { md: "5rem" },
+                        px: { md: "2rem" },
                         color: "white",
                         position: "relative",
-                    }}
-                >
-                    <Typography sx={{ fontSize:{md:"40px" , xs: "30px"}, fontWeight: 600, mb: 2 }}>
-                        {t("Try for free today")}
-                    </Typography>
-                    <Typography sx={{ mb: 3 }}>
-                        <Trans>
-                            {t(
-                                "Become part of a growing community of businesses optimizing their delivery operations. Start your free trial today and see how Mapit can transform your logistics!"
-                            )}
-                        </Trans>
-                    </Typography>
-                    <Box sx={{
+                        maxWidth: "600px",
                         display: "flex",
-                        flexDirection: { xs: "column", md: "row" },
-                        gap: { xs: "1rem", md: "0" },
+                        flexDirection: "column",
                         alignItems: "center",
                         justifyContent: "center",
-                        p: { xs: '1rem' }
-                    }} >
+                        margin: "0 auto",
+                        mb:'3rem'
+
+                    }}
+                >
+                    <Typography sx={{ fontSize: { md: "40px", xs: "30px" }, fontWeight: 600, mb: 2 }}>
+                        {t("Try for free today")}
+                    </Typography>
+                    <Typography sx={{ mb: 3, maxWidth: "700px" }}>
+                        {t("Become part of a growing community of businesses optimizing their delivery operations. Start your free trial today and see how Mapit can transform your logistics!")}
+                    </Typography>
+                    <Box
+                        sx={{
+                            display: "flex",
+                            flexDirection: { xs: "column", md: "row" },
+                            gap: { xs: "1rem", md: "0" },
+                            alignItems: "center",
+                            justifyContent: "center",
+                            p: { xs: "1rem" },
+                        }}
+                    >
                         <Button
                             sx={{
                                 background: "#FFBA21",
                                 color: "black",
                                 fontSize: "12px",
                                 textTransform: "none",
-                                mr: "1rem",
+                                mr: { md: "1rem", xs: "0" },
                                 px: "1rem",
                             }}
                         >
@@ -111,9 +126,12 @@ export default function Footer() {
                         </Button>
                     </Box>
                 </Box>
+
             </Box>
 
-            <FooterContent LogoFooter={LogoFooter} AppStore={AppStore} PlayStore={PlayStore} />
+            <FooterContent  LogoFooter={LogoFooter} AppStore={AppStore} PlayStore={PlayStore} />
         </>
     );
+  
 }
+

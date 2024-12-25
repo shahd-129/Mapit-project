@@ -37,7 +37,7 @@ export default function SolutionCard({ SolutionImage, SolutionImage2 }) {
                         maxWidth: '100%',
                         marginBottom: '2rem',
                         display: 'flex',
-                        flexDirection: { xs: 'column', md: 'row' },
+                        flexDirection: { xs: 'column-reverse', md: 'row' },
                         alignItems: 'stretch',
                     }}
                 >
@@ -88,7 +88,7 @@ export default function SolutionCard({ SolutionImage, SolutionImage2 }) {
                         maxWidth: '100%',
                         marginBottom: '2rem',
                         display: 'flex',
-                        flexDirection: { xs: 'column', md: 'row' },
+                        flexDirection: { xs: 'column-reverse', md: 'row' },
                         alignItems: 'stretch',
                     }}
                 >
@@ -119,7 +119,7 @@ export default function SolutionCard({ SolutionImage, SolutionImage2 }) {
                                 alignSelf: 'flex-start',
                                 textTransform: 'none',
                                 marginTop: 'auto',
-                                mt: '3rem',
+                                mt: {md:'3rem' , xs:0},
                             }}
                         >
                             {t("Learn More")}
@@ -144,7 +144,7 @@ export default function SolutionCard({ SolutionImage, SolutionImage2 }) {
                         maxWidth: '100%',
                         marginBottom: '2rem',
                         display: 'flex',
-                        flexDirection: { xs: 'column', md: 'row' },
+                        flexDirection: { xs: 'column-reverse', md: 'row' },
                         alignItems: 'stretch',
                     }}
                 >
@@ -174,7 +174,7 @@ export default function SolutionCard({ SolutionImage, SolutionImage2 }) {
                                 alignSelf: 'flex-start',
                                 textTransform: 'none',
                                 marginTop: 'auto',
-                                mt: '3rem',
+                                mt: {md:'3rem' , xs:0},
                             }}
                         >
                             {t("Learn More")}
@@ -195,5 +195,7 @@ export default function SolutionCard({ SolutionImage, SolutionImage2 }) {
                 </Card>
             </Grid>
         </Grid>
+        //   "Mapit offers a complete suite of integrated solutions designed to streamline your delivery operations, from the first mile to the last. Our platform is built to enhance efficiency, reduce costs, and improve customer satisfaction.": "تقدم مابت مجموعة كاملة من الحلول المتكاملة <br/>المصممة لتبسيط عمليات التسليم الخاصة بك، من <br/>الميل الأول إلى الأخير. ,تم تصميم منصتنا لتعزيز <br/>الكفاءة وخفض التكاليف وتحسين رضا العملاء.",
+        // "Mapit offers a complete suite of integrated solutions designed to streamline your delivery operations, from the first mile to the last. Our platform is built to enhance efficiency, reduce costs, and improve customer satisfaction.": "Mapit offers a complete suite of integrated<br/> solutions designed to streamline your<br/> delivery operations, from the first mile to<br/> the last. Our platform is built to enhance<br/> efficiency, reduce costs, and improve<br/> customer satisfaction.",
     );
 }

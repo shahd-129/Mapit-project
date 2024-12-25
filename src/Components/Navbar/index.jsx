@@ -13,9 +13,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setLanguage } from '../../Redux/Slices/languageSlice';
 
 function ResponsiveAppBar() {
-  const { t } = useTranslation(); 
-  const { language } = useSelector(state => state?.lang)  
-  const dispatch = useDispatch() 
+  const { t, i18n } = useTranslation();
+  const isRtl = i18n.dir() === "rtl";
+  const { language } = useSelector(state => state?.lang)
+  const dispatch = useDispatch()
   const pages = [
     { id: '1', label: t('company') },
     { id: '2', label: t('Solutions') },
@@ -45,7 +46,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar sx={{ px: { md: "6rem", position: "static" }, boxShadow: "none"  , overflowX:"hidden"}}>
+    <AppBar sx={{ px: { md: "6rem", position: "static" }, boxShadow: "none", overflowX: "hidden" }}>
       <Typography
         sx={{
           display: { xs: 'block', md: 'none' },
@@ -118,13 +119,14 @@ function ResponsiveAppBar() {
               display: { xs: 'flex', md: 'flex' },
               alignItems: 'center',
               gap: 1,
-              ml: 'auto',
+              m: 'auto',
+              
             }}
           >
-            <Box display="flex" alignItems="center" sx={{ display: { xs: "none", md: "flex" } }} gap={0}>
+            <Box display="flex" alignItems="center" sx={{ display: { xs: "none", md: "flex" }  }} gap={0}>
               <Box
                 component="img"
-                src={language === 'ar' ? ARImage : ENImage} 
+                src={language === 'ar' ? ARImage : ENImage}
                 width="17px"
                 height="17px"
                 sx={{
@@ -148,60 +150,69 @@ function ResponsiveAppBar() {
                 onClose={handleCloseLanguageMenu}
                 sx={{
                   mt: '10px',
-                  ml:"10px"
-                 
+                  ml: "10px",
                 }}
               >
                 <Box display="flex" alignItems="center" gap={1}>
-                  <Box display="flex" alignItems="center" sx={{ minWidth: '100px' , height:"50px" , background:"#f9fafb"}} gap={1}>
-                   {language === "en" 
-                   }
-                   
-                    <Button
-                      sx={{
-                        fontSize: '12px',
-                        color: 'black',
-                        textTransform: 'none',
-                       
-                      }}
-                      onClick={() => dispatch(setLanguage(('en')))}
-                    >
-                       <Box
-                      component="img"
-                      src={ENImage}
-                      width="17px"
-                      height="17px"
-                      sx={{
-                        borderRadius: '50%',
-                      }}
-                    />
-                      {t('English')}
-                    </Button>
-                  </Box>
-                  <Box display="flex" alignItems="center" gap={1}>
-                  
-                    <Button
-                      sx={{
-                        fontSize: '12px',
-                        color: 'black',
-                        textTransform: 'none',
-                        minWidth: 'auto'
-                      }}
-                      onClick={() => dispatch(setLanguage(('ar')))}
-                    >
+                  <Box display="flex" alignItems="center" sx={{ minWidth: '230px', height: "70px", background: "#f9fafb" }} gap={0}>
+                    <Box sx={{
+                       display: "flex", justifyContent: "space-between",
+                      flexDirection: "row-reverse",
+                      alignItems:"center" , m:"auto"
+                    }}>
+
+                      {language === "en"
+                      }
+
+                      <Button
+                        sx={{
+                          fontSize: '12px',
+                          color: 'black',
+                          textTransform: 'none',
+                          background: language === 'en' ? '#ccc' : 'transparent',
+                          // m:"1.5rem"
+
+                        }}
+                        onClick={() => dispatch(setLanguage(('en')))}
+                      >
                         <Box
-                      component="img"
-                      src={ARImage}
-                      width="17px"
-                      height="17px"
-                      borderRadius={'50%'}
-                      sx={{
-                        mr:"0.5rem",
-                        // borderRadius: '50%',
-                      }}
-                    />
-                      {t('العربية')}
-                    </Button>
+                          component="img"
+                          src={ENImage}
+                          width="17px"
+                          height="17px"
+                          sx={{
+                            borderRadius: '50%',
+                            mr: "0.5rem",
+                          }}
+                        />
+                        {t('English')}
+                      </Button>
+                      <Box display="flex" alignItems="center" gap={1}>
+
+                        <Button
+                          sx={{
+                            fontSize: '12px',
+                            color: 'black',
+                            textTransform: 'none',
+                            minWidth: 'auto',
+                            background: language === 'ar' ? '#ccc' : 'transparent',
+                          }}
+                          onClick={() => dispatch(setLanguage(('ar')))}
+                        >
+                          <Box
+                            component="img"
+                            src={ARImage}
+                            width="17px"
+                            height="17px"
+                            borderRadius={'50%'}
+                            sx={{
+                              mr: "0.5rem",
+                            }}
+                          />
+                          {t('العربية')}
+                        </Button>
+                      </Box>
+                    </Box>
                   </Box>
                 </Box>
               </Menu>
@@ -217,27 +228,28 @@ function ResponsiveAppBar() {
                   borderRadius: '50%',
                   padding: '10px',
                   fontSize: "30px",
-                  mr:{xs:"1rem" , md:"0"}
+                  mr: { xs: "1rem", md: "0" },
+                  transform: isRtl ? 'scaleX(-1)' : "none",
                 }}
               />
             </Tooltip>
             <Link href="https://www.mapit.sa/free-demo" underline="none">
-            <Button
-              sx={{
-                background: '#FFBA21',
-                textTransform: 'none',
-                color: 'black',
-                fontSize: '12px',
-                fontWeight: 600,
-                padding: 2,
-                py: "0.4rem",
-                px: "1rem",
-                ml: '1rem',
-                display:{sm:"flex" , xs:"none"}
-              }}
-            >
-              {t('Get a Dome')}
-            </Button>
+              <Button
+                sx={{
+                  background: '#FFBA21',
+                  textTransform: 'none',
+                  color: 'black',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  padding: 2,
+                  py: "0.6rem",
+                  px: "1rem",
+                  ml: '1rem',
+                  display: { sm: "flex", xs: "none" }
+                }}
+              >
+                {t('Get a Dome')}
+              </Button>
             </Link>
           </Box>
 
@@ -267,13 +279,17 @@ function ResponsiveAppBar() {
                   color: "black",
                   textTransform: "none",
                   padding: '1.5rem',
+                  width:"100%",
+                  display:"flex",
+                  justifyContent:"flex-start"
+                  
                 }}
               >
                 {page.label}
               </Button>
             ))}
             <Box display="flex" alignItems="center" gap={1}>
-              <Box display="flex" alignItems="center" gap={1}>
+              <Box display="flex" alignItems="center" gap={1} sx={{background:'#F9FAFB' , m:'1rem'}}>
                 <Box
                   component="img"
                   src={ENImage}
@@ -285,7 +301,7 @@ function ResponsiveAppBar() {
                 />
                 <Button
                   sx={{
-                    fontSize: '12px',
+                    fontSize: '17px',
                     color: 'black',
                     textTransform: 'none',
                     minWidth: 'auto'
@@ -307,7 +323,7 @@ function ResponsiveAppBar() {
                 />
                 <Button
                   sx={{
-                    fontSize: '12px',
+                    fontSize: '17px',
                     color: 'black',
                     textTransform: 'none',
                     minWidth: 'auto'

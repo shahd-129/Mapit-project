@@ -103,7 +103,7 @@ const FeaturesSection = () => {
                     ))}
                 </Swiper>
             ) : (
-                <SectionContainer>
+                <SectionContainer pxOnly={true}>
                     <Grid container spacing={40} alignItems="center">
                         <Grid item xs={12} md={6} container spacing={25} direction="column">
                             <Grid item>
