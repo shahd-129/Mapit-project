@@ -9,8 +9,8 @@ import { createTheme } from '@mui/material/styles'
 import { arEG } from '@mui/material/locale';
 import { enUS } from '@mui/material/locale';
 import { useSelector } from "react-redux";
-import moment from "moment"; 
-import 'moment/locale/ar'; 
+import moment from "moment";
+import 'moment/locale/ar';
 
 const StyleWrapper = (props) => {
     const { language } = useSelector(state => state?.lang)
@@ -19,7 +19,7 @@ const StyleWrapper = (props) => {
 
     const theme = useMemo(_ => {
         moment.locale(language === "ar" ? "ar" : "en");
-        return createTheme(  {direction}, direction === "rtl" ? arEG : enUS);
+        return createTheme({ direction }, direction === "rtl" ? arEG : enUS);
     }, [language, direction])
 
     const cacheLtr = createCache({
