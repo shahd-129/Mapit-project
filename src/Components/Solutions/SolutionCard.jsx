@@ -1,10 +1,20 @@
-import { Box, Button, Card, CardContent, Grid, Typography } from '@mui/material';
+import {  Grid, Typography } from '@mui/material';
 import React from 'react';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import Cards from './cards';
 import { Trans, useTranslation } from 'react-i18next';
-
+import Cards from './Cards'
 export default function SolutionCard({ SolutionImage, SolutionImage2 }) {
-   const {t} = useTranslation()
+    const { t } = useTranslation()
+
+    const cardSolutions = [{
+        title: t("Shipping, Logistics, and Carrier Solutions"), description: t("Mapit provides tailored solutions for shipping, logistics companies, and carriers, featuring a specialized system designed specifically for these industries. Our integrated platform helps you manage ...")
+        ,imageUrl : SolutionImage ,  customStyle: false
+    },
+    { title: t("Last-Mile Solutions"), description: t("Deliver exceptional service right to your customer's doorstep with our last-mile solutions. Mapit's advanced routing and communication tools ensure that every delivery is completed quickly and accura...") , imageUrl: SolutionImage2 ,  customStyle: false}
+    , { title: t("Mapit Ship"), description: t("Ship your orders with the best shipping companies in KSA")  , imageUrl: SolutionImage2 ,  customStyle: false }]
+
+
+
     return (
         <Grid
             container
@@ -14,188 +24,27 @@ export default function SolutionCard({ SolutionImage, SolutionImage2 }) {
                 margin: '1rem auto',
                 pt: "2rem",
                 width: '100%',
+                // ml:"5rem"
             }}
         >
             <Grid item md={4} xs={12}>
-                <Typography sx={{ color: '#014E81', fontWeight: {md:600 , xs:400}, pb: '0.9rem' , pl:{xs:"0.5rem"} }}>{t("Solutions")}</Typography>
-                <Typography sx={{ fontSize: {md:'35px' , xs:"22px"}, fontWeight: 600, lineHeight: "1.2" , pl:{xs:"0.5rem"}  }}>
-                   {t("Fully Integrated Solutions")} 
+                <Typography sx={{ color: '#014E81', fontWeight: { md: 600, xs: 400 }, pb: '0.9rem', pl: { xs: "0.5rem" } }}>{t("Solutions")}</Typography>
+                <Typography sx={{ fontSize: { md: '35px', xs: "22px" }, fontWeight: 600, lineHeight: "1.2", pl: { xs: "0.5rem" } }}>
+                    {t("Fully Integrated Solutions")}
                 </Typography>
                 <Typography sx={{
                     marginBottom: '2.5rem', fontSize: "14px",
                     lineHeight: "1.7", color: "rgb(30, 30, 30)",
-                    pt: "0.5rem" ,  pl:{xs:"0.5rem"}
+                    pt: "0.5rem", pl: { xs: "0.5rem" }
                 }}>
                     <Trans>
                         {t("Mapit offers a complete suite of integrated solutions designed to streamline your delivery operations, from the first mile to the last. Our platform is built to enhance efficiency, reduce costs, and improve customer satisfaction.")}
-                    </Trans>   
+                    </Trans>
                 </Typography>
             </Grid>
-            <Grid item md={8} xs={12} sx={{ pl: { md: "5rem", xs: '2.5rem' } ,pt: { xs: "2rem", md: 0 } }}>
-                <Card
-                    sx={{
-                        maxWidth: '100%',
-                        marginBottom: '2rem',
-                        display: 'flex',
-                        flexDirection: { xs: 'column-reverse', md: 'row' },
-                        alignItems: 'stretch',
-                    }}
-                >
-                    <CardContent
-                        sx={{
-                            flex: 1,
-                            padding: '1.5rem',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'center',
-                        }}
-                    >
-                        <Typography gutterBottom sx={{ fontSize: '21px', fontWeight: 600 }}>
-                            {t("Shipping, Logistics, and Carrier Solutions")}
-                        </Typography>
-                        <Typography variant="body2" sx={{ marginBottom: '1rem', color: '#666' }}>
-                           {t("Mapit provides tailored solutions for shipping, logistics companies, and carriers, featuring a specialized system designed specifically for these industries. Our integrated platform helps you manage ...")}
-                        </Typography>
-                        <Button
-                            size="small"
-                            color="primary"
-                            sx={{
-                                alignSelf: 'flex-start',
-                                textTransform: 'none',
-                                '&:hover': {
-                                    backgroundColor: 'rgba(0, 0, 0, 0.04)',
-                                },
-                            }}
-                        >
-                           {t("Learn More")}
-                            <ArrowForwardIcon sx={{ fontSize: '23px', pl: "0.4rem" }} />
-                        </Button>
-                    </CardContent>
-                    <Box
-                        component="img"
-                        src={SolutionImage}
-                        sx={{
-                            width: { xs: '100%', md: '55%' },
-                            height: { xs: 'auto', md: '50%' },
-                            objectFit: 'contain',
-                            p: 2,
-                        }}
-                    />
-                </Card>
-
-                <Card
-                    sx={{
-                        maxWidth: '100%',
-                        marginBottom: '2rem',
-                        display: 'flex',
-                        flexDirection: { xs: 'column-reverse', md: 'row' },
-                        alignItems: 'stretch',
-                    }}
-                >
-                    <CardContent
-                        sx={{
-                            flex: 1,
-                            padding: '1.5rem',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'space-between',
-                            pb: '2rem',
-                        }}
-                    >
-                        <Box>
-                            <Typography gutterBottom sx={{ fontSize: 23, fontWeight: 600 }}>
-                              {t("Last-Mile Solutions")}  
-                            </Typography>
-                            <Typography variant="body2" sx={{ marginBottom: '1rem', color: '#666' }}>
-                               {t("Deliver exceptional service right to your customer's doorstep with our last-mile solutions. Mapit's advanced routing and communication tools ensure that every delivery is completed quickly and accura...")}
-                               
-                            </Typography>
-                        </Box>
-
-                        <Button
-                            size="small"
-                            color="primary"
-                            sx={{
-                                alignSelf: 'flex-start',
-                                textTransform: 'none',
-                                marginTop: 'auto',
-                                mt: {md:'3rem' , xs:0},
-                            }}
-                        >
-                            {t("Learn More")}
-                            <ArrowForwardIcon sx={{ fontSize: '23px', pl: "0.4rem" }} />
-                        </Button>
-                    </CardContent>
-
-                    <Box
-                        component="img"
-                        src={SolutionImage2}
-                        sx={{
-                            width: { xs: '100%', md: '50%' },
-                            height: { xs: 'auto', md: '50%' },
-                            objectFit: 'contain',
-                            p: 2,
-                        }}
-                    />
-                </Card>
-
-                <Card
-                    sx={{
-                        maxWidth: '100%',
-                        marginBottom: '2rem',
-                        display: 'flex',
-                        flexDirection: { xs: 'column-reverse', md: 'row' },
-                        alignItems: 'stretch',
-                    }}
-                >
-                    <CardContent
-                        sx={{
-                            flex: 1,
-                            padding: '1.5rem',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'space-between',
-                            pb: '2rem',
-                        }}
-                    >
-                        <Box>
-                            <Typography gutterBottom sx={{ fontSize: 23, fontWeight: 600 }}>
-                               {t("Mapit Ship")} 
-                            </Typography>
-                            <Typography variant="body2" sx={{ marginBottom: '1rem', color: '#666' }}>
-                               {t("Ship your orders with the best shipping companies in KSA")} 
-                            </Typography>
-                        </Box>
-
-                        <Button
-                            size="small"
-                            color="primary"
-                            sx={{
-                                alignSelf: 'flex-start',
-                                textTransform: 'none',
-                                marginTop: 'auto',
-                                mt: {md:'3rem' , xs:0},
-                            }}
-                        >
-                            {t("Learn More")}
-                            <ArrowForwardIcon sx={{ fontSize: '23px', pl: "0.4rem" }} />
-                        </Button>
-                    </CardContent>
-
-                    <Box
-                        component="img"
-                        src={SolutionImage2}
-                        sx={{
-                            width: { xs: '100%', md: '50%' },
-                            height: { xs: 'auto', md: '50%' },
-                            objectFit: 'contain',
-                            p: 2,
-                        }}
-                    />
-                </Card>
+            <Grid item md={8} xs={12} sx={{ pl: { md: "5rem", xs: '2.5rem' }, pt: { xs: "2rem", md: 0 } }}>
+                  {cardSolutions.map((card) => (<Cards  title={card.title} desc={card.description} image={card.imageUrl} customStayle={card.customStyle}/>) )}   
             </Grid>
         </Grid>
-        //   "Mapit offers a complete suite of integrated solutions designed to streamline your delivery operations, from the first mile to the last. Our platform is built to enhance efficiency, reduce costs, and improve customer satisfaction.": "تقدم مابت مجموعة كاملة من الحلول المتكاملة <br/>المصممة لتبسيط عمليات التسليم الخاصة بك، من <br/>الميل الأول إلى الأخير. ,تم تصميم منصتنا لتعزيز <br/>الكفاءة وخفض التكاليف وتحسين رضا العملاء.",
-        // "Mapit offers a complete suite of integrated solutions designed to streamline your delivery operations, from the first mile to the last. Our platform is built to enhance efficiency, reduce costs, and improve customer satisfaction.": "Mapit offers a complete suite of integrated<br/> solutions designed to streamline your<br/> delivery operations, from the first mile to<br/> the last. Our platform is built to enhance<br/> efficiency, reduce costs, and improve<br/> customer satisfaction.",
     );
 }

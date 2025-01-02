@@ -1,4 +1,4 @@
-import { CssBaseline, GlobalStyles, ThemeProvider } from "@mui/material";
+import { CssBaseline,  ThemeProvider } from "@mui/material";
 import "./App.css";
 import Theme from "./Theme";
 import {
@@ -12,21 +12,28 @@ import {
   Footer,
 } from "./Components";
 
+// import Login from "./Components/Login";
+// import {  Route, Routes } from "react-router-dom";
+
 function App() {
+ 
+ 
+
+ 
   return (
     <>
       <ThemeProvider theme={Theme}>
-        <CssBaseline />
-        <GlobalStyles styles={{ body: { overflowX: 'hidden' } }} />
+        <CssBaseline />   
         <Navbar />
         <Home />
         <Solutions /> 
-         <About />
+          <About />
         <Features />
-        <Supporting />
-        <FAQs />
+         <Supporting />
+         <FAQs />
         <Footer />
       </ThemeProvider>
+
     </>
   );
 }

@@ -11,12 +11,14 @@ import { LogoMapit, IconLogin, ENImage, ARImage } from '../../assets';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { setLanguage } from '../../Redux/Slices/languageSlice';
-
+// import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 function ResponsiveAppBar() {
   const { t, i18n } = useTranslation();
   const isRtl = i18n.dir() === "rtl";
   const { language } = useSelector(state => state?.lang)
   const dispatch = useDispatch()
+
   const pages = [
     { id: '1', label: t('company') },
     { id: '2', label: t('Solutions') },
@@ -120,10 +122,10 @@ function ResponsiveAppBar() {
               alignItems: 'center',
               gap: 1,
               m: 'auto',
-              
+
             }}
           >
-            <Box display="flex" alignItems="center" sx={{ display: { xs: "none", md: "flex" }  }} gap={0}>
+            <Box display="flex" alignItems="center" sx={{ display: { xs: "none", md: "flex" } }} gap={0}>
               <Box
                 component="img"
                 src={language === 'ar' ? ARImage : ENImage}
@@ -156,9 +158,10 @@ function ResponsiveAppBar() {
                 <Box display="flex" alignItems="center" gap={1}>
                   <Box display="flex" alignItems="center" sx={{ minWidth: '230px', height: "70px", background: "#f9fafb" }} gap={0}>
                     <Box sx={{
-                       display: "flex", justifyContent: "space-between",
+                      display: "flex", justifyContent: "space-between",
                       flexDirection: "row-reverse",
-                      alignItems:"center" , m:"auto"
+                      alignItems: "center", m: "auto",
+                      background: 'rgb(249, 250, 251)'
                     }}>
 
                       {language === "en"
@@ -167,7 +170,7 @@ function ResponsiveAppBar() {
                       <Button
                         sx={{
                           fontSize: '12px',
-                          color: 'black',
+                          color: language === 'en' ? 'black' : "rgb(102, 112, 133)",
                           textTransform: 'none',
                           background: language === 'en' ? '#ccc' : 'transparent',
                           // m:"1.5rem"
@@ -192,10 +195,11 @@ function ResponsiveAppBar() {
                         <Button
                           sx={{
                             fontSize: '12px',
-                            color: 'black',
+                            color: language === 'ar' ? 'black' : "rgb(102, 112, 133)",
                             textTransform: 'none',
                             minWidth: 'auto',
                             background: language === 'ar' ? '#ccc' : 'transparent',
+
                           }}
                           onClick={() => dispatch(setLanguage(('ar')))}
                         >
@@ -218,6 +222,7 @@ function ResponsiveAppBar() {
               </Menu>
             </Box>
             <Tooltip title={t('Log In')}>
+
               <Box
                 component="img"
                 src={IconLogin}
@@ -279,17 +284,17 @@ function ResponsiveAppBar() {
                   color: "black",
                   textTransform: "none",
                   padding: '1.5rem',
-                  width:"100%",
-                  display:"flex",
-                  justifyContent:"flex-start"
-                  
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "flex-start"
+
                 }}
               >
                 {page.label}
               </Button>
             ))}
             <Box display="flex" alignItems="center" gap={1}>
-              <Box display="flex" alignItems="center" gap={1} sx={{background:'#F9FAFB' , m:'1rem'}}>
+              <Box display="flex" alignItems="center" gap={1} sx={{ background: '#F9FAFB', m: '1rem' }}>
                 <Box
                   component="img"
                   src={ENImage}

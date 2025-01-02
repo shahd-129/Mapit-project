@@ -14,14 +14,13 @@ export default function Footer() {
                     display: "flex",
                     flexDirection: { xs: "column" },
                     bgcolor: "#01588C",
-                    minHeight: { md: "480px", xs: "200px" },
                     position: "relative",
                     overflow: "hidden",
                     borderTopLeftRadius: { md: "200px", xs: "0" },
                     pb: "3rem",
-                    my: "4rem",
-                    width:"100%",
-                     boxSizing: "border-box"
+                    mt: "3rem",
+                    height:"350px"
+                 
                 }}
             >
                 <Box
@@ -32,7 +31,7 @@ export default function Footer() {
                         alignItems: "center",
                         justifyContent: "center",
                         bgcolor: "#01588C",
-                        width:"100%"
+                        width: "100%"
                     }}
                 >
 
@@ -46,7 +45,7 @@ export default function Footer() {
                         right={0}
                         sx={{
                             transform: isRtl ? 'scaleX(-1)' : "none",
-                            zIndex:{xs:999}
+                            zIndex: { xs: 999 }
                         }}
 
                     />
@@ -83,7 +82,7 @@ export default function Footer() {
                         alignItems: "center",
                         justifyContent: "center",
                         margin: "0 auto",
-                        mb:'3rem'
+                        mb: '3rem'
 
                     }}
                 >
@@ -126,12 +125,11 @@ export default function Footer() {
                         </Button>
                     </Box>
                 </Box>
-
             </Box>
 
-            <FooterContent  LogoFooter={LogoFooter} AppStore={AppStore} PlayStore={PlayStore} />
+            <FooterContent LogoFooter={LogoFooter} AppStore={AppStore} PlayStore={PlayStore} />
         </>
     );
-  
+
 }
 

@@ -60,8 +60,9 @@ export default function Supporting() {
                                     src={item.imageUrl}
                                     alt={item.title}
                                     style={{
-                                        width: '23px',
-                                        height: '23px',
+                                        width: '56px',
+                                        height: '56px',
+                                        padding:"14px",
                                         objectFit: 'contain',
                                     }}
                                 />
@@ -72,7 +73,9 @@ export default function Supporting() {
                                     sx={{
                                         textAlign: "center",
                                         lineHeight: '3rem',
-                                        fontSize: '16px',
+                                        fontSize: '20px',
+                                        fontWeight:500,
+                                        color:"rgb(30, 30, 30)"
                                     }}
                                 >
                                     {t(item.title)}

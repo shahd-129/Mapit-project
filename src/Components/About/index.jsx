@@ -47,9 +47,8 @@ export default function About() {
                                     left: 0,
                                     marginBottom:"5rem",
                                     width: isSmallScreen ? '100%' : '100%',
-                                    height: '70%',
+                                    height: '100%',
                                     border: 'none',
-
                                     marginLeft: isSmallScreen ? 0 : '2rem',
                                     paddingLeft: isSmallScreen ? 0 : '8rem',
                                 }}
@@ -65,7 +64,7 @@ export default function About() {
                         >
                             <Typography
                                 component="span"
-                                sx={{ color: 'rgb(0, 71, 171)', fontWeight: 500, mb: 2, display: 'block' }}
+                                sx={{ color: 'rgb(0, 71, 171)', fontWeight: 500 , mb:'1rem', display: 'block' }}
                             >
                                 {t("About Mapit")}
                             </Typography>
@@ -78,7 +77,7 @@ export default function About() {
                                 </Trans>
 
                             </Typography>
-                            <Typography sx={{ color: 'text.secondary', mt: 8, fontSize: { md: "17px", xs: "15px" } }}>
+                            <Typography sx={{ color: 'rgb(30, 30, 30)', mt: 8, fontSize: { md: "17px", xs: "15px" } , fontWeight:300 }}>
 
                                 {t("Mapit is a system specialized in managing and automating first and last-mile delivery operations to enhance operational efficiency and increase customer satisfaction. Our platform enhances operational efficiency and customer satisfaction through innovative solutions, auto sorting, fleet management, route optimization, and real-time tracking. By automating key processes, Mapit empowers businesses to streamline their delivery operations, reduce costs, and meet the demands of modern logistics. Our technology ensures timely, efficient service with full visibility throughout the delivery journey, transforming how companies manage and execute their deliveries.")}
 
@@ -102,6 +101,4 @@ export default function About() {
             </SectionContainer>
         </Box>
     );
-    //  "Mapit is a system specialized in managing and automating first and last-mile delivery operations to enhance operational efficiency and increase customer satisfaction. Our platform enhances operational efficiency and customer satisfaction through innovative solutions, auto sorting, fleet management, route optimization, and real-time tracking. By automating key processes, Mapit empowers businesses to streamline their delivery operations, reduce costs, and meet the demands of modern logistics. Our technology ensures timely, efficient service with full visibility throughout the delivery journey, transforming how companies manage and execute their deliveries.": "Mapit is a system specialized in managing and automating first <br /> and last-mile delivery operations to enhance operational <br /> efficiency and increase customer satisfaction. Our platform <br /> enhances operational efficiency and customer satisfaction <br /> through innovative solutions, auto sorting, fleet management, <br /> route optimization, and real-time tracking. By automating key <br /> processes, Mapit empowers businesses to streamline their <br /> delivery operations, reduce costs, and meet the demands of <br /> modern logistics. Our technology ensures timely, efficient service <br /> with full visibility throughout the delivery journey, transforming <br /> how companies manage and execute their deliveries.",
-    //  "Mapit is a system specialized in managing and automating first and last-mile delivery operations to enhance operational efficiency and increase customer satisfaction. Our platform enhances operational efficiency and customer satisfaction through innovative solutions, auto sorting, fleet management, route optimization, and real-time tracking. By automating key processes, Mapit empowers businesses to streamline their delivery operations, reduce costs, and meet the demands of modern logistics. Our technology ensures timely, efficient service with full visibility throughout the delivery journey, transforming how companies manage and execute their deliveries.": "    مابت هو نظام مختص في إدارة وأتمتة عمليات التوصيل في الميل الأول والميل الأخير <br/>لرفع كفاءة التشغيل، ورفع مستوى رضى العميل. تعمل منصتنا على تعزيز الكفاءة <br/>التشغيلية ورضا العملاء من خلال الحلول المبتكرة والفرز التلقائي وإدارة الأسطول <br/> وتحسين المسار والتتبع في الوقت الفعلي. من خلال أتمتة العمليات الرئيسية، تمكن<br/>  مابت الشركات  من تبسيط عمليات التوصيل الخاصة بها وخفض التكاليف وتلبية <br/>  متطلبات الخدمات اللوجستية الحديثة.  تضمن تقنيتنا خدمة فعالة في الوقت  <br/> المناسب مع رؤية كاملة طوال رحلة التوصيل، مما يحول كيفية إدارة الشركات وتنفيذ<br/>   عمليات التوصيل الخاصة بها."
 }

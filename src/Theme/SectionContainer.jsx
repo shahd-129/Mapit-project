@@ -19,7 +19,6 @@ export default function SectionContainer({ mlOnly, mrOnly, mxNone, children , px
 
     return (
         <Box 
-        sx={{overflowx:"hidden"}}
             {...margins}
             {...padding}
         >

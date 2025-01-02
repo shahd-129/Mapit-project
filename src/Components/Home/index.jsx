@@ -108,7 +108,6 @@ export default function Home() {
                   padding: 2,
                   py: "0.6rem",
                   px: "1.2rem",
-                  display: { sm: "flex", xs: "none" }
                 }}
               >
                {t("Get a Demo for Free")}
