@@ -10,22 +10,22 @@ export default function About() {
     const isRtl = i18n.dir() === "rtl";
     const isSmallScreen = useMediaQuery('(max-width:800px)');
     return (
-        <Box sx={{ bgcolor: '#FAFAFA', py: '3rem', position: 'relative' }}>
+        <Box sx={{ bgcolor: '#FAFAFA', py: '3rem', position: 'relative' , width:"100%" }}>
 
-            <Box
-                sx={{
-                    position: 'absolute',
-                    top: '15%',
-                    left: 0,
-                    bottom:"70px",
-                    width: { md: '20%', xs: "10%" },
-                    height: { md: '100%', xs: "50%" },
-                    backgroundImage: `url(${BackgroundAbout})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    transform: isRtl ? 'scaleX(-1)' : "none",
-                }}
-            ></Box>
+            <Box 
+             sx={{
+                position: 'absolute',
+                top: '15%',
+                left: 0,
+                bottom:"70px",
+                width: { md: '20%', xs: "10%" },
+                height: { md: '100%', xs: "50%" },
+                backgroundImage: `url(${BackgroundAbout})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                transform: isRtl ? 'scaleX(-1)' : "none",
+            }}
+            />
 
             <SectionContainer mlOnly={true} pxOnly={true}>
                 <Grid container spacing={2} alignItems="center" sx={{ gap: '0rem' }}>
@@ -60,7 +60,7 @@ export default function About() {
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <Box
-                            sx={{ width: { md: "545px" }, pl: { md: "40px" } , mt:"2rem" }}
+                            sx={{  pl: { md: "40px" } , mt:"2rem" }}
                         >
                             <Typography
                                 component="span"

@@ -1,6 +1,4 @@
-import { CssBaseline,  ThemeProvider } from "@mui/material";
 import "./App.css";
-import Theme from "./Theme";
 import {
   Supporting,
   Features,
@@ -12,18 +10,11 @@ import {
   Footer,
 } from "./Components";
 
-// import Login from "./Components/Login";
-// import {  Route, Routes } from "react-router-dom";
-
 function App() {
- 
- 
-
  
   return (
     <>
-      <ThemeProvider theme={Theme}>
-        <CssBaseline />   
+      
         <Navbar />
         <Home />
         <Solutions /> 
@@ -32,7 +23,7 @@ function App() {
          <Supporting />
          <FAQs />
         <Footer />
-      </ThemeProvider>
+     
 
     </>
   );

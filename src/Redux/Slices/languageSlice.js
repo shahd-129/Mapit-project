@@ -3,7 +3,7 @@ import { changeLanguage } from "i18next";
 
 const languageSlice = createSlice({
     name: 'language',
-    initialState: { language: localStorage.getItem("i18nextLng") || "en" }, 
+    initialState: { language: localStorage.getItem("i18nextLng") || "EN" }, 
     reducers: {
         setLanguage: (state, action) => {
             const language  = action.payload; 

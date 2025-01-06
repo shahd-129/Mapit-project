@@ -31,7 +31,7 @@ export default function Solutions() {
    
   return (
     <Box>
-      <SectionContainer pxOnly={true} mxNone={true}>
+      {/* <SectionContainer pxOnly={true} mxNone={true}> */}
         <Typography sx={{ textAlign: 'center', fontSize:"13px" ,pt: '2rem', mb: '1rem' }}>
           {t("In Collaboration with Industry Leaders")}
         </Typography>
@@ -61,7 +61,7 @@ export default function Solutions() {
           ))}
         </Box>
         <SolutionCard SolutionImage={SolutionImage} SolutionImage2={SolutionImage2} />
-      </SectionContainer>
+      {/* </SectionContainer> */}
     </Box>
   );
 }

@@ -1,11 +1,11 @@
-import { Button, Card, CardContent, Typography , Box } from '@mui/material'
+import { Button, Card, CardContent, Typography , Box, useTheme } from '@mui/material'
 import React from 'react'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useTranslation } from 'react-i18next';
 export default function Cards({image, title , desc , customStayle}) {
-const {t , i18n} = useTranslation()
-
-const isRTL = i18n.dir() === 'rtl'
+const {t } = useTranslation()
+const theme = useTheme()
+const isRTL = theme.direction === 'rtl'
 return (<>
 
         <Card
@@ -13,7 +13,7 @@ return (<>
                 maxWidth: '100%',
                 marginBottom: '2rem',
                 display: 'flex',
-                flexDirection: { xs: 'column-reverse', md: 'row' },
+                flexDirection: { xs: 'column-reverse', md: 'row' , sm:"row"},
                 alignItems: 'stretch',
             }}
         >
@@ -25,10 +25,10 @@ return (<>
                     flexDirection: 'column',
                 }}
             >
-                <Typography gutterBottom sx={{ fontSize: '21px', fontWeight: 600 }}>
+                <Typography gutterBottom sx={{ fontSize: {md:'21px' , sm:"30px"}, fontWeight: 600  }}>
                  {title}
                 </Typography>
-                <Typography variant="body2" sx={{ marginBottom: '1rem', color: '#666' , fontSize:"15px" }}>
+                <Typography variant="body2" sx={{ marginBottom: '1rem', color: '#666' , fontSize:{md:"15px" , sm:"20px"} }}>
                  {desc}
                 </Typography>
                 <Button
@@ -37,8 +37,8 @@ return (<>
                     sx={{
                         alignSelf: 'flex-start',
                         textTransform: 'none',
-                        // marginTop: customStayle[2] ? 'auto' : 'none',
-                        mt: 'auto'
+                        mt: 'auto',
+                        fontSize:{sm:"19px" , md:"12px"}
                     }}
                 >
                     {t("Learn More")}
@@ -49,10 +49,11 @@ return (<>
                 component="img"
                 src={image}
                 sx={{
-                    width: { xs: '100%', md: '50%' },
-                    // height: { xs: 'auto' },
+                    width: { xs: '100%', md: '327px' , sm:"50%" },
+                    height: { xs: '250px' , md:'344px' ,  sm:"70vw" },
                     objectFit: 'cover',
                     p: 2,
+                    transform: isRTL ? 'scaleX(-1)' :"none"
                 }}
             />
         </Card>

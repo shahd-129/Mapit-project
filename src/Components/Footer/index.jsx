@@ -1,12 +1,16 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography, useTheme } from "@mui/material";
 import { AppStore, FooterImage, FooterImage2, LogoFooter, PlayStore } from "../../assets";
 import FooterContent from "./FooterContent";
 import { useTranslation } from "react-i18next";
 
 
 export default function Footer() {
-    const { t, i18n } = useTranslation()
-    const isRtl = i18n.dir() === "rtl";
+    const { t } = useTranslation()
+    const theme = useTheme()
+    const isRtl = theme.direction === "ltr";
+    // console.log(i18n.dir());
+    console.log(theme.direction);
+    
     return (
         <>
             <Box
@@ -19,7 +23,7 @@ export default function Footer() {
                     borderTopLeftRadius: { md: "200px", xs: "0" },
                     pb: "3rem",
                     mt: "3rem",
-                    height:"350px"
+                    height:{md:"350px" , xs:"400px"}
                  
                 }}
             >
@@ -44,7 +48,7 @@ export default function Footer() {
                         alt="Background Image Right"
                         right={0}
                         sx={{
-                            transform: isRtl ? 'scaleX(-1)' : "none",
+                            transform: isRtl ? 'none' : "scaleX(-1)",
                             zIndex: { xs: 999 }
                         }}
 
@@ -60,7 +64,7 @@ export default function Footer() {
                             top: { md: "1%" },
                             maxWidth: { md: "100%" },
                             position: { xs: "static", md: "absolute" },
-                            transform: isRtl ? 'scaleX(-1)' : "none",
+                            transform: isRtl ? 'none' : "scaleX(-1)",
 
                         }}
                         src={FooterImage2}

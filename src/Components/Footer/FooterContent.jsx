@@ -25,7 +25,7 @@ export default function FooterContent({ LogoFooter, AppStore, PlayStore }) {
                     zIndex: 2,
                     px: { md: "30px" },
                     pb: "1rem",
-                    mx: { md: "4.5rem" },
+                    // mx: { md: "4rem" },
                     overflow: "hidden",
                     my: "5rem",
                     py: "2rem"
@@ -161,16 +161,16 @@ export default function FooterContent({ LogoFooter, AppStore, PlayStore }) {
                         </Box>
                     </Grid>
                     <Divider variant="middle" sx={{ width: "100%" }} />
-                    {/* <Box display={ 'flex'} justifyContent={'center'} flexDirection={{xs:"column"}}>
+                    <Box sx={{ display: 'flex',   flexDirection: "row" , justifyContent :"space-between" , width:"100%" , pt:'1.5rem'  }} >
 
-                        <Typography sx={{fontSize:"14px" , mt:"1rem"}} >
+                        <Typography sx={{ fontSize: "14px" }} >
                             {t('©2024 mapit. All rights reserved.')}
                         </Typography>
-                        <Box sx={{ display:"flex" , flexDirection:"row"}}>
+                        <Box sx={{flexDirection:"row" , display:"flex" , fontSize:"12px" }} >
                             <Typography mr={'1rem'}>Privacy Policy</Typography>
                             <Typography>Documentation</Typography>
                         </Box>
-                        </Box> */}
+                    </Box>
 
                 </Grid>
 

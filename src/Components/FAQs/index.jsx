@@ -33,8 +33,8 @@ export default function FAQs() {
                 <SectionContainer >
                     <Grid container spacing={3} justifyContent="center">
 
-                        <Grid item md={6} xs={12} sx={{ ml: '-5rem' }}>
-                            <Typography sx={{ fontSize: "35px", fontWeight: 600, textAlign: {md:'center' , xs:"left"} , pl:{xs:"2rem"} }}>
+                        <Grid item md={6} xs={12}>
+                            <Typography sx={{ fontSize: "35px", fontWeight: 600, textAlign: {md:'center' , xs:"left"} , pl:{xs:"0.5rem"} }}>
                                 {t("FAQs")}
                             </Typography>
                         </Grid>
@@ -47,7 +47,7 @@ export default function FAQs() {
                                         key={index}
                                         elevation={0}
                                         sx={{
-                                            marginRight: '1rem',
+                                            mr: {md:'1rem' , xs:"0rem"},
                                             BorderBottom: "none",
                                             pr: "2rem",
                                             '&::before': {
@@ -70,7 +70,7 @@ export default function FAQs() {
                                             aria-controls={`panel${index}bh-content`}
                                             id={`panel${index}bh-header`}
                                         >
-                                            <Typography sx={{ width: '100%', flexShrink: 0, fontSize: "19px", fontWeight: 500 }}>
+                                            <Typography sx={{ width: '100%', flexShrink: 0, fontSize: {md:"19px" , xs:"15px"}, fontWeight: 500 }}>
                                                 {t(content.Typography)}
                                             </Typography>
                                         </AccordionSummary>

@@ -73,8 +73,8 @@ export default function Home() {
           textAlign="center"
           sx={{
             color: 'white',
-            fontSize: { xs: '40px', sm: '50px', md: '40px' },
-            fontWeight: "bold",
+            fontSize: { xs: '40px', sm: '50px', md: '48px' },
+            fontWeight: "600",
             mb: "1rem"
           }}
         >

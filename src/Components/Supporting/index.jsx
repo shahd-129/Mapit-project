@@ -37,7 +37,7 @@ export default function Supporting() {
                             item
                             xs={6}
                             sm={4}
-                            md={2}
+                            md={1.7}
                             key={index}
                             sx={{
                                 display: 'flex',
@@ -73,7 +73,7 @@ export default function Supporting() {
                                     sx={{
                                         textAlign: "center",
                                         lineHeight: '3rem',
-                                        fontSize: '20px',
+                                        fontSize: '17px',
                                         fontWeight:500,
                                         color:"rgb(30, 30, 30)"
                                     }}

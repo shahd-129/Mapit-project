@@ -5,10 +5,10 @@ import translationAR from '../i18n/ar.json';
 import translationEN from '../i18n/en.json';
 
 const resources = {
-  en: {
+  EN: {
     translation: translationEN,
   },
-  ar: {
+  ع: {
     translation: translationAR,
   },
 };
@@ -19,8 +19,8 @@ i18n
   .init({
     resources,
     defaultNS: 'translation',
-    fallbackLng: 'en',  
-    debug: true,
+    fallbackLng: 'EN',  
+    debug: false,
     interpolation: {
       escapeValue: false,
     },
