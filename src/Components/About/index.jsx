@@ -148,19 +148,10 @@ export default function About() {
             <SectionContainer  pxOnly={true}>
                 <Grid container spacing={2} alignItems="center" sx={{ gap: '0rem' }}>
                     <Grid item xs={12} md={6}>
-                        <Box
-                            sx={{
-                                position: 'relative',
-                                width: '70%',
-                                aspectRatio: '16 / 9',
-                                overflow: 'hidden',
-                            }}
-                        >
                             <LiteYouTubeEmbed
                                 title="YouTube video player"
                                 containerClassName="youtube-container"
                             />
-                        </Box>
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <Box sx={{ pl: { md: "40px" }, mt: "2rem" }}>
