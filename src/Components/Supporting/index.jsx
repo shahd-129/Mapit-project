@@ -1,6 +1,5 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 import React from 'react';
-import SectionContainer from '../../Theme/SectionContainer';
 import { ShoppingBag, ShoppingCart, MedicalImage, LogisticImage, DropImage } from '../../assets';
 import { useTranslation } from 'react-i18next';
 
@@ -22,10 +21,9 @@ export default function Supporting() {
                 {t('Supporting Industries')}
             </Typography>
 
-            {/* <SectionContainer pxOnly={true}> */}
+            <Container>
                 <Grid
                     container
-                    maxWidth={'1150px'}
                     spacing={0} 
                     gap={0}
                     direction="row"
@@ -85,7 +83,7 @@ export default function Supporting() {
                         </Grid>
                     ))}
                 </Grid>
-            {/* </SectionContainer> */}
+            </Container>
         </Box>
     );
 }
