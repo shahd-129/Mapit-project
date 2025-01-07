@@ -18,7 +18,7 @@ export default function About() {
                 top: '15%',
                 left: 0,
                 bottom:"70px",
-                width: { md: '20%', xs: "10%" },
+                width: { md: '20%', xs: "100%" , sm:"100%" },
                 height: { md: '100%', xs: "50%" },
                 backgroundImage: `url(${BackgroundAbout})`,
                 backgroundSize: 'cover',

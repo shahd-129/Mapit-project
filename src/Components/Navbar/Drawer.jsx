@@ -6,15 +6,6 @@ import { useTranslation } from 'react-i18next';
 import { ENImage, ARImage } from '../../assets';
 
 
-// const pages = [
-//     { id: '1', label: 'company' },
-//     { id: '2', label: 'Solutions' },
-//     { id: '3', label: 'Features' },
-//     { id: '4', label: 'Industries' },
-//     { id: '5', label: 'Pricing' },
-//     { id: '6', label: 'Resources' },
-// ];
-
 export default function CustomDrawer({ setDrawerOpen, drawerOpen , pages }) {
     const dispatch = useDispatch()
     const { t } = useTranslation()

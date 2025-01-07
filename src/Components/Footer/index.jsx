@@ -1,5 +1,5 @@
 import { Box, Button, Typography, useTheme } from "@mui/material";
-import { AppStore, FooterImage, FooterImage2, LogoFooter, PlayStore } from "../../assets";
+import { FooterImage, FooterImage2} from "../../assets";
 import FooterContent from "./FooterContent";
 import { useTranslation } from "react-i18next";
 
@@ -9,7 +9,7 @@ export default function Footer() {
     const theme = useTheme()
     const isRtl = theme.direction === "ltr";
     // console.log(i18n.dir());
-    console.log(theme.direction);
+    // console.log(theme.direction);
     
     return (
         <>
@@ -23,7 +23,7 @@ export default function Footer() {
                     borderTopLeftRadius: { md: "200px", xs: "0" },
                     pb: "3rem",
                     mt: "3rem",
-                    height:{md:"350px" , xs:"400px"}
+                    height:{md:"350px" , xs:"480px"}
                  
                 }}
             >
@@ -59,7 +59,7 @@ export default function Footer() {
                         left={0}
                         sx={{
                             width: { xs: "100%", md: "350px" },
-                            maxHeight: { md: "400px", xs: "250px" },
+                            maxHeight: { md: "400px", xs: "200px" },
                             objectFit: 'cover',
                             top: { md: "1%" },
                             maxWidth: { md: "100%" },
@@ -76,7 +76,7 @@ export default function Footer() {
                     sx={{
                         flex: 3,
                         textAlign: "center",
-                        py: { md: "5rem" },
+                        py: { md: "5rem" , sm:"1.5rem" , xs:"1.5rem" },
                         px: { md: "2rem" },
                         color: "white",
                         position: "relative",
@@ -99,7 +99,7 @@ export default function Footer() {
                     <Box
                         sx={{
                             display: "flex",
-                            flexDirection: { xs: "column", md: "row" },
+                            flexDirection: { xs: "column", md: "row" , sm:"row" },
                             gap: { xs: "1rem", md: "0" },
                             alignItems: "center",
                             justifyContent: "center",
@@ -131,7 +131,7 @@ export default function Footer() {
                 </Box>
             </Box>
 
-            <FooterContent LogoFooter={LogoFooter} AppStore={AppStore} PlayStore={PlayStore} />
+            <FooterContent  />
         </>
     );
 

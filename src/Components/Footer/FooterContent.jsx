@@ -4,7 +4,8 @@ import { useTranslation } from 'react-i18next';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
-export default function FooterContent({ LogoFooter, AppStore, PlayStore }) {
+import { AppStore , LogoFooter, PlayStore } from "../../assets";
+export default function FooterContent() {
     const { t } = useTranslation();
 
     return (
@@ -118,7 +119,7 @@ export default function FooterContent({ LogoFooter, AppStore, PlayStore }) {
                                 size="small"
                                 sx={{
                                     flex: 1,
-                                    width: "200px",
+                                    width: {md:"200px" , xs:"100%" , sm:"100%"},
                                     height: "30px",
                                     backgroundColor: "white",
                                     "& .MuiOutlinedInput-root": {
@@ -160,15 +161,15 @@ export default function FooterContent({ LogoFooter, AppStore, PlayStore }) {
                             </Link>
                         </Box>
                     </Grid>
-                    <Divider variant="middle" sx={{ width: "100%" }} />
-                    <Box sx={{ display: 'flex',   flexDirection: "row" , justifyContent :"space-between" , width:"100%" , pt:'1.5rem'  }} >
+                    <Divider variant="middle" sx={{ width: "100%" , pt:{xs:"1.5rem"} }} />
+                    <Box sx={{ display: 'flex',  flexDirection:{md:"row" , xs:"column"} , justifyContent :"space-between" , width:"100%" , pt:'1.5rem'  }} >
 
                         <Typography sx={{ fontSize: "14px" }} >
                             {t('©2024 mapit. All rights reserved.')}
                         </Typography>
-                        <Box sx={{flexDirection:"row" , display:"flex" , fontSize:"12px" }} >
-                            <Typography mr={'1rem'}>Privacy Policy</Typography>
-                            <Typography>Documentation</Typography>
+                        <Box sx={{flexDirection:{md:"row" , xs:"column"} , display:"flex" , fontSize:"12px",}} >
+                            <Typography mr={'1rem'} sx={{ "&:hover": { color: "#FFBA21" }}}>{t('Privacy Policy')}</Typography>
+                            <Typography sx={{ "&:hover": { color: "#FFBA21" }}}>{t('Documentation')}</Typography>
                         </Box>
                     </Box>
 
