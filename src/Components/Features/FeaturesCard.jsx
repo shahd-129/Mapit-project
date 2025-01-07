@@ -66,8 +66,7 @@ export default function FeaturesCard() {
                         alt="Automated Shipment Assignment"
                         width={'100%'}
                         height={'100%'}
-
-                        style={{ objectFit: "cover", paddingTop: "1.5rem" }}
+                        style={{ objectFit: "cover", pt: "4rem" }}
                     />
                 </Paper>
             </Grid>
