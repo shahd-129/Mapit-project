@@ -11,20 +11,17 @@ import {
 } from "./Components";
 
 function App() {
- 
+
   return (
     <>
-      
-        <Navbar />
-        <Home />
-        <Solutions /> 
-          <About />
-        <Features />
-         <Supporting />
-         <FAQs />
-        <Footer />
-     
-
+      <Navbar />
+      <Home />
+      <Solutions />
+      <About />
+      <Features />
+      <Supporting />
+      <FAQs />
+      <Footer />
     </>
   );
 }
