@@ -29,6 +29,7 @@ const FeaturesSection = () => {
     ];
 
     return (
+        <Box sx={{pt:"4rem"}}>
         <Container>
             <Typography
                 sx={{
@@ -71,6 +72,8 @@ const FeaturesSection = () => {
                 </Button>
             </Box>
         </Container>
+
+        </Box>
     );
 };
 

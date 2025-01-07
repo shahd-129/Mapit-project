@@ -1,5 +1,6 @@
+
 export default function createThemeMapit(direction){
-    return{
+  return{
       palette: {
         primary: {
           main: "#014E81"
@@ -43,7 +44,7 @@ export default function createThemeMapit(direction){
         },
       },
       spacing: 1,
-      direction
+     direction,
     }
    
 } 

@@ -28,7 +28,7 @@ export default function FooterContent() {
                     pb: "1rem",
                     // mx: { md: "4rem" },
                     overflow: "hidden",
-                    my: "5rem",
+                    mt: "5rem",
                     py: "2rem"
 
                 }}
@@ -161,7 +161,7 @@ export default function FooterContent() {
                             </Link>
                         </Box>
                     </Grid>
-                    <Divider variant="middle" sx={{ width: "100%" , pt:{xs:"1.5rem"} }} />
+                    <Divider variant="middle" sx={{ width: "100%" }} />
                     <Box sx={{ display: 'flex',  flexDirection:{md:"row" , xs:"column"} , justifyContent :"space-between" , width:"100%" , pt:'1.5rem'  }} >
 
                         <Typography sx={{ fontSize: "14px" }} >

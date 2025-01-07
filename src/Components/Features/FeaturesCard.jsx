@@ -4,15 +4,15 @@ import { useTranslation } from 'react-i18next';
 import { FeatuerImage, FeatuerImage2, FeatuerImage3 } from "../../assets";
 export default function FeaturesCard() {
 
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
 
     return (<>
         <Grid container spacing={30}>
             <Grid item xs={12} md={6} sm={12}>
-                <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <Box sx={{ display: "flex", flexDirection: "column" }} >
                     <Paper sx={{ display: "flex", alignItems: "stretch", height: "350px" }}>
-                        <Box sx={{ flex: 1, p: 40   }}>
+                        <Box sx={{ flex: 1, p: 40 }}>
                             <Typography sx={{ fontSize: "25px", fontWeight: 600, mt: 0 }}>
                                 {t("Precise Customer Location")}
                             </Typography>
@@ -30,7 +30,7 @@ export default function FeaturesCard() {
                     </Paper>
 
 
-                    <Paper sx={{ display: "flex", alignItems: "stretch", height: "350px"  , mt: '2rem' }}>
+                    <Paper sx={{ display: "flex", alignItems: "stretch", height: "350px", mt: '2rem' }}>
                         <Box sx={{ flex: 1, p: 50 }}>
                             <Typography sx={{ fontSize: "25px", fontWeight: 600, mt: 0 }}>
                                 {t("Efficient Shipment Sorting")}
@@ -52,7 +52,7 @@ export default function FeaturesCard() {
 
 
             <Grid item xs={12} md={6}>
-                <Paper sx={{ display: "flex", alignItems: "stretch", flexDirection:"column", height:"515px" , width:"488px"  }}>
+                <Paper sx={{ display: "flex", alignItems: "stretch", flexDirection: "column", height: "100%", width: "488px" }}>
                     <Box sx={{ flex: 1, p: 32 }}>
                         <Typography sx={{ fontSize: "28px", fontWeight: 600, mt: 0 }}>
                             {t("Automated Shipment Assignment")}
@@ -67,15 +67,11 @@ export default function FeaturesCard() {
                         width={'100%'}
                         height={'100%'}
 
-                        style={{ objectFit: "cover", paddingTop: "4rem" }}
+                        style={{ objectFit: "cover", paddingTop: "1.5rem" }}
                     />
                 </Paper>
             </Grid>
         </Grid>
-
-
-
-
     </>
     )
 }

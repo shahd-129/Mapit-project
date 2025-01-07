@@ -20,7 +20,7 @@ export default function SolutionCard({ SolutionImage, SolutionImage2 }) {
             container
             spacing={2}
             sx={{
-                maxWidth: '950px',
+                maxWidth: '1050px',
                 margin: '1rem auto',
                 pt: "2rem",
                 width: '100%',

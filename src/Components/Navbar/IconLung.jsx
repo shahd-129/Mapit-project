@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
 export default function IconLung({ ENImage, ARImage }) {
-    const { t } = useTranslation()
+    const { t} = useTranslation()
 
     const { language } = useSelector(state => state?.lang)
     const dispatch = useDispatch()
@@ -13,7 +13,7 @@ export default function IconLung({ ENImage, ARImage }) {
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleLanguageClick = (event) => {
-        setAnchorEl(event.currentTarget);
+       setAnchorEl(event.currentTarget);
       };
     
       const handleCloseLanguageMenu = () => {

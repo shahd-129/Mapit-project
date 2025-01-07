@@ -22,9 +22,10 @@ export default function Supporting() {
                 {t('Supporting Industries')}
             </Typography>
 
-            <SectionContainer pxOnly={true}>
+            {/* <SectionContainer pxOnly={true}> */}
                 <Grid
                     container
+                    maxWidth={'1150px'}
                     spacing={0} 
                     gap={0}
                     direction="row"
@@ -84,7 +85,7 @@ export default function Supporting() {
                         </Grid>
                     ))}
                 </Grid>
-            </SectionContainer>
+            {/* </SectionContainer> */}
         </Box>
     );
 }

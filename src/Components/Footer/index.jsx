@@ -5,11 +5,11 @@ import { useTranslation } from "react-i18next";
 
 
 export default function Footer() {
-    const { t } = useTranslation()
+    const { t , i18n} = useTranslation()
     const theme = useTheme()
     const isRtl = theme.direction === "ltr";
-    // console.log(i18n.dir());
-    // console.log(theme.direction);
+    console.log(i18n.dir());
+    console.log(theme.direction);
     
     return (
         <>

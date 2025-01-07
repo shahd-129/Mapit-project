@@ -25,7 +25,7 @@ return (<>
                     flexDirection: 'column',
                 }}
             >
-                <Typography gutterBottom sx={{ fontSize: {md:'21px' , sm:"30px"}, fontWeight: 600  }}>
+                <Typography gutterBottom sx={{ fontSize: {md:'28px' , sm:"30px"}, fontWeight: 600  }}>
                  {title}
                 </Typography>
                 <Typography variant="body2" sx={{ marginBottom: '1rem', color: '#666' , fontSize:{md:"15px" , sm:"20px"} }}>
