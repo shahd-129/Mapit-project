@@ -9,7 +9,7 @@ export default function FooterContent() {
     const { t } = useTranslation();
 
     return (
-        <Container>
+        <Container sx={{px:{xs:"1.5rem"}}}>
 
             <Grid container>
                 <Grid item xs={12} sm={12} md={3} sx={{ display: "flex", flexDirection: "column", mb: 2, pb: "1rem", pl: { md: "10px" } }}>
@@ -135,7 +135,7 @@ export default function FooterContent() {
                     </Box>
                 </Grid>
 
-                <Divider variant="middle" sx={{ width: "100%" }} />
+                <Divider variant="middle" sx={{ width: "100%" , pt:{ xs:"1.5rem"} }} />
 
 
             </Grid>

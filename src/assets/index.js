@@ -6,7 +6,7 @@ export { default as SaudiTech } from "../assets/saudi-tech.png";
 export { default as Sobol } from "../assets/sobol.png";
 export { default as ZidShip } from "../assets/zidship.png";
 export { default as Zid } from "../assets/zid.png";
-export { default as SolutionImage } from "../assets/logistics-mobile.png";
+export { default as SolutionImage } from "../assets/logistics-web.04bcbf62.png";
 export { default as SolutionImage2 } from "../assets/last-mile-web.png";
 export { default as BackgroundAbout } from "../assets/logo-gradient.a7269bf1.svg";
 export { default as FeatuerImage } from "../assets/precise-customer-location.png";

@@ -23,7 +23,7 @@ export default function FeaturesSlider({ features }) {
     return (
         <Slider {...settings}>
             {features.map((feature, index) => (
-                <Box key={index} sx={{ px: {sm:"1.5rem"} }}>
+                <Box key={index} sx={{ px: {sm:"1.5rem" , xs:"1rem"} }}>
                     <Paper
                         sx={{
                             display: "flex",

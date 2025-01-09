@@ -1,42 +1,44 @@
 import React from 'react';
-import { Box, Typography, Grid, Button, Container } from '@mui/material';
+import { Box, Typography, Grid, Button, Container, useTheme } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import SectionContainer from '../../Theme/SectionContainer';
 import BackgroundAbout from '../../assets/logo-gradient.a7269bf1.svg';
-import { Trans, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 
 export default function About() {
-    const { t, i18n } = useTranslation();
-    const isRtl = i18n.dir() === "rtl";
+    const { t} = useTranslation();
+     const theme = useTheme()
+        const isRTL = theme.direction === 'rtl'
     return (
         <Box sx={{ bgcolor: '#FAFAFA', py: '3rem', position: 'relative', width: "100%" }}>
             <Box
                 sx={{
                     position: 'absolute',
-                    top: '15%',
+                    top: { xs: '20%', md: "40%" },
                     left: 0,
                     bottom: "70px",
-                    width: { md: '20%', xs: "100%", sm: "100%" },
+                    width: { md: '15%', xs: "100%", sm: "100%" },
                     height: { md: '100%', xs: "50%" },
                     backgroundImage: `url(${BackgroundAbout})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    transform: isRtl ? 'scaleX(-1)' : "none",
+                    transform: isRTL ? 'scaleX(-1)' : "none",
                 }}
             />
-            <Container>
-                <Grid container spacing={30} alignItems="center" >
-                    <Grid item xs={12} md={6}>
+            <Container sx={{ px: { xs: "1.5rem" } }}>
+                <Grid container spacing={20} alignItems="center" >
+                    <Grid item xs={12} md={6} sx={{  mb: { md: '5rem' }  }}>
                         <LiteYouTubeEmbed
                             id="gUW0V-yvZk0"
                             title="YouTube video player"
                             containerClassName="youtube-container"
+                            
                         />
                     </Grid>
+
                     <Grid item xs={12} md={6}>
-                        <Box sx={{ pl: { md: "40px" }, mt: "2rem" }}>
+                        <Box sx={{ pl: { md: "40px" }, mt: "2rem" }} width={'100%'}>
                             <Typography sx={{ color: 'rgb(0, 71, 171)', fontWeight: 500, mb: '1rem' }}>
                                 {t("About Mapit")}
                             </Typography>
@@ -46,7 +48,7 @@ export default function About() {
                             >
                                 {t("Revolutionising Delivery Management")}
                             </Typography>
-                            <Typography sx={{ color: 'rgb(30, 30, 30)', mt: 8, fontSize: { md: "17px", xs: "15px" }, fontWeight: 300 }}>
+                            <Typography sx={{ color: 'rgb(30, 30, 30)', mt: 8, fontSize: { md: "17px", xs: "14px" }, fontWeight: 300 }}>
                                 {t("Mapit is a system specialized in managing and automating first and last-mile delivery operations to enhance operational efficiency and increase customer satisfaction. Our platform enhances operational efficiency and customer satisfaction through innovative solutions, auto sorting, fleet management, route optimization, and real-time tracking. By automating key processes, Mapit empowers businesses to streamline their delivery operations, reduce costs, and meet the demands of modern logistics. Our technology ensures timely, efficient service with full visibility throughout the delivery journey, transforming how companies manage and execute their deliveries.")}
                             </Typography>
                             <Button
@@ -59,7 +61,7 @@ export default function About() {
                                 }}
                             >
                                 {t("Learn More")}
-                                <ArrowForwardIcon sx={{ fontSize: '23px', pl: '0.4rem' }} />
+                                <ArrowForwardIcon sx={{ fontSize: '23px', pl: "0.4rem", ml:"0.5rem", transform: isRTL ? 'scalex(-1)' : 'none' }} />
                             </Button>
                         </Box>
                     </Grid>

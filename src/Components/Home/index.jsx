@@ -1,12 +1,13 @@
 
-import { Box, Button, Link, Typography } from '@mui/material';
+import { Box, Button, Link, Typography, useTheme } from '@mui/material';
 import React from 'react';
 import HomeBackground from '../../assets/hero.mp4'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Trans, useTranslation } from 'react-i18next';
 export default function Home() {
-  const { t, i18n } = useTranslation()
-  const isRtl = i18n.dir() === "rtl";
+  const { t } = useTranslation()
+  const theme = useTheme()
+  const isRtl = theme.direction === "rtl";
   
   return (
     <Box
@@ -66,7 +67,7 @@ export default function Home() {
               {t('Mapit New Updates | Watch Video')}
             </Typography>
           </Link>
-          <ArrowForwardIcon sx={{ fontSize: '23px', pl: "0.4rem", transform: isRtl ? 'scaleX(-1)' : "none", }} />
+          <ArrowForwardIcon sx={{ fontSize: '23px', pl: "0.4rem", ml:"0.5rem" ,transform: isRtl ? 'scaleX(-1)' : "none", }} />
         </Box>
         <Typography
           variant="h1"
