@@ -15,10 +15,9 @@ export default function TryMapitSec() {
                 position: "relative",
                 overflow: "hidden",
                 borderTopLeftRadius: { md: "200px", xs: "0" },
-                pb: "3rem",
                 mt: "3rem",
-                height: { md: "350px", xs: "480px" }
-
+                height: { md: "350px", xs: "480px" },
+                width:"100%",
             }}
         >
             <Box
@@ -46,9 +45,9 @@ export default function TryMapitSec() {
                         zIndex: { xs: 999 }
                     }}
 
-                />
+                /> 
 
-                <Box
+                 <Box
                     component={"img"}
                     left={0}
                     sx={{
@@ -124,9 +123,6 @@ export default function TryMapitSec() {
                 </Box>
             </Box>
         </Box>
-
-
-
     </>
     )
 }

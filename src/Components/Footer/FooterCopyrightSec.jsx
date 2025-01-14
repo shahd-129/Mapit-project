@@ -6,7 +6,7 @@ export default function FooterCopyrightSec() {
     const { t } = useTranslation()
 
     return (
-        <Container sx={{px:{xs:"1.5rem"}}} >
+        <Container sx={{ px: { xs: "1.5rem" } }} >
             <Box sx={{ display: 'flex', flexDirection: { md: "row", xs: "column" }, justifyContent: "space-between", width: "100%", my: "1.5rem" }} >
 
                 <Typography sx={{ fontSize: "14px" }} >

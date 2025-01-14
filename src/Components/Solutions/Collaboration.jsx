@@ -1,8 +1,10 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next'
+ import React from 'react'
+ import { useTranslation } from 'react-i18next'
 import { Zid, ZidShip, Aramex, Naqel, Salla, SaudiTech, Sobol } from '../../assets';
 import Ezpay from '../../assets/ezpay.png';
-import { Box, Container, Typography } from '@mui/material';
+ import { Box, Container, Typography, useMediaQuery, useTheme } from '@mui/material';
+ import Slider from 'react-slick';
+
 
 
 const image = [
@@ -15,6 +17,8 @@ const image = [
     { imageUrl: Aramex },
     { imageUrl: Naqel },
 ];
+
+
 
 const customHeights = {
     4: '50px',
@@ -45,6 +49,8 @@ export default function Collaboration() {
                         '&::-webkit-scrollbar': { display: 'none' },
                     }}
                 >
+                
+
                     {image.map((item, index) => (
                         <Box
                             component="img"
@@ -59,8 +65,15 @@ export default function Collaboration() {
                             }}
                         />
                     ))}
+
+           
                 </Box>
             </Box>
         </Container>
     )
 }
+
+
+
+
+
