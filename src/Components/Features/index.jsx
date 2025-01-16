@@ -62,10 +62,11 @@ const FeaturesSection = () => {
                 <Box
 
                     width='500px'
-                    height='151px'
+                    height='100px'
                     sx={{
                         backgroundSize: "420px 120px",
                         backgroundImage: `url(${ButtonShadow})`,
+                        margin: "0 auto",
                     }}
                 >
 
