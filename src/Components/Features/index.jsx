@@ -59,14 +59,14 @@ const FeaturesSection = () => {
                     :
                     <FeaturesCard features={features} />
                 }
-                <Box
+                {/* <Box
 
                     width='500px'
                     height='100px'
                     sx={{
                         backgroundSize: "420px 120px",
                         backgroundImage: `url(${ButtonShadow})`,
-                        margin: "0 auto",
+                       
                     }}
                 >
 
@@ -83,7 +83,7 @@ const FeaturesSection = () => {
                         </Button>
                     </Box>
 
-                </Box>
+                </Box> */}
             </Container>
         </Box>
     );

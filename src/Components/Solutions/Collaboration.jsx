@@ -40,8 +40,8 @@ export default function Collaboration() {
                 <Box
                     sx={{
                         display: 'flex',
-                        gap: "3rem",
-                        justifyContent: { xs: 'start', md: 'center' },
+                        gap: "2rem",
+                        justifyContent: 'space-between',
                         overflowX: 'auto',
                         scrollBehavior: 'smooth',
                         '&::-webkit-scrollbar': { display: 'none' },

@@ -12,7 +12,7 @@ export default function Cards({ image, title, desc }) {
 
             <Paper
                 sx={{
-                    maxWidth: "700px",
+                    // maxWidth: "700px",
                     marginBottom: '2rem',
                     display: 'flex',
                     flexDirection: { xs: 'column-reverse', md: 'row', sm: "row" },

@@ -24,13 +24,10 @@ export default function SolutionCard({ SolutionImage, SolutionImage2 }) {
                     width: '100%',
            
                 }}
-                display={'flex'}
-                justifyContent={'center'}
-            
+                
 
             >
-                <Grid item md={4} xs={12}  display={'flex'}
-                justifyContent={'center'} >
+                <Grid item md={4} xs={12}  >
                     <Box sx={{ px: { xs: "1.2rem" } }}>
                         <Typography sx={{ color: '#014E81', fontWeight: { md: 600, xs: 400 }, pb: '0.9rem' }}>{t("Solutions")}</Typography>
                         <Typography sx={{ fontSize: { md: '35px', xs: "22px" }, fontWeight: 600, lineHeight: "1.2" }}>
@@ -40,7 +37,6 @@ export default function SolutionCard({ SolutionImage, SolutionImage2 }) {
                             marginBottom: '2.5rem', fontSize: "17px",
                             color: "rgb(30, 30, 30)", fontWeight: 300,
                             pt: "0.5rem",
-                            //  pl: { xs: "0.5rem" }
                         }}>
 
                             {t("Mapit offers a complete suite of integrated solutions designed to streamline your delivery operations, from the first mile to the last. Our platform is built to enhance efficiency, reduce costs, and improve customer satisfaction.")}
@@ -51,7 +47,7 @@ export default function SolutionCard({ SolutionImage, SolutionImage2 }) {
                 </Grid>
 
                 <Grid item md={8} xs={12}
-                // sx={{ pt: { xs: "2rem" } }}
+              
                 >
                     {cardSolutions.map((card) => (<Cards title={card.title} desc={card.description} image={card.imageUrl} />))}
                 </Grid>
