@@ -8,15 +8,16 @@ export default function Cards({ image, title, desc }) {
     const isRTL = theme.direction === 'rtl'
     return (<>
 
-        <Box sx={{ px: { xs: 20 } }}>
+        <Box sx={{pl:"1rem"}} >
 
             <Paper
                 sx={{
-                    maxWidth:"700px",
+                    maxWidth: "700px",
                     marginBottom: '2rem',
                     display: 'flex',
                     flexDirection: { xs: 'column-reverse', md: 'row', sm: "row" },
                     alignItems: 'stretch',
+                  
                 }}
             >
                 <Box
@@ -51,7 +52,7 @@ export default function Cards({ image, title, desc }) {
                     component="img"
                     src={image}
                     sx={{
-                        width: { xs: '100%', md: '327px', sm: "50%" },
+                        width: { xs: '100%', md: '50%', sm: "50%" },
                         height: { xs: '250px', md: '344px', sm: "70vw" },
                         objectFit: 'cover',
                         p: 2,

@@ -9,13 +9,11 @@ export default function FooterContent() {
     const { t } = useTranslation();
 
     return (
-       <>
-       <Box sx={{borderTopLeftRadius:"200px" , background: "#01588C" , height:"20%"}}  >
        
        <Container sx={{px:{xs:"1.5rem"}}}>
 
-            <Grid container>
-                <Grid item xs={12} sm={12} md={3} sx={{ display: "flex", flexDirection: "column", mb: 2, pb: "1rem", pl: { md: "10px" } }}>
+            <Grid container spacing={20}>
+                <Grid item xs={12} sm={12} md={4} sx={{ display: "flex", flexDirection: "column", mb: 2, pb: "1rem", pl: { md: "10px" } }}>
 
                     <Box component="img" src={LogoFooter} sx={{ width: "100px", mb: 3, ml: { xs: '0' } }} />
                     <Typography sx={{ fontSize: "15px", color: "#333", mb: 1, lineHeight: "1.5rem", }}>
@@ -41,7 +39,7 @@ export default function FooterContent() {
                     </Box>
                 </Grid>
 
-                <Grid item xs={6} sm={6} md={3} sx={{ display: "flex", flexDirection: "column", mt: '2rem', pb: "1rem", pl: { md: "60px" } }}>
+                <Grid item xs={6} sm={6} md={2} sx={{ display: "flex", flexDirection: "column", mt: '2rem', pb: "1rem" }}>
                     <Typography sx={{ fontSize: "16px", fontWeight: "600", color: "#01588C", mb: 2 }}>
                         {t('Mapit')}
                     </Typography>
@@ -64,7 +62,7 @@ export default function FooterContent() {
                 </Grid>
 
 
-                <Grid item xs={6} sm={6} md={3} sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", mt: '2rem' }}>
+                <Grid item xs={6} sm={6} md={2} sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", mt: '2rem' }}>
                     <Typography sx={{ fontSize: "16px", fontWeight: "600", color: "#01588C", mb: 2 }}>
                         {t("Solutions")}
                     </Typography>
@@ -87,7 +85,7 @@ export default function FooterContent() {
                 </Grid>
 
 
-                <Grid item xs={12} sm={6} md={3} sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", mt: '2rem' }}>
+                <Grid item xs={12} sm={6} md={4} sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", mt: '2rem' }}>
                     <Typography sx={{ fontSize: "13px", pb: '0.5rem' }}>{t("Stay up to date")}</Typography>
                     <Box display="flex" alignItems="center" gap={1} mb={2}>
                         <TextField
@@ -146,8 +144,6 @@ export default function FooterContent() {
        
       
 
-       </Box>
-       </>
     );
 }
 

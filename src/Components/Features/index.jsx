@@ -1,6 +1,6 @@
 import React from "react";
-import { Box,Typography, useMediaQuery, Button, Container, useTheme } from "@mui/material";
-import { FeatuerImage, FeatuerImage2, FeatuerImage3 } from "../../assets";
+import { Box, Typography, useMediaQuery, Button, Container, useTheme } from "@mui/material";
+import { FeatuerImage, FeatuerImage2, FeatuerImage3, ButtonShadow } from "../../assets";
 import { Trans, useTranslation } from "react-i18next";
 import FeaturesSlider from "./FeatureSlider";
 import FeaturesCard from "./FeaturesCard";
@@ -29,55 +29,64 @@ const FeaturesSection = () => {
     ];
 
     return (
-        <Box sx={{pt:"4rem"}}>
-        <Container>
-            <Typography
-                sx={{
-                    color: "#0047ab",
-                    fontSize: "17px",
-                    fontWeight: 500,
-                    textAlign: "center",
-                    marginBottom: "1rem",
-                }}
-            >
-                {t('Features')}
-            </Typography>
-            <Typography
-                sx={{
-                    fontSize: "30px",
-                    fontWeight: 600,
-                    textAlign: "center",
-                    marginBottom: "2rem",
-                }}
-            >
-                <Trans>{t("Designed to Solve Last-Mile Challenges")}</Trans>
-            </Typography>
-
-
-            {isSmallScreen ?
-                <FeaturesSlider features={features} />
-                :
-                <FeaturesCard features={features} />
-            }
-            <Box sx={{ textAlign: "center", mt: "3rem" }}>
-                <Button
+        <Box sx={{ pt: "4rem" }}>
+            <Container>
+                <Typography
                     sx={{
-                        color: "white",
-                        background: "rgb(1, 88, 140)",
-                        textTransform: "none",
+                        color: "#0047ab",
                         fontSize: "17px",
+                        fontWeight: 500,
+                        textAlign: "center",
+                        marginBottom: "1rem",
                     }}
                 >
-                    {t('See All Features')}
-                </Button>
-            </Box>
-        </Container>
+                    {t('Features')}
+                </Typography>
+                <Typography
+                    sx={{
+                        fontSize: "30px",
+                        fontWeight: 600,
+                        textAlign: "center",
+                        marginBottom: "2rem",
+                    }}
+                >
+                    <Trans>{t("Designed to Solve Last-Mile Challenges")}</Trans>
+                </Typography>
 
+
+                {isSmallScreen ?
+                    <FeaturesSlider features={features} />
+                    :
+                    <FeaturesCard features={features} />
+                }
+                <Box
+
+                    width='500px'
+                    height='151px'
+                    sx={{
+                        backgroundSize: "420px 120px",
+                        backgroundImage: `url(${ButtonShadow})`,
+                    }}
+                >
+
+                    <Box sx={{ textAlign: "center", mt: "3rem", display: "flex", justifyContent: "center" }}>
+                        <Button
+                            sx={{
+                                color: "white",
+                                background: "rgb(1, 88, 140)",
+                                textTransform: "none",
+                                fontSize: "17px",
+                            }}
+                        >
+                            {t('See All Features')}
+                        </Button>
+                    </Box>
+
+                </Box>
+            </Container>
         </Box>
     );
 };
 
 export default FeaturesSection;
 
-
-//////fkenfkenfkefkef

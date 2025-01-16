@@ -1,9 +1,8 @@
- import React from 'react'
- import { useTranslation } from 'react-i18next'
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { Zid, ZidShip, Aramex, Naqel, Salla, SaudiTech, Sobol } from '../../assets';
 import Ezpay from '../../assets/ezpay.png';
- import { Box, Container, Typography, useMediaQuery, useTheme } from '@mui/material';
- import Slider from 'react-slick';
+import { Box, Container, Typography } from '@mui/material';
 
 
 
@@ -35,21 +34,20 @@ export default function Collaboration() {
     return (
         <Container>
             <Box>
-
                 <Typography sx={{ textAlign: 'center', fontSize: "15px", pt: '2rem', mb: '1rem' }}>
                     {t("In Collaboration with Industry Leaders")}
                 </Typography>
                 <Box
                     sx={{
                         display: 'flex',
-                        gap: "3.7rem",
+                        gap: "3rem",
                         justifyContent: { xs: 'start', md: 'center' },
                         overflowX: 'auto',
                         scrollBehavior: 'smooth',
                         '&::-webkit-scrollbar': { display: 'none' },
                     }}
                 >
-                
+
 
                     {image.map((item, index) => (
                         <Box
@@ -58,7 +56,7 @@ export default function Collaboration() {
                             src={item.imageUrl}
                             alt={`Image-${index}`}
                             sx={{
-                                width: '80px',
+                                width: '90px',
                                 height: customHeights[index] || 'auto',
                                 mt: customML[index] || '',
                                 objectFit: 'contain',
@@ -66,7 +64,7 @@ export default function Collaboration() {
                         />
                     ))}
 
-           
+
                 </Box>
             </Box>
         </Container>

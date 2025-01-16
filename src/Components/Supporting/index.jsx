@@ -36,7 +36,7 @@ export default function Supporting() {
                             item
                             xs={6}
                             sm={4}
-                            md={1.7}
+                            md={1.8}
                             key={index}
                             sx={{
                                 display: 'flex',
@@ -48,8 +48,8 @@ export default function Supporting() {
                                 sx={{
                                     background: "#ECF2F9",
                                     borderRadius: '50%',
-                                    width: "45px",
-                                    height: "45px",
+                                    width: "50px",
+                                    height: "50px",
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',

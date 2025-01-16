@@ -1,6 +1,5 @@
-import { Accordion, AccordionDetails, AccordionSummary, Box, Grid, Typography } from '@mui/material'
+import { Accordion, AccordionDetails, AccordionSummary, Box, Container, Grid, Typography } from '@mui/material'
 import React from 'react'
-import SectionContainer from '../../Theme/SectionContainer'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useTranslation } from 'react-i18next';
 
@@ -30,26 +29,27 @@ export default function FAQs() {
     return (
         <>
             <Box>
-                <SectionContainer >
-                    <Grid container spacing={3} justifyContent="center">
+                <Container>
+                    <Grid container justifyContent="center">
 
-                        <Grid item md={6} xs={12}>
-                            <Typography sx={{ fontSize: "35px", fontWeight: 600, textAlign: {md:'center' , xs:"left"} , pl:{xs:"0.5rem"} }}>
+                        <Grid item md={4} xs={12}>
+                            <Typography sx={{ fontSize: "35px", fontWeight: 600, pl: { xs: "0.5rem"  , md:"5rem"} }}>
                                 {t("FAQs")}
                             </Typography>
                         </Grid>
 
 
-                        <Grid item md={6} xs={12} display={'flex'} alignItems={'center'} justifyContent={'center'}>
-                            <Box sx={{ width: '100%', ml: '1rem' }}>
+                        <Grid item md={8} xs={12} display={'flex'} alignItems={'center'} justifyContent={'center'}>
+                            <Box sx={{ width: '100%', ml: {md:'1rem'} }}>
                                 {contentAccordion.map((content, index) => (
                                     <Accordion
                                         key={index}
                                         elevation={0}
                                         sx={{
-                                            mr: {md:'1rem' , xs:"0rem"},
+                                            mr: { md: '1rem', xs: "0rem" },
+                                            pl:{xs:"2rem"},
                                             BorderBottom: "none",
-                                            pr: "2rem",
+                                            pr: "5rem",
                                             '&::before': {
                                                 display: 'none',
                                             },
@@ -60,6 +60,7 @@ export default function FAQs() {
                                     >
                                         <AccordionSummary
                                             sx={{
+                                                pl:{md:"64px"},
                                                 '&::before': {
                                                     BorderBottom: "none",
                                                     display: 'none',
@@ -70,7 +71,7 @@ export default function FAQs() {
                                             aria-controls={`panel${index}bh-content`}
                                             id={`panel${index}bh-header`}
                                         >
-                                            <Typography sx={{ width: '100%', flexShrink: 0, fontSize: {md:"19px" , xs:"15px"}, fontWeight: 500 }}>
+                                            <Typography sx={{ width: '100%', fontSize: { md: "17px", xs: "15px" } , fontWeight:500 }}>
                                                 {t(content.Typography)}
                                             </Typography>
                                         </AccordionSummary>
@@ -84,7 +85,7 @@ export default function FAQs() {
                             </Box>
                         </Grid>
                     </Grid>
-                </SectionContainer>
+                </Container>
             </Box>
         </>
     )
