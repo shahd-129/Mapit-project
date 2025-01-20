@@ -10,7 +10,7 @@ export default function FeaturesCard() {
     return (<>
         <Container>
 
-            <Grid container sx={{ pt: '2rem' }} display={'flex'} justifyContent={'center'}>
+            <Grid container sx={{ pt: '2rem' }}>
                 <Grid item xs={12} md={6} sm={12}  >
                     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }} >
                         <Paper sx={{ display: "flex", alignItems: "stretch", height: "350px", width: "90%" }}>
@@ -53,8 +53,8 @@ export default function FeaturesCard() {
                 </Grid>
 
 
-                <Grid container item xs={12} md={6}>
-                    <Paper sx={{ display: "flex", alignItems: "stretch", flexDirection: "column", height: "100%", width: "488px" }}>
+                <Grid container  xs={12} md={5}>
+                    <Paper sx={{ display: "flex", alignItems: "stretch", flexDirection: "column", height: "100%" }}>
                         <Box sx={{ flex: 1, p: 32 }}>
                             <Typography sx={{ fontSize: "28px", fontWeight: 600, mt: 0 }}>
                                 {t("Automated Shipment Assignment")}

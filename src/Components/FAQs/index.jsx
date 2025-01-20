@@ -39,17 +39,19 @@ export default function FAQs() {
                         </Grid>
 
 
-                        <Grid item md={8} xs={12} display={'flex'} alignItems={'center'} justifyContent={'center'}>
-                            <Box sx={{ width: '100%', ml: {md:'1rem'} }}>
+                        <Grid item md={8} xs={12}>
+                            <Box sx={{ width: '100%',
+                                 ml: {md:'1rem'},
+                                 pl:{md:"64px" }
+                                  }}>
                                 {contentAccordion.map((content, index) => (
                                     <Accordion
                                         key={index}
                                         elevation={0}
                                         sx={{
                                             mr: { md: '1rem', xs: "0rem" },
-                                            pl:{xs:"2rem"},
-                                            BorderBottom: "none",
-                                            pr: "5rem",
+                                            pl:{xs:"2rem" },
+                                            pr: {md:"5rem" , xs:"1rem"},
                                             '&::before': {
                                                 display: 'none',
                                             },
@@ -60,7 +62,7 @@ export default function FAQs() {
                                     >
                                         <AccordionSummary
                                             sx={{
-                                                pl:{md:"64px"},
+                                              
                                                 '&::before': {
                                                     BorderBottom: "none",
                                                     display: 'none',
@@ -71,7 +73,7 @@ export default function FAQs() {
                                             aria-controls={`panel${index}bh-content`}
                                             id={`panel${index}bh-header`}
                                         >
-                                            <Typography sx={{ width: '100%', fontSize: { md: "17px", xs: "15px" } , fontWeight:500 }}>
+                                            <Typography sx={{ width: '100%', fontSize: { md: "17px", xs: "20px" } , fontWeight:500 }}>
                                                 {t(content.Typography)}
                                             </Typography>
                                         </AccordionSummary>
