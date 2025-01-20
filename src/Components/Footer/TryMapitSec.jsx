@@ -69,7 +69,7 @@ export default function TryMapitSec() {
                 sx={{
                     flex: 3,
                     textAlign: "center",
-                    py: { md: "5rem", sm: "1.5rem", xs: "1.5rem" },
+                    py: { md: "5rem", sm: "1.5rem", xs: "0.5rem" },
                     px: { md: "2rem" },
                     color: "white",
                     position: "relative",
@@ -83,10 +83,10 @@ export default function TryMapitSec() {
 
                 }}
             >
-                <Typography sx={{ fontSize: { md: "40px", xs: "30px" }, fontWeight: 600, mb: 2 }}>
+                <Typography sx={{ fontSize: { md: "48px", xs: "30px" }, fontWeight: 600, mb: 2 }}>
                     {t("Try for free today")}
                 </Typography>
-                <Typography sx={{ mb: 3, maxWidth: "700px" }}>
+                <Typography sx={{ mb: 2, maxWidth: "700px" , fontSize:"18px" , fontWeight:300 , px:{xs:5} }}>
                     {t("Become part of a growing community of businesses optimizing their delivery operations. Start your free trial today and see how Mapit can transform your logistics!")}
                 </Typography>
                 <Box
