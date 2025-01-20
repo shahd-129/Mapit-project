@@ -1,78 +1,41 @@
-import { Box, Container, Grid, Paper, Typography } from '@mui/material'
+import { Box, Grid, Stack } from '@mui/material'
 import React from 'react'
 import { useTranslation } from 'react-i18next';
-import { FeatuerImage, FeatuerImage2, FeatuerImage3 } from "../../assets";
-export default function FeaturesCard() {
+import FeatureCard from './FeatureCard';
+
+export default function FeaturesCard({ features }) {
 
     const { t } = useTranslation();
 
-
-    return (<>
+    return (
         <Grid container spacing={30}>
             <Grid item xs={12} md={6} sm={12}>
-                <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }} >
-                    <Paper sx={{ display: "flex", alignItems: "stretch", height: "350px" }}>
-                        <Box sx={{ flex: 1, p: 35 }}>
-                            <Typography sx={{ fontSize: "25px", fontWeight: 600, mt: 0 }}>
-                                {t("Precise Customer Location")}
-                            </Typography>
-                            <Typography sx={{ fontSize: "16px", fontWeight: 300 }}>
-                                {t('Accurately determine the customer’s location during or after order placement, ensuring seamless delivery without the need for additional customer contact.')}
-                            </Typography>
-                        </Box>
-                        <img
-                            src={FeatuerImage}
-                            alt="Precise Customer Location"
-                            width={'40%'}
-                            height={'100%'}
-                            style={{ objectFit: "cover", overflow: "hidden" }}
-                        />
-                    </Paper>
-
-
-                    <Paper sx={{ display: "flex", alignItems: "stretch", height: "350px", mt: '2rem' }}>
-                        <Box sx={{ flex: 1, p: 32 }}>
-                            <Typography sx={{ fontSize: "25px", fontWeight: 600, mt: 0 }}>
-                                {t("Efficient Shipment Sorting")}
-                            </Typography>
-                            <Typography sx={{ fontSize: "16px", fontWeight: 300 }}>
-                                {t('Facilitate your warehouse operations by automatically sorting shipments based on the regions and neighborhoods you serve.')}
-                            </Typography>
-                        </Box>
-                        <img
-                            src={FeatuerImage3}
-                            alt="Efficient Shipment Sorting"
-                            width={'40%'}
-                            height={'100%'}
-                            style={{ objectFit: "cover", overflow: "hidden" }}
-                        />
-                    </Paper>
-                </Box>
-            </Grid>
-
-
-            <Grid item xs={12} md={6}>
-                <Paper sx={{ display: "flex", alignItems: "stretch", flexDirection: "column", height: "100%" }}>
-                    <Box sx={{ flex: 1, p: 32 }}>
-                        <Typography sx={{ fontSize: "28px", fontWeight: 600, mt: 0 }}>
-                            {t("Automated Shipment Assignment")}
-                        </Typography>
-                        <Typography sx={{ fontSize: "16px", fontWeight: 300 }}>
-                            {t("Automatically assign shipments to drivers and display the specific shipments for each driver through an easy-to-use app.")}
-                        </Typography>
-                    </Box>
-                    <img
-                        src={FeatuerImage2}
-                        alt="Automated Shipment Assignment"
-                        width={'100%'}
-                        height={'70%'}
-                        style={{ objectFit: "cover", pt: "4rem" }}
+                <Stack spacing={30}>
+                    <FeatureCard
+                        feature={features[1]}
+                        height={"350px"}
+                        img_height="100%"
+                        img_width="40%"
                     />
-                </Paper>
-            </Grid>
 
+                    <FeatureCard
+                        feature={features[2]}
+                        height={"350px"}
+                        img_height="100%"
+                        img_width="40%"
+                    />
+                </Stack>
+            </Grid>
+            <Grid item xs={12} md={6}>
+                <FeatureCard
+                    feature={features[0]}
+                    direction={"column"}
+                    height={"100%"}
+                    img_height={'70%'}
+                    img_width={'100%'}
+                />
+            </Grid>
         </Grid>
-    </>
     )
 }
 
