@@ -1,12 +1,10 @@
-import { Box, Grid, Stack } from '@mui/material'
+import { Grid, Stack } from '@mui/material'
 import React from 'react'
-import { useTranslation } from 'react-i18next';
 import FeatureCard from './FeatureCard';
 
 export default function FeaturesCard({ features }) {
 
-    const { t } = useTranslation();
-
+  
     return (
         <Grid container spacing={30}>
             <Grid item xs={12} md={6} sm={12}>
@@ -33,9 +31,9 @@ export default function FeaturesCard({ features }) {
                     height={"100%"}
                     img_height={'70%'}
                     img_width={'100%'}
+                    padding={35}
                 />
             </Grid>
         </Grid>
     )
 }
-

@@ -1,11 +1,11 @@
 import { Box, Paper, Typography } from '@mui/material'
 import React from 'react'
 
-export default function FeatureCard({ feature, direction = "row", height, img_height, img_width }) {
+export default function FeatureCard({ feature, direction = "row", height, img_height, img_width , padding }) {
     return (
         <Paper sx={{ display: "flex", alignItems: "stretch", height, flexDirection: direction }}>
-            <Box sx={{ flex: 1, p: 35 }}>
-                <Typography sx={{ fontSize: "25px", fontWeight: 600, mt: 0 }}>
+            <Box sx={{ flex: 1, p: 32  , padding}}>
+                <Typography sx={{ fontSize: "28px", fontWeight: 600, mt: 0 }}>
                     {feature?.title}
                 </Typography>
                 <Typography sx={{ fontSize: "16px", fontWeight: 300 }}>

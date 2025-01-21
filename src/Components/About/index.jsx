@@ -1,24 +1,25 @@
 import React from 'react';
-import { Box, Typography, Grid, Button, Container, useTheme } from '@mui/material';
+import { Box, Typography, Grid, Button, useTheme } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import BackgroundAbout from '../../assets/logo-gradient.a7269bf1.svg';
 import { useTranslation } from 'react-i18next';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
-
+import {CustomContainer} from '../common'
 export default function About() {
     const { t} = useTranslation();
      const theme = useTheme()
         const isRTL = theme.direction === 'rtl'
     return (
-        <Box sx={{ bgcolor: '#FAFAFA', py: '3rem', position: 'relative', width: "100%" }}>
+       
+        <Box sx={{ bgcolor: '#FAFAFA', py: '2rem', position: 'relative', width: "100%" }}>
             <Box
                 sx={{
                     position: 'absolute',
-                    top: { xs: '20%', md: "40%" },
+                    top: { xs: '20%', md: "35%" },
                     left: 0,
                     bottom: "70px",
-                    width: { md: '15%', xs: "100%", sm: "100%" },
+                    width: { md: '25%', xs: "100%", sm: "100%" },
                     height: { md: '100%', xs: "50%" },
                     backgroundImage: `url(${BackgroundAbout})`,
                     backgroundSize: 'cover',
@@ -26,9 +27,9 @@ export default function About() {
                     transform: isRTL ? 'scaleX(-1)' : "none",
                 }}
             />
-            <Container sx={{ px: { xs: "1.5rem" } }}>
+            <CustomContainer >
                 <Grid container spacing={20} alignItems="center" >
-                    <Grid item xs={12} md={6} sx={{  mb: { md: '5rem' }  }}>
+                    <Grid item xs={12} md={6} sx={{  mb: { md: 144 }  }}>
                         <LiteYouTubeEmbed
                             id="gUW0V-yvZk0"
                             title="YouTube video player"
@@ -38,7 +39,7 @@ export default function About() {
                     </Grid>
 
                     <Grid item xs={12} md={6}>
-                        <Box sx={{ pl: { md: "40px" }, mt: "2rem" }} width={'100%'}>
+                        <Box sx={{ pl: { md: "40px" }, mt: "2rem"  , px:"0.5rem"}} width={'100%'}>
                             <Typography sx={{ color: 'rgb(0, 71, 171)', fontWeight: 500, mb: '1rem' }}>
                                 {t("About Mapit")}
                             </Typography>
@@ -66,8 +67,8 @@ export default function About() {
                         </Box>
                     </Grid>
                 </Grid>
-
-            </Container>
+            </CustomContainer>
         </Box>
+      
     );
 }
