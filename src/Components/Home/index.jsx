@@ -8,7 +8,7 @@ export default function Home() {
   const { t } = useTranslation()
   const theme = useTheme()
   const isRtl = theme.direction === "rtl";
-  
+
   return (
     <Box
       sx={{
@@ -57,17 +57,23 @@ export default function Home() {
             <Typography
               sx={{
                 display: 'flex',
-                alignItems: 'center',
+                flexDirection: 'row', 
+                alignItems: 'center', 
                 fontSize: '12px',
-                fontWeight: 600,
+                fontWeight: 500,
                 mr: 2,
-                color: "white"
+                color: "white",
+                gap: 2,
               }}
             >
-              {t('Mapit New Updates | Watch Video')}
+              <Box mr={5}>{t('Mapit New Updates')}</Box>
+              <Box mr={5}>|</Box>
+              <Box mr={5}>{t('Watch Video')}</Box>
             </Typography>
+
           </Link>
-          <ArrowForwardIcon sx={{ fontSize: '23px', pl: "0.4rem", ml:"0.5rem" ,transform: isRtl ? 'scaleX(-1)' : "none", }} />
+          <ArrowForwardIcon sx={{ fontSize: '23px', pl: "0.4rem", 
+            transform: isRtl ? 'scaleX(-1)' : "none", }} />
         </Box>
         <Typography
           variant="h1"

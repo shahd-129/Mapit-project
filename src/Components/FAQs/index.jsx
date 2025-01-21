@@ -33,25 +33,26 @@ export default function FAQs() {
                     <Grid container justifyContent="center">
 
                         <Grid item md={4} xs={12}>
-                            <Typography sx={{ fontSize: "40px", fontWeight: 600, pl: { xs: "0.5rem"  , md:"5rem"} }}>
+                            <Typography sx={{ fontSize: "40px", fontWeight: 600, pl: { xs: "0.5rem", md: "5rem" } }}>
                                 {t("FAQs")}
                             </Typography>
                         </Grid>
 
 
                         <Grid item md={8} xs={12}>
-                            <Box sx={{ width: '100%',
-                                 ml: {md:'1rem'},
-                                 pl:{md:"64px" }
-                                  }}>
+                            <Box sx={{
+                                width: '100%',
+                                //  ml: {md:'1rem'},
+                                pl: { md: "64px" }
+                            }}>
                                 {contentAccordion.map((content, index) => (
                                     <Accordion
                                         key={index}
                                         elevation={0}
                                         sx={{
                                             mr: { md: '1rem', xs: "0rem" },
-                                            pl:{xs:"2rem" },
-                                            pr: {md:"5rem" , xs:"1rem"},
+                                            pl: { xs: "2rem" },
+                                            pr: { md: "5rem", xs: "1rem" },
                                             '&::before': {
                                                 display: 'none',
                                             },
@@ -62,7 +63,7 @@ export default function FAQs() {
                                     >
                                         <AccordionSummary
                                             sx={{
-                                              
+
                                                 '&::before': {
                                                     BorderBottom: "none",
                                                     display: 'none',
@@ -73,12 +74,12 @@ export default function FAQs() {
                                             aria-controls={`panel${index}bh-content`}
                                             id={`panel${index}bh-header`}
                                         >
-                                            <Typography sx={{ width: '100%', fontSize: { md: "20px", xs: "20px" } , fontWeight:500 }}>
+                                            <Typography sx={{ width: '100%', fontSize: { md: "20px", xs: "20px" }, fontWeight: 500 }}>
                                                 {t(content.Typography)}
                                             </Typography>
                                         </AccordionSummary>
                                         <AccordionDetails>
-                                            <Typography sx={{ fontSize: "14px" }}>
+                                            <Typography sx={{ fontSize: "14px" , pb:15 }}>
                                                 {t(content.TypographyContent)}
                                             </Typography>
                                         </AccordionDetails>

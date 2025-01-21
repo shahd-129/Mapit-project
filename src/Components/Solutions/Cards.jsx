@@ -8,30 +8,35 @@ export default function Cards({ image, title, desc }) {
     const isRTL = theme.direction === 'rtl'
     return (<>
 
-        <Box sx={{pl:"1rem"}} >
+        <Box  >
 
             <Paper
                 sx={{
-                    // maxWidth: "700px",
                     marginBottom: '2rem',
                     display: 'flex',
                     flexDirection: { xs: 'column-reverse', md: 'row', sm: "row" },
                     alignItems: 'stretch',
-                  
+                    mx:"0.5rem"
+
                 }}
             >
                 <Box
                     sx={{
                         flex: 1,
-                        padding: '1.5rem',
+                        p: '1.5rem',
                         display: 'flex',
                         flexDirection: 'column',
+                        
                     }}
                 >
                     <Typography gutterBottom sx={{ fontSize: { md: '28px', sm: "30px" }, fontWeight: 600 }}>
                         {title}
                     </Typography>
-                    <Typography variant="body2" sx={{ marginBottom: '1rem', color: "rgb(30, 30, 30)", fontWeight: 300, fontSize: { md: "17px", sm: "20px" } }}>
+                    <Typography variant="body2" sx={{
+                        marginBottom: '1rem', color: "rgb(30, 30, 30)",
+                        fontWeight: 300,
+                        fontSize: { md: "17px", sm: "20px" }
+                    }}>
                         {desc}
                     </Typography>
                     <Button

@@ -1,9 +1,10 @@
 import React from "react";
-import { Box, Typography, useMediaQuery, Button, Container, useTheme } from "@mui/material";
+import { Box, Button, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { FeatuerImage, FeatuerImage2, FeatuerImage3, ButtonShadow } from "../../assets";
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import FeaturesSlider from "./FeatureSlider";
 import FeaturesCard from "./FeaturesCard";
+import { CustomContainer } from "../common";
 
 const FeaturesSection = () => {
     const { t } = useTranslation();
@@ -29,52 +30,59 @@ const FeaturesSection = () => {
     ];
 
     return (
-        <Box sx={{ pt: "4rem" }}>
-            <Container>
+        <CustomContainer>
+            <Box py={45}>
+
+            <Typography
+                sx={{
+                    color: "#0047ab",
+                    fontSize: "17px",
+                    fontWeight: 500,
+                    textAlign: "center",
+                    marginBottom: "1rem",
+                }}
+            >
+                {t('Features')}
+            </Typography>
+            <Box sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignContent: "center",
+            }}>
                 <Typography
                     sx={{
-                        color: "#0047ab",
-                        fontSize: "17px",
-                        fontWeight: 500,
-                        textAlign: "center",
-                        marginBottom: "1rem",
-                    }}
-                >
-                    {t('Features')}
-                </Typography>
-                <Typography
-                    sx={{
-                        fontSize: "30px",
+                        fontSize: "40px",
                         fontWeight: 600,
                         textAlign: "center",
                         marginBottom: "2rem",
+                        width: { md: "40%" }
                     }}
                 >
-                    <Trans>{t("Designed to Solve Last-Mile Challenges")}</Trans>
+                    {t("Designed to Solve Last-Mile Challenges")}
                 </Typography>
 
-
-                {isSmallScreen ?
-                    <FeaturesSlider features={features} />
-                    :
-                    <FeaturesCard features={features} />
-                }
-                {/* <Box
+            </Box>
+            {isSmallScreen ?
+                <FeaturesSlider features={features} />
+                :
+                <FeaturesCard features={features} />
+            }
+            <Box display={'flex'} justifyContent={'center'}>
+                <Box
 
                     width='500px'
                     height='100px'
                     sx={{
                         backgroundSize: "420px 120px",
                         backgroundImage: `url(${ButtonShadow})`,
-                       
+
                     }}
                 >
 
-                    <Box sx={{ textAlign: "center", mt: "3rem", display: "flex", justifyContent: "center" }}>
+                    <Box sx={{ textAlign: "center", mt: "3rem", }}>
                         <Button
+                            variant="contained"
                             sx={{
-                                color: "white",
-                                background: "rgb(1, 88, 140)",
                                 textTransform: "none",
                                 fontSize: "17px",
                             }}
@@ -83,11 +91,12 @@ const FeaturesSection = () => {
                         </Button>
                     </Box>
 
-                </Box> */}
-            </Container>
-        </Box>
+                </Box>
+            </Box>
+            </Box>
+        </CustomContainer>
+
     );
 };
 
 export default FeaturesSection;
-

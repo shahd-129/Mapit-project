@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Zid, ZidShip, Aramex, Naqel, Salla, SaudiTech, Sobol } from '../../assets';
 import Ezpay from '../../assets/ezpay.png';
 import { Box, Container, Typography } from '@mui/material';
-
+import {CustomContainer} from '../common'
 
 
 const image = [
@@ -32,7 +32,7 @@ export default function Collaboration() {
     const { t } = useTranslation()
 
     return (
-        <Container>
+        <CustomContainer>
             <Box>
                 <Typography sx={{ textAlign: 'center', fontSize: "15px", pt: '2rem', mb: '1rem' }}>
                     {t("In Collaboration with Industry Leaders")}
@@ -67,7 +67,7 @@ export default function Collaboration() {
 
                 </Box>
             </Box>
-        </Container>
+        </CustomContainer>
     )
 }
 
