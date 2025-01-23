@@ -31,7 +31,7 @@ const FeaturesSection = () => {
 
     return (
         <CustomContainer>
-            <Box py={45}>
+            <Box py={40}>
 
             <Typography
                 sx={{

@@ -5,12 +5,13 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { AppStore, LogoFooter, PlayStore } from "../../assets";
+import { CustomContainer } from '../common';
 export default function FooterContent() {
     const { t } = useTranslation();
 
     return (
-       
-       <Container sx={{px:{xs:"1.5rem"}}}>
+
+        <CustomContainer >
 
             <Grid container spacing={20}>
                 <Grid item xs={12} sm={12} md={4} sx={{ display: "flex", flexDirection: "column", mb: 2, pb: "1rem", pl: { md: "10px" } }}>
@@ -39,7 +40,7 @@ export default function FooterContent() {
                     </Box>
                 </Grid>
 
-                <Grid item xs={6} sm={6} md={2} sx={{ display: "flex", flexDirection: "column", mt: '2rem', pb: "1rem" }}>
+                <Grid item xs={6} sm={6} md={2} sx={{ display: "flex", flexDirection: "column", mt: { md: '2rem' }, pb: "1rem" }}>
                     <Typography sx={{ fontSize: "16px", fontWeight: "600", color: "#01588C", mb: 2 }}>
                         {t('Mapit')}
                     </Typography>
@@ -62,7 +63,7 @@ export default function FooterContent() {
                 </Grid>
 
 
-                <Grid item xs={6} sm={6} md={2} sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", mt: '2rem' }}>
+                <Grid item xs={6} sm={6} md={2} sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", mt: { md: '2rem' } }}>
                     <Typography sx={{ fontSize: "16px", fontWeight: "600", color: "#01588C", mb: 2 }}>
                         {t("Solutions")}
                     </Typography>
@@ -85,7 +86,7 @@ export default function FooterContent() {
                 </Grid>
 
 
-                <Grid item xs={12} sm={6} md={4} sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", mt: '2rem' }}>
+                <Grid item xs={12} sm={6} md={4} sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", mt: { md: '2rem' } }}>
                     <Typography sx={{ fontSize: "13px", pb: '0.5rem' }}>{t("Stay up to date")}</Typography>
                     <Box display="flex" alignItems="center" gap={1} mb={2}>
                         <TextField
@@ -136,13 +137,11 @@ export default function FooterContent() {
                     </Box>
                 </Grid>
 
-                <Divider variant="middle" sx={{ width: "100%" , pt:{ xs:"1.5rem"} }} />
-
-
+                <Divider variant="middle" sx={{ width: "100%", pt: { xs: "1.5rem" } }} />
             </Grid>
-        </Container>
-       
-      
+
+        </CustomContainer>
+
 
     );
 }

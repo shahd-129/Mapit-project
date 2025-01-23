@@ -2,6 +2,7 @@ import { Accordion, AccordionDetails, AccordionSummary, Box, Container, Grid, Ty
 import React from 'react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useTranslation } from 'react-i18next';
+import { CustomContainer } from '../common';
 
 export default function FAQs() {
     const [expanded, setExpanded] = React.useState(false);
@@ -29,11 +30,11 @@ export default function FAQs() {
     return (
         <>
             <Box>
-                <Container>
-                    <Grid container justifyContent="center">
+                <CustomContainer>
+                    <Grid container >
 
                         <Grid item md={4} xs={12}>
-                            <Typography sx={{ fontSize: "40px", fontWeight: 600, pl: { xs: "0.5rem", md: "5rem" } }}>
+                            <Typography sx={{ fontSize: "40px", fontWeight: 600, pl: { xs: "0.5rem" } }}>
                                 {t("FAQs")}
                             </Typography>
                         </Grid>
@@ -42,8 +43,7 @@ export default function FAQs() {
                         <Grid item md={8} xs={12}>
                             <Box sx={{
                                 width: '100%',
-                                //  ml: {md:'1rem'},
-                                pl: { md: "64px" }
+                                py: { xs: 32 }
                             }}>
                                 {contentAccordion.map((content, index) => (
                                     <Accordion
@@ -51,8 +51,8 @@ export default function FAQs() {
                                         elevation={0}
                                         sx={{
                                             mr: { md: '1rem', xs: "0rem" },
-                                            pl: { xs: "2rem" },
-                                            pr: { md: "5rem", xs: "1rem" },
+                                            pl: { xs: "1rem" },
+                                            pr: { md: "2rem", xs: "1rem" },
                                             '&::before': {
                                                 display: 'none',
                                             },
@@ -79,7 +79,7 @@ export default function FAQs() {
                                             </Typography>
                                         </AccordionSummary>
                                         <AccordionDetails>
-                                            <Typography sx={{ fontSize: "14px" , pb:15 }}>
+                                            <Typography sx={{ fontSize: "14px", pb: 15 }}>
                                                 {t(content.TypographyContent)}
                                             </Typography>
                                         </AccordionDetails>
@@ -88,7 +88,7 @@ export default function FAQs() {
                             </Box>
                         </Grid>
                     </Grid>
-                </Container>
+                </CustomContainer>
             </Box>
         </>
     )

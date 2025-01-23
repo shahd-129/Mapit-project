@@ -6,12 +6,13 @@ export default function CustomContainer({ children }) {
         <Box
             // py={40}
             px={{
-                xs: 5,
+                xs:16,
                 sm: 15,
                 md: 20,
                 lg: 170,
                 xl: 210,
-            }}>
+            }}
+            >
             {children}
         </Box>
     )

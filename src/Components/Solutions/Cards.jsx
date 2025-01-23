@@ -16,7 +16,6 @@ export default function Cards({ image, title, desc }) {
                     display: 'flex',
                     flexDirection: { xs: 'column-reverse', md: 'row', sm: "row" },
                     alignItems: 'stretch',
-                    mx:"0.5rem"
 
                 }}
             >
