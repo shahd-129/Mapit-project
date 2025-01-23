@@ -38,13 +38,13 @@ export default function SolutionCard({ SolutionImage, SolutionImage2 }) {
                             pb: '0.9rem'
                         }}>{t("Solutions")}</Typography>
                         <Typography sx={{
-                            fontSize: { md: '35px', xs: "22px" },
+                            fontSize: { md: '35px', xs: "28px" },
                             fontWeight: 600, lineHeight: "1.2"
                         }}>
                             {t("Fully Integrated Solutions")}
                         </Typography>
                         <Typography sx={{
-                            marginBottom: '2.5rem', fontSize: "17px",
+                            marginBottom: '2.5rem', fontSize: {md:"17px" , xs:"14px"},
                             color: "rgb(30, 30, 30)", fontWeight: 300,
                             pt: "0.5rem",
                         }}>

@@ -5,12 +5,10 @@ import { useTranslation } from "react-i18next";
 import FeaturesSlider from "./FeatureSlider";
 import FeaturesCard from "./FeaturesCard";
 import { CustomContainer } from "../common";
-
 const FeaturesSection = () => {
     const { t } = useTranslation();
     const theme = useTheme()
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
-
     const features = [
         {
             title: t("Automated Shipment Assignment"),
@@ -28,15 +26,13 @@ const FeaturesSection = () => {
             image: FeatuerImage3,
         },
     ];
-
     return (
         <CustomContainer>
             <Box py={40}>
-
                 <Typography
                     sx={{
-                        color: "#0047ab",
-                        fontSize: "17px",
+                        color: "#0047AB",
+                        fontSize: "18px",
                         fontWeight: 500,
                         textAlign: "center",
                         marginBottom: "1rem",
@@ -60,7 +56,6 @@ const FeaturesSection = () => {
                     >
                         {t("Designed to Solve Last-Mile Challenges")}
                     </Typography>
-
                 </Box>
                 {isSmallScreen ?
                     <FeaturesSlider features={features} />
@@ -69,16 +64,13 @@ const FeaturesSection = () => {
                 }
                 <Box display={'flex'} justifyContent={'center'}>
                     <Box
-
                         width='500px'
                         height='100px'
                         sx={{
                             backgroundSize: "420px 120px",
                             backgroundImage: `url(${ButtonShadow})`,
-
                         }}
                     >
-
                         <Box sx={{ textAlign: "center", mt: "3rem", }}>
                             <Button
                                 variant="contained"
@@ -90,13 +82,10 @@ const FeaturesSection = () => {
                                 {t('See All Features')}
                             </Button>
                         </Box>
-
                     </Box>
                 </Box>
             </Box>
-        </CustomContainer >
-
+        </CustomContainer>
     );
 };
-
 export default FeaturesSection;

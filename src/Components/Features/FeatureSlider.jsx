@@ -23,7 +23,7 @@ export default function FeaturesSlider({ features }) {
     return (
         <Slider {...settings}>
             {features.map((feature, index) => (
-                <Box key={index} sx={{ px: {sm:"1.5rem"} }}>
+                <Box key={index}>
                     <Paper
                         sx={{
                             display: "flex",
@@ -33,10 +33,10 @@ export default function FeaturesSlider({ features }) {
                         }}
                     >
                         <Box sx={{ flex: 1, p: "1.5rem" }}>
-                            <Typography sx={{ fontSize: "15px", fontWeight: 600, mt: 0 }}>
+                            <Typography sx={{ fontSize: {xs:"20px"}, fontWeight: 600, mt: 0 }}>
                                 {feature.title}
                             </Typography>
-                            <Typography sx={{ fontSize: "14px", fontWeight: 300 }}>
+                            <Typography sx={{ fontSize: {xs:"18px" , md:"14px"}, fontWeight: 300 }}>
                                 {feature.description}
                             </Typography>
                         </Box>
