@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -10,11 +10,11 @@ import { LogoMapit, IconLogin, ENImage, ARImage } from '../../assets';
 import { useTranslation } from 'react-i18next';
 import IconLung from './IconLung';
 import Drawer from './Drawer';
-
+import CompanyNav from '../CompanyNav';
 
 function ResponsiveAppBar() {
-  const { t} = useTranslation();
-  const theme = useTheme()
+  const { t } = useTranslation();
+  const theme = useTheme();
   const isRtl = theme.direction === "rtl";
 
   const pages = [
@@ -26,9 +26,16 @@ function ResponsiveAppBar() {
     { id: '6', label: t('Resources') },
   ];
   const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const [companyDrawer, setCompanyDrawer] = React.useState(false); // حالة للـ Drawer
 
   const handleOpenDrawer = () => {
     setDrawerOpen(true);
+  };
+
+  const openCompanyDrawer = (id) => {
+    if (id === '1') {
+      setCompanyDrawer(true); 
+    }
   };
 
   return (
@@ -85,12 +92,14 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               <Typography
                 key={page.id}
+                onClick={() => openCompanyDrawer(page.id)} // استدعاء الدالة لفتح الـ Drawer
                 sx={{
                   color: 'white',
                   textTransform: 'none',
                   fontSize: "14px",
                   fontWeight: 600,
                   padding: "0.4rem",
+                  cursor: "pointer",
                   '&:hover': {
                     color: '#FFBA21',
                   },
@@ -107,11 +116,9 @@ function ResponsiveAppBar() {
               alignItems: 'center',
               gap: 1,
               ml: 'auto',
-
             }}
           >
             <Tooltip title={t('Log In')}>
-
               <Box
                 component="img"
                 src={IconLogin}
@@ -149,6 +156,7 @@ function ResponsiveAppBar() {
           <Drawer drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} pages={pages} />
         </Toolbar>
       </Container>
+      <CompanyNav isOpen={companyDrawer} setCompanyDrower={setCompanyDrawer} /> 
     </AppBar>
   );
 }

@@ -26,5 +26,8 @@ export { default as LogoMapit } from "../assets/logo-light.svg";
 export { default as IconLogin } from "../assets/login.9b2f5272 (1).svg";
 export { default as ENImage } from "../assets/en-US.9acbcf10.svg";
 export { default as ARImage } from "../assets/ar-SA.5c9dda39.svg";
-export { default as ButtonShadow} from '../assets/button-shadow.png'
-export {default as BackGroundLogin} from '../assets/Cubs.87cfb733.svg'
+export { default as ButtonShadow } from "../assets/button-shadow.png";
+export { default as BackGroundLogin } from "../assets/Cubs.87cfb733.svg";
+export { default as aboutIconCompany } from "../assets/about.e21d56b0.svg";
+export { default as aboutIconCompany2 } from "../assets/careers.7921a952.svg";
+export { default as aboutIconCompany3 } from "../assets/contact-us.ed4973b4.svg";
