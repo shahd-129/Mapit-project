@@ -36,7 +36,7 @@ const FeaturesSection = () => {
             <Typography
                 sx={{
                     color: "#0047ab",
-                    fontSize: "17px",
+                    fontSize: "18px",
                     fontWeight: 500,
                     textAlign: "center",
                     marginBottom: "1rem",

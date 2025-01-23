@@ -28,13 +28,13 @@ export default function Cards({ image, title, desc }) {
                         
                     }}
                 >
-                    <Typography gutterBottom sx={{ fontSize: { md: '28px', sm: "30px" }, fontWeight: 600 }}>
+                    <Typography gutterBottom sx={{ fontSize: { md: '28px',  xs:"24px" }, fontWeight: 600 }}>
                         {title}
                     </Typography>
                     <Typography variant="body2" sx={{
                         marginBottom: '1rem', color: "rgb(30, 30, 30)",
                         fontWeight: 300,
-                        fontSize: { md: "17px", sm: "20px" }
+                        fontSize: { md: "17px", sm: "20px" , xs:"14px" }
                     }}>
                         {desc}
                     </Typography>

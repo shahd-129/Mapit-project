@@ -40,16 +40,16 @@ export default function About() {
 
                     <Grid item xs={12} md={6}>
                         <Box sx={{ pl: { md: "40px" }, mt: "1rem" }} width={'100%'}>
-                            <Typography sx={{ color: 'rgb(0, 71, 171)', fontWeight: 500, mb: '1rem' }}>
+                            <Typography sx={{ color: 'rgb(0, 71, 171)', fontWeight: 500, mb: '1rem' , fontSize:"18px"}}>
                                 {t("About Mapit")}
                             </Typography>
                             <Typography
                                 variant="h3"
-                                sx={{ fontWeight: 600, mb: 3, fontSize: { xs: '1.75rem', md: '2.2rem' } }}
+                                sx={{ fontWeight: 600, mb: 3, fontSize: { xs: '28px', md: '40px' } }}
                             >
                                 {t("Revolutionising Delivery Management")}
                             </Typography>
-                            <Typography sx={{ color: 'rgb(30, 30, 30)', mt: 8, fontSize: { md: "17px", xs: "14px" }, fontWeight: 300 }}>
+                            <Typography sx={{ color: 'rgb(30, 30, 30)', mt: 8, fontSize: { md: "18px", xs: "14px" }, fontWeight: 300 }}>
                                 {t("Mapit is a system specialized in managing and automating first and last-mile delivery operations to enhance operational efficiency and increase customer satisfaction. Our platform enhances operational efficiency and customer satisfaction through innovative solutions, auto sorting, fleet management, route optimization, and real-time tracking. By automating key processes, Mapit empowers businesses to streamline their delivery operations, reduce costs, and meet the demands of modern logistics. Our technology ensures timely, efficient service with full visibility throughout the delivery journey, transforming how companies manage and execute their deliveries.")}
                             </Typography>
                             <Button
