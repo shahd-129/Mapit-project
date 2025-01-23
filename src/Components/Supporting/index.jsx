@@ -2,6 +2,7 @@ import { Box, Container, Grid, Typography } from '@mui/material';
 import React from 'react';
 import { ShoppingBag, ShoppingCart, MedicalImage, LogisticImage, DropImage } from '../../assets';
 import { useTranslation } from 'react-i18next';
+import { CustomContainer } from '../common';
 
 export default function Supporting() {
     const { t } = useTranslation();
@@ -21,11 +22,9 @@ export default function Supporting() {
                 {t('Supporting Industries')}
             </Typography>
 
-            <Container>
+            <CustomContainer>
                 <Grid
                     container
-                    spacing={0} 
-                    gap={0}
                     direction="row"
                     justifyContent="center"
                     alignItems="center"
@@ -36,7 +35,7 @@ export default function Supporting() {
                             item
                             xs={6}
                             sm={4}
-                            md={1.8}
+                            md={2}
                             key={index}
                             sx={{
                                 display: 'flex',
@@ -83,7 +82,7 @@ export default function Supporting() {
                         </Grid>
                     ))}
                 </Grid>
-            </Container>
+            </CustomContainer>
         </Box>
     );
 }

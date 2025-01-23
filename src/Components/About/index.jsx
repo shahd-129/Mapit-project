@@ -12,7 +12,7 @@ export default function About() {
         const isRTL = theme.direction === 'rtl'
     return (
        
-        <Box sx={{ bgcolor: '#FAFAFA', py: '2rem', position: 'relative', width: "100%" }}>
+        <Box sx={{ bgcolor: '#FAFAFA', py: '2.5rem', position: 'relative', width: "100%" }}>
             <Box
                 sx={{
                     position: 'absolute',
@@ -39,7 +39,7 @@ export default function About() {
                     </Grid>
 
                     <Grid item xs={12} md={6}>
-                        <Box sx={{ pl: { md: "40px" }, mt: "2rem"  , px:"0.5rem"}} width={'100%'}>
+                        <Box sx={{ pl: { md: "40px" }, mt: "2rem" }} width={'100%'}>
                             <Typography sx={{ color: 'rgb(0, 71, 171)', fontWeight: 500, mb: '1rem' }}>
                                 {t("About Mapit")}
                             </Typography>
@@ -62,7 +62,8 @@ export default function About() {
                                 }}
                             >
                                 {t("Learn More")}
-                                <ArrowForwardIcon sx={{ fontSize: '23px', pl: "0.4rem", ml:"0.5rem", transform: isRTL ? 'scalex(-1)' : 'none' }} />
+                                <ArrowForwardIcon sx={{ fontSize: '23px', 
+                                     ml:"0.5rem", transform: isRTL ? 'scalex(-1)' : 'none' }} />
                             </Button>
                         </Box>
                     </Grid>

@@ -28,11 +28,11 @@ export default function SolutionCard({ SolutionImage, SolutionImage2 }) {
                 container
                 spacing={30}
                 sx={{
-                    py: 30
+                    py: 40
                 }}
             >
                 <Grid item md={4} xs={12}  >
-                    <Box sx={{ px: { xs: "1.2rem" } }}>
+                    <Box >
                         <Typography sx={{
                             color: '#014E81', fontWeight: { md: 600, xs: 400 },
                             pb: '0.9rem'

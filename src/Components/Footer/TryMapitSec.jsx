@@ -16,8 +16,8 @@ export default function TryMapitSec() {
                 overflow: "hidden",
                 borderTopLeftRadius: { md: "200px", xs: "0" },
                 mt: "3rem",
-                height: { md: "350px", xs: "480px" },
-                width:"100%",
+                height: { md: "350px", xs: "500px" },
+              
             }}
         >
             <Box
@@ -69,8 +69,9 @@ export default function TryMapitSec() {
                 sx={{
                     flex: 3,
                     textAlign: "center",
-                    py: { md: "5rem", sm: "1.5rem", xs: "0.5rem" },
-                    px: { md: "2rem" },
+                    py: { md: "5rem", sm: "1.5rem" , xs :15  },
+                    
+                    px: { md: "2rem" , xs:16 },
                     color: "white",
                     position: "relative",
                     maxWidth: "600px",
