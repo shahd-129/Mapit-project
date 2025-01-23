@@ -80,7 +80,7 @@ export default function Home() {
           textAlign="center"
           sx={{
             color: 'white',
-            fontSize: { xs: '40px', sm: '50px', md: '48px' },
+            fontSize: { xs: '32px', sm: '50px', md: '48px' },
             fontWeight: "600",
             mb: "1rem"
           }}
@@ -94,7 +94,7 @@ export default function Home() {
           sx={{
             color: 'white',
             mb: "1.4rem",
-            fontSize: "19px",
+            fontSize: {md:"19px" , xs:"14px"},
             fontWeight: 200
           }}
         >

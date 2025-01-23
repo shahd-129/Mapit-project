@@ -10,7 +10,7 @@ export default function FooterCopyrightSec() {
         <Container sx={{px:{xs:16 }}} >
             <Box sx={{ display: 'flex', flexDirection: { md: "row", xs: "column" }, justifyContent: "space-between", width: "100%", my: "1.5rem" }} >
 
-                <Typography sx={{ fontSize: "14px"   }} >
+                <Typography sx={{ fontSize: "16px"   }} >
                     {t('©2024 mapit. All rights reserved.')}
                 </Typography>
                 <Box sx={{ flexDirection: { md: "row" }, display: "flex", fontSize: "12px", }} >

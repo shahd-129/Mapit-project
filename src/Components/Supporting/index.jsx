@@ -17,7 +17,7 @@ export default function Supporting() {
     return (
         <Box py={'3rem'}>
             <Typography
-                sx={{ fontSize: "32px", fontWeight: 600, textAlign: "center" }}
+                sx={{ fontSize: {md:"32px" , xs:"28px"}, fontWeight: 600, textAlign: "center" }}
             >
                 {t('Supporting Industries')}
             </Typography>
@@ -71,7 +71,7 @@ export default function Supporting() {
                                     sx={{
                                         textAlign: "center",
                                         lineHeight: '3rem',
-                                        fontSize: '17px',
+                                        fontSize: {xs:'20px' , md:"20px"},
                                         fontWeight:500,
                                         color:"rgb(30, 30, 30)"
                                     }}

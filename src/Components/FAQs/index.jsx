@@ -79,7 +79,7 @@ export default function FAQs() {
                                             </Typography>
                                         </AccordionSummary>
                                         <AccordionDetails>
-                                            <Typography sx={{ fontSize: "14px", pb: 15 }}>
+                                            <Typography sx={{ fontSize: "16px", pb: 15 }}>
                                                 {t(content.TypographyContent)}
                                             </Typography>
                                         </AccordionDetails>

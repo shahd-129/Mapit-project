@@ -22,7 +22,7 @@ export default function Cards({ image, title, desc }) {
                 <Box
                     sx={{
                         flex: 1,
-                        p: '1.5rem',
+                        p: '32pX',
                         display: 'flex',
                         flexDirection: 'column',
                         
@@ -34,7 +34,7 @@ export default function Cards({ image, title, desc }) {
                     <Typography variant="body2" sx={{
                         marginBottom: '1rem', color: "rgb(30, 30, 30)",
                         fontWeight: 300,
-                        fontSize: { md: "17px", sm: "20px" , xs:"14px" }
+                        fontSize: { md: "18px", sm: "20px" , xs:"14px" }
                     }}>
                         {desc}
                     </Typography>

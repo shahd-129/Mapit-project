@@ -18,7 +18,7 @@ function ResponsiveAppBar() {
   const isRtl = theme.direction === "rtl";
 
   const pages = [
-    { id: '1', label: t('company') },
+    { id: '1', label: t('Company') },
     { id: '2', label: t('Solutions') },
     { id: '3', label: t('Features') },
     { id: '4', label: t('Industries') },

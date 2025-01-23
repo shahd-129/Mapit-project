@@ -35,16 +35,16 @@ export default function SolutionCard({ SolutionImage, SolutionImage2 }) {
                     <Box >
                         <Typography sx={{
                             color: '#014E81', fontWeight: { md: 600, xs: 400 },
-                            pb: '0.9rem'
+                            pb: '0.9rem' , fontSize:{xs:"14px" , md:"18px"}
                         }}>{t("Solutions")}</Typography>
                         <Typography sx={{
-                            fontSize: { md: '35px', xs: "28px" },
+                            fontSize: { md: '40px', xs: "28px" },
                             fontWeight: 600, lineHeight: "1.2"
                         }}>
                             {t("Fully Integrated Solutions")}
                         </Typography>
                         <Typography sx={{
-                            marginBottom: '2.5rem', fontSize: {md:"17px" , xs:"14px"},
+                            marginBottom: '2.5rem', fontSize: {md:"18px" , xs:"14px"},
                             color: "rgb(30, 30, 30)", fontWeight: 300,
                             pt: "0.5rem",
                         }}>

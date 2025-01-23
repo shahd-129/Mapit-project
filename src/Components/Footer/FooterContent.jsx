@@ -16,19 +16,19 @@ export default function FooterContent() {
                     { md: '200px', xs: "0" }, px: { md: "3rem", xs: 16 }
             }}>
                 <Container>
-                    <Box display={'flex'} justifyContent={'center'}>
+                    <Box display={'flex'} justifyContent={'center'} px="32 px">
 
                     <Grid container spacing={20} pt={50}>
                         <Grid item xs={12} sm={12} md={4} sx={{ display: "flex", flexDirection: "column", mb: 2, pb: "1rem", pl: { md: "10px" } }}>
 
                             <Box component="img" src={LogoFooter} sx={{ width: "100px", mb: 3, ml: { xs: '0' } }} />
-                            <Typography sx={{ fontSize: "15px", color: "#333", mb: 1, lineHeight: "1.5rem", }}>
+                            <Typography sx={{ fontSize: "16px", color: "#333", mb: 1, lineHeight: "1.5rem", }}>
                                 {t("AT TAKHASSUSI RD. - AL NAKHEEL DIS.Riyadh")}
                             </Typography>
                             <Typography sx={{ fontSize: "14px", lineHeight: "1.5rem", mb: 1, "&:hover": { color: "#FFBA21" } }}>
                                 {t('+966 58 184 9999')}
                             </Typography>
-                            <Typography sx={{ fontSize: "14px", lineHeight: "1.5rem", color: "#333", "&:hover": { color: "#FFBA21" } }}>
+                            <Typography sx={{ fontSize: "16px", lineHeight: "1.5rem", color: "#333", "&:hover": { color: "#FFBA21" } }}>
                                 info@mapit.sa
                             </Typography>
                             <Box sx={{ pt: '1.5rem', display: "flex", gap: '1rem' }}>
@@ -53,7 +53,7 @@ export default function FooterContent() {
                                 <Typography
                                     key={index}
                                     sx={{
-                                        fontSize: "14px",
+                                        fontSize: "16px",
                                         color: "#333",
                                         lineHeight: "1.5rem",
                                         p: "0.2rem",
@@ -76,7 +76,7 @@ export default function FooterContent() {
                                 <Typography
                                     key={index}
                                     sx={{
-                                        fontSize: "14px",
+                                        fontSize: {md:"14px" , xs:"16px"},
                                         color: "#333",
                                         mb: 1,
                                         lineHeight: "1.5rem",
@@ -92,7 +92,7 @@ export default function FooterContent() {
 
 
                         <Grid item xs={12} sm={6} md={4} lg={3} sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", mt: { md: '2rem' } }}>
-                            <Typography sx={{ fontSize: "13px", pb: '0.5rem' }}>{t("Stay up to date")}</Typography>
+                            <Typography sx={{ fontSize: "16px", pb: '0.5rem' }}>{t("Stay up to date")}</Typography>
                             <Box display="flex" alignItems="center" gap={1} mb={2}>
                                 <TextField
                                     label={t("Enter Your Email")}
@@ -124,7 +124,7 @@ export default function FooterContent() {
                                     {t("Subscribe")}
                                 </Button>
                             </Box>
-                            <Typography sx={{ fontSize: "14px", color: "#333", mb: 1, pt: "1.5rem" }}>
+                            <Typography sx={{ fontSize: "16px", color: "#333", mb: 1, pt: "1.5rem" }}>
                                 {t("Download Mapit App")}
                             </Typography>
                             <Box display="flex" gap={2} pt={'0.5rem'}>

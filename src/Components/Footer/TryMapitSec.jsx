@@ -69,9 +69,6 @@ export default function TryMapitSec() {
                 sx={{
                     flex: 3,
                     textAlign: "center",
-                    py: {  sm: "1.5rem" , xs :15  },
-                    
-                    px: { md: "2rem" },
                     color: "white",
                     position: "relative",
                     maxWidth: "600px",
@@ -80,14 +77,14 @@ export default function TryMapitSec() {
                     alignItems: "center",
                     justifyContent: "center",
                     margin: "0 auto",
-                    // mb: '3rem'
+                    padding: '32px 16px 40px'
 
                 }}
             >
                 <Typography sx={{ fontSize: { md: "48px", xs: "30px" }, fontWeight: 600, mb: 2 }}>
                     {t("Try for free today")}
                 </Typography>
-                <Typography sx={{ mb: 2, maxWidth: "700px" , fontSize:"18px" , fontWeight:300 , px:{xs:5} }}>
+                <Typography sx={{ mb: 2, maxWidth: "700px" , fontSize:{xs:"16px" , md:"20px"} , fontWeight:300 , px:{xs:5} }}>
                     {t("Become part of a growing community of businesses optimizing their delivery operations. Start your free trial today and see how Mapit can transform your logistics!")}
                 </Typography>
                 <Box
@@ -104,10 +101,10 @@ export default function TryMapitSec() {
                         sx={{
                             background: "#FFBA21",
                             color: "black",
-                            fontSize: "12px",
+                            fontSize: "14px",
                             textTransform: "none",
                             mr: { md: "1rem", xs: "0" },
-                            px: "1rem",
+                            p:"6px 16px",
                         }}
                     >
                         {t("Get a Demo for Free")}
@@ -116,7 +113,7 @@ export default function TryMapitSec() {
                         sx={{
                             color: "white",
                             textTransform: "none",
-                            fontSize: "12px",
+                            fontSize: "14px",
                         }}
                     >
                         {t("Explore Mapit")}

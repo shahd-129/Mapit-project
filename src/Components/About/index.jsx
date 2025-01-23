@@ -40,7 +40,7 @@ export default function About() {
 
                     <Grid item xs={12} md={6}>
                         <Box sx={{ pl: { md: "40px" }, mt: "1rem" }} width={'100%'}>
-                            <Typography sx={{ color: 'rgb(0, 71, 171)', fontWeight: 500, mb: '1rem' , fontSize:"18px"}}>
+                            <Typography sx={{ color: 'rgb(0, 71, 171)', fontWeight: 500, mb: '1rem' , fontSize:{md:"18px" , xs:"14px"}}}>
                                 {t("About Mapit")}
                             </Typography>
                             <Typography
