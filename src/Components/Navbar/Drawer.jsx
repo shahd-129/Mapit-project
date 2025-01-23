@@ -39,11 +39,11 @@ export default function CustomDrawer({ setDrawerOpen, drawerOpen , pages }) {
                 <Button
                     key={page.id}
                     sx={{
-                        fontSize: '20px',
+                        fontSize: '15px',
                         fontWeight:500,
                         color: "black",
                         textTransform: "none",
-                        padding: '1.5rem',
+                        padding: '1rem',
                         width: "100%",
                         display: "flex",
                         justifyContent: "flex-start"

@@ -69,9 +69,9 @@ export default function TryMapitSec() {
                 sx={{
                     flex: 3,
                     textAlign: "center",
-                    py: { md: "5rem", sm: "1.5rem" , xs :15  },
+                    py: {  sm: "1.5rem" , xs :15  },
                     
-                    px: { md: "2rem" , xs:16 },
+                    px: { md: "2rem" },
                     color: "white",
                     position: "relative",
                     maxWidth: "600px",
@@ -80,7 +80,7 @@ export default function TryMapitSec() {
                     alignItems: "center",
                     justifyContent: "center",
                     margin: "0 auto",
-                    mb: '3rem'
+                    // mb: '3rem'
 
                 }}
             >
