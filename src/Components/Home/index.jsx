@@ -44,8 +44,8 @@ export default function Home() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            width: "250px",
-            height: "30px",
+            width: "280px",
+            height: "35px",
             borderRadius: "20px",
             background: 'rgb(2, 100, 158)',
             color: 'white',
@@ -59,20 +59,20 @@ export default function Home() {
                 display: 'flex',
                 flexDirection: 'row', 
                 alignItems: 'center', 
-                fontSize: '12px',
                 fontWeight: 500,
                 mr: 2,
+                fontSize:"14px",
                 color: "white",
                 gap: 2,
               }}
             >
-              <Box mr={5}>{t('Mapit New Updates')}</Box>
+              <Box mr={5} >{t('Mapit New Updates')}</Box>
               <Box mr={5}>|</Box>
               <Box mr={5}>{t('Watch Video')}</Box>
             </Typography>
 
           </Link>
-          <ArrowForwardIcon sx={{ fontSize: '23px', pl: "0.4rem", 
+          <ArrowForwardIcon sx={{ fontSize: '24px', pl: "0.4rem", 
             transform: isRtl ? 'scaleX(-1)' : "none", }} />
         </Box>
         <Typography
@@ -94,7 +94,7 @@ export default function Home() {
           sx={{
             color: 'white',
             mb: "1.4rem",
-            fontSize: {md:"19px" , xs:"14px"},
+            fontSize: {md:"20px" , xs:"14px"},
             fontWeight: 200
           }}
         >
@@ -110,7 +110,7 @@ export default function Home() {
                 background: '#FFBA21',
                 textTransform: 'none',
                 color: 'black',
-                fontSize: '12px',
+                fontSize: '14px',
                 fontWeight: 600,
                 padding: 2,
                 py: "0.6rem",
@@ -121,7 +121,7 @@ export default function Home() {
             </Button>
           </Link>
           <Link href="https://www.mapit.sa/features" target="_blank" >
-            <Button sx={{ color: "white", textTransform: "none", fontSize: '12px', ml: "0.8rem", mt: "0.2rem" }}>
+            <Button sx={{ color: "white", textTransform: "none", fontSize: '14px', ml: "0.8rem", mt: "0.2rem" }}>
               {t("Explore Mapit")}
             </Button>
           </Link>
