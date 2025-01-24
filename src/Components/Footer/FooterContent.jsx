@@ -99,7 +99,7 @@ export default function FooterContent() {
                                     size="small"
                                     sx={{
                                         flex: 1,
-                                        width: { md: "250px", xs: "100%", sm: "100%" },
+                                        width: { md: "190px", xs: "100%", sm: "100%" , lg:"250px" },
                                         height: "30px",
                                         backgroundColor: "white",
                                         "& .MuiOutlinedInput-root": {

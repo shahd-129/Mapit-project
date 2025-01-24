@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { ENImage, ARImage } from '../../assets';
 
 
-export default function CustomDrawer({ setDrawerOpen, drawerOpen , pages }) {
+export default function CustomDrawer({ setDrawerOpen, drawerOpen , pages , handelOpenCompany }) {
     const dispatch = useDispatch()
     const { t } = useTranslation()
 
@@ -38,6 +38,7 @@ export default function CustomDrawer({ setDrawerOpen, drawerOpen , pages }) {
             {pages.map((page) => (
                 <Button
                     key={page.id}
+                    onClick={ () => handelOpenCompany(page.id)}
                     sx={{
                         fontSize: '15px',
                         fontWeight:500,
