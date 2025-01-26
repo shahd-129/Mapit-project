@@ -152,7 +152,7 @@ function ResponsiveAppBar() {
                   background: '#FFBA21',
                   textTransform: 'none',
                   color: 'black',
-                  fontSize: '12px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   padding: 2,
                   py: "0.6rem",

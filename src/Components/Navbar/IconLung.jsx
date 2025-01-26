@@ -35,10 +35,11 @@ export default function IconLung({ ENImage, ARImage }) {
             />
             <Button
                 sx={{
-                    fontSize: '12px',
+                    fontSize: '14px',
                     color: 'white',
                     textTransform: 'none',
-                    minWidth: 'auto'
+                    minWidth: 'auto',
+                  
                 }}
                 onClick={handleLanguageClick}
             >

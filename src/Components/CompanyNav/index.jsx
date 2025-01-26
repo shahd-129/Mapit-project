@@ -1,19 +1,23 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { Grid, Paper, Popover } from '@mui/material';
+import { Button, Grid, Paper, Popover, useTheme } from '@mui/material';
 import { aboutIconCompany, aboutIconCompany2, aboutIconCompany3 } from '../../assets';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import { useTranslation } from 'react-i18next';
-
 const CompanyNav = ({ anchorEl, setAnchorEl }) => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const handlePopoverClose = () => {
         setAnchorEl(null);
     };
     const isPopoverOpen = Boolean(anchorEl);
     const popoverId = isPopoverOpen ? 'company-popover' : undefined;
+    const theme = useTheme()
+    // const rtl = i18n.dir() === 'rtl'
+    const rtl = theme.direction === 'rtl'
+    // console.log(i18n.dir());
+    console.log(theme.direction);
 
 
     return (<>
@@ -24,39 +28,41 @@ const CompanyNav = ({ anchorEl, setAnchorEl }) => {
             onClose={handlePopoverClose}
             anchorOrigin={{
                 vertical: 'bottom',
-                horizontal: 'right',
+                horizontal: rtl ? 'right' : 'left',
             }}
             transformOrigin={{
-                vertical: 'bottom',
-                horizontal: 'right',
+                vertical: 'top',
+                horizontal: rtl ? 'right' : 'left',
             }}
             sx={{
-                width: { lg: '90%', md: "95%", sm: "95%" ,xs: '100%' },
+                width: { lg: '85%', md: "90%", sm: "95%", xs: '100%' },
                 // height: { md: 'auto', xs: '75%' }, top: 60, p: 3,
-                mt: 40
+                mt: 40 
             }}
             slotProps={{
-                paper:{
-                    sx:{
+                paper: {
+                    sx: {
                         p: 20
                     }
                 }
             }}
         >
-            <Typography
+            <Button
                 sx={{
                     color: 'black',
                     fontSize: '16px',
                     cursor: 'pointer',
-                    px: { xs: 15 },
-                    py: { xs: 15, md: 0.5 },
-                    display: { md: "none", xs: "block" }
+                    // px: { xs: 2 },
+                    // py: { xs: 2 },
+                    display: { md: "none", xs: "flex" },
+                      textTransform:"none"
                 }}
                 onClick={handlePopoverClose}
             >
-                {t('Back to menu')}
-            </Typography>
-            <Grid container spacing={20}>
+                {t('Back to Menu')}
+            </Button>
+           
+            <Grid container spacing={15}>
                 <Grid item lg={4.5} md={4} xs={12} sm={12}>
                     <Typography
                         sx={{
@@ -76,8 +82,6 @@ const CompanyNav = ({ anchorEl, setAnchorEl }) => {
                                     width: '30px',
                                     height: '30px',
                                     borderRadius: '50%',
-
-
                                 }}
                             >
                                 <Box component={'img'} src={aboutIconCompany} sx={{ p: 7 }} />
