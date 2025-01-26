@@ -31,9 +31,16 @@ const CompanyNav = ({ anchorEl, setAnchorEl }) => {
                 horizontal: 'right',
             }}
             sx={{
-                width: { md: '90%', xs: '100%' },
-                height: { md: 'auto', xs: '75%' }, top: 60, p: 3,
-                py: 50, overflowY: { xs: 'auto' }, position: "fixed"
+                width: { lg: '90%', md: "95%", sm: "95%" ,xs: '100%' },
+                // height: { md: 'auto', xs: '75%' }, top: 60, p: 3,
+                mt: 40
+            }}
+            slotProps={{
+                paper:{
+                    sx:{
+                        p: 20
+                    }
+                }
             }}
         >
             <Typography
@@ -49,8 +56,8 @@ const CompanyNav = ({ anchorEl, setAnchorEl }) => {
             >
                 {t('Back to menu')}
             </Typography>
-            <Grid container py={20}>
-                <Grid item md={4} xs={12} sm={12} px={24}  >
+            <Grid container spacing={20}>
+                <Grid item lg={4.5} md={4} xs={12} sm={12}>
                     <Typography
                         sx={{
                             color: 'black',
@@ -151,7 +158,7 @@ const CompanyNav = ({ anchorEl, setAnchorEl }) => {
 
                 </Grid>
 
-                <Grid item md={3} xs={12} sm={12} px={30}>
+                <Grid item lg={3.5} md={3} xs={12} sm={12}>
                     <Typography
                         sx={{
                             color: 'black',
@@ -174,8 +181,8 @@ const CompanyNav = ({ anchorEl, setAnchorEl }) => {
                     </Box>
                 </Grid>
 
-                <Grid item md={5} xs={12} sm={12} pr={70} px={30}>
-                    <Paper sx={{ width: '300px' }}>
+                <Grid item lg={4} md={5} xs={12} sm={12}>
+                    <Paper>
                         <LiteYouTubeEmbed
                             id="HC2qmLWao0w"
                             title="YouTube video player"
