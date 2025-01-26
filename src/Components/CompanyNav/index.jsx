@@ -24,11 +24,11 @@ const CompanyNav = ({ anchorEl, setAnchorEl }) => {
             onClose={handlePopoverClose}
             anchorOrigin={{
                 vertical: 'bottom',
-                horizontal: 'left',
+                horizontal: 'right',
             }}
             transformOrigin={{
                 vertical: 'bottom',
-                horizontal: 'left',
+                horizontal: 'right',
             }}
             sx={{
                 width: { md: '90%', xs: '100%' },
