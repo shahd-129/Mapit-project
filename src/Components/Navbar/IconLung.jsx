@@ -51,8 +51,7 @@ export default function IconLung({ ENImage, ARImage }) {
                 sx={{
                     mt: '10px',
                     ml: "10px",
-                }}
-            >
+                }}>
 
                 <Box display="flex" alignItems="center" gap={1}>
                     <Box display="flex" alignItems="center" sx={{ minWidth: '230px', height: "70px", background: "#f9fafb" }} gap={0}>

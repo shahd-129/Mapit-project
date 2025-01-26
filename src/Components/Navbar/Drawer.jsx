@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { ENImage, ARImage } from '../../assets';
 
 
-export default function CustomDrawer({ setDrawerOpen, drawerOpen , pages , handelOpenCompany }) {
+export default function CustomDrawer({ setDrawerOpen, drawerOpen , pages ,handlePopoverOpen }) {
     const dispatch = useDispatch()
     const { t } = useTranslation()
 
@@ -38,7 +38,11 @@ export default function CustomDrawer({ setDrawerOpen, drawerOpen , pages , hande
             {pages.map((page) => (
                 <Button
                     key={page.id}
-                    onClick={ () => handelOpenCompany(page.id)}
+                    onClick={(e) => {
+                        if (page.id === '1') {
+                          handlePopoverOpen(e);
+                        }
+                      }}
                     sx={{
                         fontSize: '15px',
                         fontWeight:500,

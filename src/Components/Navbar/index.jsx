@@ -25,8 +25,16 @@ function ResponsiveAppBar() {
     { id: '5', label: t('Pricing') },
     { id: '6', label: t('Resources') },
   ];
+
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const [companyDrawer, setCompanyDrawer] = React.useState(false);
+
+  // For Popover
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const handlePopoverOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
 
   const handleOpenDrawer = () => {
     setDrawerOpen(true);
@@ -34,7 +42,7 @@ function ResponsiveAppBar() {
 
   const openCompanyDrawer = (id) => {
     if (id === '1') {
-      setCompanyDrawer(true); 
+      setCompanyDrawer(true);
     }
   };
 
@@ -92,7 +100,11 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               <Typography
                 key={page.id}
-                onClick={() => openCompanyDrawer(page.id)} 
+                onClick={(e) => {
+                  if (page.id === '1') {
+                    handlePopoverOpen(e);
+                  }
+                }}
                 sx={{
                   color: 'white',
                   textTransform: 'none',
@@ -149,14 +161,18 @@ function ResponsiveAppBar() {
                   display: { sm: "flex", xs: "none" }
                 }}
               >
-                {t('Get a Dome')}
+                {t('Get a Demo')}
               </Button>
             </Link>
           </Box>
-          <Drawer drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} pages={pages} handelOpenCompany={openCompanyDrawer} />
+          <Drawer drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen}
+           pages={pages} handlePopoverOpen={handlePopoverOpen} />
         </Toolbar>
       </Container>
-      <CompanyNav isOpen={companyDrawer} setCompanyDrower={setCompanyDrawer} /> 
+
+
+      <CompanyNav isOpen={companyDrawer} 
+       setAnchorEl={setAnchorEl} anchorEl={anchorEl} />
     </AppBar>
   );
 }
