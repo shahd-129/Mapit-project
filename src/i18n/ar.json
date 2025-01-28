@@ -74,7 +74,15 @@
   "Enhancing operational efficiency and customer satisfaction":"تعزيز الكفاءة التشغيلية ورضا العملاء",
   "Through innovative solutions, auto sorting, fleet management, route optimization, and real-time tracking.":"من خلال حلول مبتكرة، وفرز تلقائي، وإدارة الأسطول، وتحسين المسار، والتتبع في الوقت الفعلي.",
   "Back to Menu":"العوده الى القائمه",
-  "Get a Demo":"احصل على عرض توضيحي"
+  "Get a Demo":"احصل على عرض توضيحي",
+  "Don't have an account?":"ليس لديك حساب؟",
+"Forget Password?":"نسيت كلمة المرور؟",
+"Login to Your Account":"تسجيل الدخول إلى حسابك",
+"Back to Home":"الرجوع الى الصفحه الرئيسية",
+"Create Account":"انشاء حساب",
+"Email":"عنوان البريد الالكتروني",
+"Password":"كلمة السر",
+"Login":"تسجيل دخول"
 
   
 }

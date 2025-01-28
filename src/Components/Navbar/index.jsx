@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import IconLung from './IconLung';
 import Drawer from './Drawer';
 import CompanyNav from '../CompanyNav';
+import { NavLink } from 'react-router-dom';
 
 function ResponsiveAppBar() {
   const { t } = useTranslation();
@@ -40,11 +41,11 @@ function ResponsiveAppBar() {
     setDrawerOpen(true);
   };
 
-  const openCompanyDrawer = (id) => {
-    if (id === '1') {
-      setCompanyDrawer(true);
-    }
-  };
+  // const openCompanyDrawer = (id) => {
+  //   if (id === '1') {
+  //     setCompanyDrawer(true);
+  //   }
+  // };
 
   return (
     <AppBar sx={{ px: { md: "6rem", position: "static" }, boxShadow: "none", overflowX: "hidden" }}>
@@ -130,22 +131,24 @@ function ResponsiveAppBar() {
               ml: 'auto',
             }}
           >
-            <Tooltip title={t('Log In')}>
-              <Box
-                component="img"
-                src={IconLogin}
-                width="40px"
-                height="40px"
-                sx={{
-                  background: '#0B6296',
-                  borderRadius: '50%',
-                  padding: '10px',
-                  fontSize: "30px",
-                  mr: { xs: "1rem", md: "0" },
-                  transform: isRtl ? 'scaleX(-1)' : "none",
-                }}
-              />
-            </Tooltip>
+            <NavLink to='/auth/login'>
+              <Tooltip title={t('Log In')}>
+                <Box
+                  component="img"
+                  src={IconLogin}
+                  width="40px"
+                  height="40px"
+                  sx={{
+                    background: '#0B6296',
+                    borderRadius: '50%',
+                    padding: '10px',
+                    fontSize: "30px",
+                    mr: { xs: "1rem", md: "0" },
+                    transform: isRtl ? 'scaleX(-1)' : "none",
+                  }}
+                />
+              </Tooltip>
+            </NavLink>
             <Link href="https://www.mapit.sa/free-demo" underline="none">
               <Button
                 sx={{
@@ -166,13 +169,13 @@ function ResponsiveAppBar() {
             </Link>
           </Box>
           <Drawer drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen}
-           pages={pages} handlePopoverOpen={handlePopoverOpen} />
+            pages={pages} handlePopoverOpen={handlePopoverOpen} />
         </Toolbar>
       </Container>
 
 
-      <CompanyNav isOpen={companyDrawer} 
-       setAnchorEl={setAnchorEl} anchorEl={anchorEl} />
+      <CompanyNav isOpen={companyDrawer}
+        setAnchorEl={setAnchorEl} anchorEl={anchorEl} />
     </AppBar>
   );
 }

@@ -1,28 +1,11 @@
 import "./App.css";
-import {
-  Supporting,
-  Features,
-  About,
-  Solutions,
-  Navbar,
-  Home,
-  FAQs,
-  Footer,
-} from "./Components";
+import Routes from "./Routes";
 
 function App() {
 
   return (
-    <>
-      <Navbar />
-      <Home />
-      <Solutions />
-      <About />
-      <Features />
-      <Supporting />
-      <FAQs />
-      <Footer />
-    </>
+   
+    <Routes/>
   );
 }
 
