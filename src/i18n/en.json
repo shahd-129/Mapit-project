@@ -81,5 +81,19 @@
 "Create Account":"Create Account",
 "Email":"Email",
 "Password":"Password",
-"Login":"Login"
+"Login":"Login",
+"Basic Details": "Basic Details",
+"A few details about company": "A few details about company",
+"Account": "Account",
+"Your accout details": "Your accout details",
+"Setup your account password": "Setup your account password",
+"Have already account":"Have already account",
+"Create New Account":"Create New Account",
+"Company Name *":"Company Name *",
+"Logo/Avatar *":"Logo/Avatar *",
+"Register as *":"Register as *",
+"Website":"Website",
+"Name":"Name",
+"Phone":"Phone",
+"Signup":"Signup"
 }
