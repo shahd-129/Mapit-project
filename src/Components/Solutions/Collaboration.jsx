@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, {  useMemo } from 'react';
 
 import { Box, Typography, useTheme } from '@mui/material';
 import { Zid, ZidShip, Aramex, Naqel, Salla, SaudiTech, Sobol, EzPay } from '../../assets';

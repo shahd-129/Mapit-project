@@ -20,7 +20,7 @@ export default function Register() {
           {t('Create New Account')}
         </Typography>
 
-        <Paper sx={{ display: "flex", m: "auto", flexDirection: "column", py: 25, px: 15, width: "50%" }}>
+        <Paper sx={{ display: "flex", m: "auto", flexDirection: "column", py: 25, px: 15, width: "70%" }}>
           <Grid container spacing={45}>
             <ContentSection/>
 
