@@ -4,14 +4,21 @@ export const authApi = authSlice.injectEndpoints({
   endpoints: (builder) => ({
     signup: builder.mutation({
       query: (body) => ({
-        url: "/register",
+        url: "merchant-dashboard/register",
         method: "POST",
         body,
       }),
     }),
-
+    login: builder.mutation({
+      query: (body) => ({
+        url: 'user/login',
+        method: "POST",
+        body,
+       
+      }),
+    }),
    
   }),
 });
 
-export const { useSignupMutation} = authApi
+export const { useSignupMutation , useLoginMutation} = authApi

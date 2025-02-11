@@ -7,6 +7,7 @@ export const merchentApi = merchentSlice.injectEndpoints({
         url: '/me',
         method: "GET",
       }),
+      transformResponse: (response, meta, arg) => response?.body,
     }),
   }),
 });

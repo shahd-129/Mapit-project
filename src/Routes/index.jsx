@@ -1,11 +1,8 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import AuthLayout from '../Layout/LayoutAuth'
-import Layout from '../Layout/Layout'
+import {AuthLayout ,Layout , LayoutMerchent } from '../Layout'
 import { Login, Register } from '../Auth'
-import LayoutMerchent from '../Layout/LayoutMerchent'
-import Merchent from '../Components/Merchent'
-import Starred from '../Components/Starred'
+import { Merchent , Starred} from '../View'
 import Guard from '../Components/Guard'
 
 

@@ -6,7 +6,9 @@ import { Box, Container, Typography } from '@mui/material'
 export default function Merchent() {
 
     const {data } = useGetMerchentQuery()
-     const userData = data?.body;
+     const userData = data;
+     console.log(userData);
+     
     
     
     return (
