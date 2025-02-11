@@ -6,6 +6,7 @@ export const authSlice = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl:
       "https://mapit-staging.herokuapp.com/api/v1/merchant-dashboard",
+     
   }),
   endpoints: (builder) => ({}),
 });

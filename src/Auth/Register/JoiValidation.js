@@ -42,7 +42,7 @@ export const validation = (data) => {
       "any.required": "Phone number is required",
     }), phoneCode: Joi.string().min(1).max(5).required(),
     deliveryMethod: Joi.array().items(
-      Joi.string().valid("MYSELF", "MAPIT_SHIP")
+      Joi.string().valid("MYSELF", "MAPIT_SHIP") 
     ).min(1) 
     .max(2)
   });
