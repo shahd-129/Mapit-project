@@ -2,7 +2,7 @@ import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import {AuthLayout ,Layout , LayoutMerchent } from '../Layout'
 import { Login, Register } from '../Auth'
-import { Merchent , Starred} from '../View'
+import { Merchent , Starred , WareHouse} from '../View'
 import Guard from '../Components/Guard'
 
 
@@ -24,7 +24,11 @@ export default function Routes() {
             path: "/merchent",
             element: <LayoutMerchent />, children:[{
                 path:"inbox" , element:<Guard><Merchent/></Guard>
-            } , {path:"starred" , element:<Guard><Starred/></Guard>} ]
+            } , 
+            {path:"starred" , element:<Guard><Starred/></Guard>},
+            {path:"warehouse" , element:<Guard><WareHouse/></Guard>}
+        
+        ]
         },
     ])
     return (

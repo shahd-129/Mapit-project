@@ -14,10 +14,11 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import { Link } from 'react-router-dom';
+import { Warehouse } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 
-const drawerWidth = 240;
+const drawerWidth = '220px';
 
 const Main = styled('main')(({ theme }) => ({
   flexGrow: 1,
@@ -26,6 +27,7 @@ const Main = styled('main')(({ theme }) => ({
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
+  
 }));
 
 const DrawerHeader = styled('div')(({ theme }) => ({
@@ -36,33 +38,27 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-start',
 }));
 
-export default function DrowerNavMerchent() {
+export default function DrowerNavMerchent({ open, handleDrawerOpen  }) {
+  const { t } = useTranslation();
   const theme = useTheme();
-  const isLargeScreen = useMediaQuery('(min-width: 900px)');
-  const [open, setOpen] = React.useState(isLargeScreen); 
 
   const handleDrawerClose = () => {
-    setOpen(false);
+    handleDrawerOpen(false); 
   };
 
-  return (
+  return (<>
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <Main>
-        <DrawerHeader />
-      </Main>
       <Drawer
+     
         sx={{
           width: drawerWidth,
-          height: '50%',
           flexShrink: 0,
-          '& .MuiDrawer-paper': {
-            width: drawerWidth,
-          },
+          '& .MuiDrawer-paper': { width: drawerWidth,},
         }}
         variant="persistent"
-        anchor="right"
-        open={open}
+        anchor="left"
+        open={open} 
       >
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
@@ -74,6 +70,7 @@ export default function DrowerNavMerchent() {
           {[
             { text: 'Inbox', path: '/merchent/inbox', icon: <InboxIcon /> },
             { text: 'Starred', path: '/merchent/starred', icon: <MailIcon /> },
+            { text: t('Warehouse'), path: '/merchent/warehouse', icon: <Warehouse /> },
           ].map(({ text, path, icon }) => (
             <ListItem key={text} disablePadding>
               <ListItemButton component={Link} to={path}>
@@ -86,5 +83,6 @@ export default function DrowerNavMerchent() {
         <Divider />
       </Drawer>
     </Box>
+  </>
   );
 }

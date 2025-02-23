@@ -4,7 +4,9 @@ import { jwtDecode } from "jwt-decode";
 
  const initialState = {
    token: null,
-   user :null
+   user :null,
+   wareHosue:[],
+
  };
 
  const tokenSlice = createSlice({

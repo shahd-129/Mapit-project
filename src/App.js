@@ -3,6 +3,8 @@ import "./App.css";
 import Routes from "./Routes";
 import { useEffect } from "react";
 import { setToken,} from "./Redux/Slices/tokenSlice";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
 
@@ -16,9 +18,11 @@ function App() {
   }, [dispatch]);
     
   
-  return (
-   
-    <Routes/>
+  return (<>
+  
+  <ToastContainer position="top-center" autoClose={3000} />
+  <Routes/>
+  </>
   );
 }
 

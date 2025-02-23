@@ -1,3 +1,7 @@
 {
-    "bitoAI.codeCompletion.enableAutoCompletion": false
+    "bitoAI.codeCompletion.enableAutoCompletion": false,
+    "C_Cpp.commentContinuationPatterns": [
+        
+        "/**"
+    ]
 }

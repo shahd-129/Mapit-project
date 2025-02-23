@@ -96,5 +96,20 @@
   "Website":"الموقع الالكتروني",
   "Name":"الاسم",
   "Phone":"رقم الهاتف",
-  "Signup":"تسجيل الدخول"
+  "Signup":"تسجيل الدخول",
+  "City": "المدينة",
+  "Date": "التاريخ",
+  "Address Details": "العنوان بالتفاصيل",
+  "Log out":"تسجيل خروج",
+  "Warehouse":"مستودعات",
+  "Add Warehouse":"اضافه مستودع",
+  "Update Warehouse":"تحديث المستودع",
+  "State/Region":"الولايه المنطقه",
+  "Street":"الشارع",
+  "Building Number":"رقم المبنى",
+  "District":"الحي",
+  "Update":"تحديث",
+  "Close":"اغلاق",
+  "Add":"اضافه",
+  "Delete":"حذف"
 }
