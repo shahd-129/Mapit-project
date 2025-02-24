@@ -1,6 +1,6 @@
 import { Box, Button, Menu } from '@mui/material'
 import React from 'react'
-import { setLanguage } from '../../Redux/Slices/languageSlice'
+import { setLanguage } from '../../redux/slice/languageSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 

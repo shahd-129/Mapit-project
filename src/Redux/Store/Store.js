@@ -1,10 +1,10 @@
 // Store.js
 import { configureStore } from "@reduxjs/toolkit";
-import languageReducer from "../Slices/languageSlice";
-import { authApi } from "../Api/Signup";
-import tokenReducer from '../Slices/tokenSlice'
-import { merchentApi } from "../Api/merchent";
-import { warehouseApi } from "../Api/warehouse";
+import languageReducer from "../slice/languageSlice";
+import { authApi } from "../api/signup";
+import tokenReducer from '../slice/tokenSlice'
+import { merchentApi } from "../api/merchent";
+import { warehouseApi } from "../api/warehouse";
 const store = configureStore({
   reducer: {
     lang: languageReducer,

@@ -4,12 +4,12 @@ import MuiAppBar from '@mui/material/AppBar';
 // import { LogoMapit } from '../../assets'
 import MenuIcon from '@mui/icons-material/Menu';
 import { useDispatch } from 'react-redux';
-import { clearToken } from '../../Redux/Slices/tokenSlice';
+import { clearToken } from '../../redux/slice/tokenSlice';
 import { useNavigate } from 'react-router-dom';
-import IconLung from './IconLung';
+import IconLung from './iconLung';
 import { LogoMapit, ENImage, ARImage } from '../../assets';
 import { useTranslation } from 'react-i18next';
-import DrowerNavMerchent from '../../View/DrowerNavMerchent';
+import DrowerNavMerchent from '../../view/drowerNavMerchent';
 export default function NavMerchent() {
 
     const AppBar = styled(MuiAppBar)(({ theme }) => ({

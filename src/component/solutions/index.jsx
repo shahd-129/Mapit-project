@@ -1,7 +1,7 @@
 import React from 'react';
 import { SolutionImage, SolutionImage2 } from '../../assets';
-import SolutionCard from './SolutionCard';
-import Collaboration from './Collaboration';
+import SolutionCard from './solutionCard';
+import Collaboration from './collaboration';
 
 
 export default function Solutions() {

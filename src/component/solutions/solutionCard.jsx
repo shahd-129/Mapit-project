@@ -1,7 +1,7 @@
 import { Grid, Typography, Box } from '@mui/material';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Cards from './Cards'
+import Cards from './cards'
 import { CustomContainer } from '../common';
 export default function SolutionCard({ SolutionImage, SolutionImage2 }) {
     const { t } = useTranslation()

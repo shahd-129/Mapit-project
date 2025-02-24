@@ -2,8 +2,8 @@ import React from "react";
 import { Box, Button, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { FeatuerImage, FeatuerImage2, FeatuerImage3, ButtonShadow } from "../../assets";
 import { useTranslation } from "react-i18next";
-import FeaturesSlider from "./FeatureSlider";
-import FeaturesCard from "./FeaturesCard";
+import FeaturesSlider from "./featureSlider";
+import FeaturesCard from "./featuresCard";
 import { CustomContainer } from "../common";
 const FeaturesSection = () => {
     const { t } = useTranslation();

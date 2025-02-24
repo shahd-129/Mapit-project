@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import BusinessIcon from '@mui/icons-material/Business';
 import EmailIcon from '@mui/icons-material/Email';
-import { useSignupMutation } from '../../Redux/Api/Signup';
+import { useSignupMutation } from '../../redux/api/signup';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';

@@ -5,15 +5,13 @@ import Toolbar from '@mui/material/Toolbar';
 import { Button, Container, useTheme } from '@mui/material';
 import { LogoMapit, ENImage, ARImage } from '../../assets';
 import { useTranslation } from 'react-i18next';
-import IconLung from './IconLung';
+import IconLung from './iconLung';
 import { Link } from 'react-router-dom';
 
 function NavAuth() {
   const { t } = useTranslation();
   const theme = useTheme();
-  const isRtl = theme.direction === "rtl";
 
- 
   return (
     <AppBar sx={{ px: { md: "6rem", position: "static" }, overflowX: "hidden" , pt:15 }}>
 

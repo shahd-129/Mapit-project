@@ -1,9 +1,9 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import {AuthLayout ,Layout , LayoutMerchent } from '../Layout'
-import { Login, Register } from '../Auth'
-import { Merchent , Starred , WareHouse} from '../View'
-import Guard from '../Components/Guard'
+import {AuthLayout ,Layout , LayoutMerchent } from '../layout'
+import { Login, Register } from '../auth'
+import { Merchent , Starred , Warehouse} from '../view'
+import Guard from '../component/guard'
 
 
 export default function Routes() {
@@ -26,7 +26,7 @@ export default function Routes() {
                 path:"inbox" , element:<Guard><Merchent/></Guard>
             } , 
             {path:"starred" , element:<Guard><Starred/></Guard>},
-            {path:"warehouse" , element:<Guard><WareHouse/></Guard>}
+            {path:"warehouse" , element:<Guard><Warehouse/></Guard>}
         
         ]
         },

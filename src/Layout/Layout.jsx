@@ -1,5 +1,5 @@
 import React from 'react'
-import { About, Navbar, Home, Solutions, FAQs, Supporting, Footer } from '../Components'
+import { About, Navbar, Home, Solutions, FAQs, Supporting, Footer } from '../component'
 
 export default function Layout() {
     return (<>

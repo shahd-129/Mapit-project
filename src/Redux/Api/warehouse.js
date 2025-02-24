@@ -1,6 +1,6 @@
-import { warehouseSlice } from "../Slices/warehouseSlice";
+import { baseApiSlice } from "./baseApiSlice";
 
-export const warehouseApi = warehouseSlice.enhanceEndpoints({addTagTypes:["WAREHOUSE"]}).injectEndpoints({
+export const warehouseApi = baseApiSlice.enhanceEndpoints({addTagTypes:["WAREHOUSE"]}).injectEndpoints({
   endpoints: (builder) => ({
     getWarehouseData: builder.query({
       query: (params) => ({
@@ -8,7 +8,8 @@ export const warehouseApi = warehouseSlice.enhanceEndpoints({addTagTypes:["WAREH
         method: "GET",
         params
       }),
-      providesTags:['WAREHOUSE']
+      providesTags:['WAREHOUSE'],
+      transformResponse: (response, meta, arg) => response?.body,
     }),
     addWarehouseData: builder.mutation({
       query: (body) => ({

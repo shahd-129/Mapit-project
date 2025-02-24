@@ -8,9 +8,9 @@ import { Container, Tooltip, Button, Link, useTheme } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { LogoMapit, IconLogin, ENImage, ARImage } from '../../assets';
 import { useTranslation } from 'react-i18next';
-import IconLung from './IconLung';
-import Drawer from './Drawer';
-import CompanyNav from '../CompanyNav';
+import IconLung from './iconLung';
+import Drawer from './drawer';
+import CompanyNav from '../companyNav';
 import { NavLink } from 'react-router-dom';
 
 function ResponsiveAppBar() {

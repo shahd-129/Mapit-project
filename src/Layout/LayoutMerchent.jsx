@@ -1,6 +1,6 @@
 import React from 'react'
-import NavMerchent from '../Components/Navbar/NavMerchent'
-import DrowerNavMerchent from '../View/DrowerNavMerchent'
+import NavMerchent from '../component/navbar/navMerchent'
+import DrowerNavMerchent from '../view/drowerNavMerchent'
 import { Outlet } from 'react-router-dom'
 import { Container, Toolbar } from '@mui/material'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useGetMerchentQuery } from '../../Redux/Api/merchent'
+import { useGetMerchentQuery } from '../../redux/api/merchent'
 import { Box, Container, Typography } from '@mui/material'
 
 

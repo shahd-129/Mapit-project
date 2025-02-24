@@ -1,6 +1,6 @@
-import FooterContent from "./FooterContent";
-import FooterCopyrightSec from "./FooterCopyrightSec";
-import TryMapitSec from "./TryMapitSec";
+import FooterContent from "./footerContent";
+import FooterCopyrightSec from "./footerCopyrightSec";
+import TryMapitSec from "./tryMapitSec";
 export default function Footer() {
     
     return (

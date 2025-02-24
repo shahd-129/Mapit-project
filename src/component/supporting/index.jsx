@@ -2,7 +2,7 @@ import { Box, Grid, Typography } from '@mui/material';
 import React from 'react';
 import { ShoppingBag, ShoppingCart, MedicalImage, LogisticImage, DropImage } from '../../assets';
 import { useTranslation } from 'react-i18next';
-import { CustomContainer } from '../common';
+import { customContainer } from '../common';
 
 export default function Supporting() {
     const { t } = useTranslation();
@@ -22,7 +22,7 @@ export default function Supporting() {
                 {t('Supporting Industries')}
             </Typography>
 
-            <CustomContainer>
+            <customContainer>
                 <Grid
                     container
                     direction="row"
@@ -82,7 +82,7 @@ export default function Supporting() {
                         </Grid>
                     ))}
                 </Grid>
-            </CustomContainer>
+            </customContainer>
         </Box>
     );
 }

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useGetWarehouseDataQuery } from "../../Redux/Api/warehouse";
+import { useGetWarehouseDataQuery } from "../../redux/api/warehouse";
 import { Box, Button, Grid } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import moment from "moment";
 import { useTranslation } from "react-i18next";
-import AddWareHouse from "./AddWareHouse";
+import WarehouseDialog from "./warehouseDialog";
 
 export default function WarehouseSection() {
 
@@ -46,7 +46,7 @@ export default function WarehouseSection() {
   ];
 
 
-  const { data } = useGetWarehouseDataQuery({ page: page + 1, limit: pageSize });
+  const { data  ,isLoading } = useGetWarehouseDataQuery({ page: page + 1, limit: pageSize });
   const [open, setOpen] = useState(false)
   const [isEditing, setIsEditing] = useState(null)
 
@@ -56,21 +56,26 @@ export default function WarehouseSection() {
     setIsEditing('update')
   }
 
+  const closeWarehouseHandler = ()=>{
+    setOpen(false)
+    setIsEditing(null)
+    setSelectedWareHouse(null)
+  }
+
   return (
     <>
-
-
-    <AddWareHouse 
+    <WarehouseDialog
       open={open} 
       setOpen={setOpen} 
       setIsEditing={setIsEditing} 
       selectedWareHouse={selectedWareHouse} 
       setSelectedWareHouse={setSelectedWareHouse} 
       isEditing={isEditing} 
+      onClose={closeWarehouseHandler}
     />
-
-    <Grid container sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-      <Box
+<Box display={'flex'} flexDirection={'column'}>
+    <Box  sx={{ display: "flex", justifyContent: "center", alignItems: "center" , height:480 }}>
+      {/* <Box
         sx={{
           height: 480,
           width: { md: "60%", xs: "100%", sm: "100%" },
@@ -79,14 +84,14 @@ export default function WarehouseSection() {
           justifyContent: "center",
           alignItems: "center",
         }}
-      >
+      > */}
 
         <Box 
           sx={{ 
             width: "100%", 
             display: "flex", 
-            justifyContent: "flex-start", 
-            mb: 10
+            mb: 10,
+           
           }}
         >
           <Button onClick={() => setOpen(true)} variant="contained">
@@ -97,13 +102,14 @@ export default function WarehouseSection() {
      
         <Box sx={{ width: { md: "100%", xs: "100%" }, maxWidth: "100%", height: "100%" }}>
           <DataGrid
-            rows={data?.body?.docs ?? []}
+            rows={data?.docs ?? []}
             columns={columns}
             pageSizeOptions={[5]}
             paginationMode="server"
             autoPageSize={true}
             disableRowSelectionOnClick
-            rowCount={data?.body?.totalDocs ?? 0}
+            loading={isLoading}
+            rowCount={data?.totalDocs ?? 0}
             paginationModel={{ page, pageSize }}
             onPaginationModelChange={(params) => {
               setPage(params.page);
@@ -114,7 +120,9 @@ export default function WarehouseSection() {
           />
         </Box>
       </Box>
-    </Grid>
+
+</Box>
+    {/* </Box> */}
   </>
 );
 }

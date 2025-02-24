@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
 import "./App.css";
-import Routes from "./Routes";
+import Routes from "./routes";
 import { useEffect } from "react";
-import { setToken,} from "./Redux/Slices/tokenSlice";
+import { setToken,} from "./redux/slice/tokenSlice";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
