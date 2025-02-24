@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useGetWarehouseDataQuery } from "../../Redux/Api/warehouse";
-import { Box, Button, Container, Grid } from "@mui/material";
+import { Box, Button, Grid } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import moment from "moment";
 import { useTranslation } from "react-i18next";
@@ -58,49 +58,63 @@ export default function WarehouseSection() {
 
   return (
     <>
-    
-
-        <Button onClick={() => setOpen(true)} variant="contained">{t('Add')}</Button>
-        <AddWareHouse open={open} setOpen={setOpen} setIsEditing={setIsEditing} selectedWareHouse={selectedWareHouse} setSelectedWareHouse={setSelectedWareHouse} isEditing={isEditing} />
-        <Grid container >
-          {/* <Grid item  */}
-            <Box
-              sx={{
-                height: 480,
-                width:{md:'80%' , xs:"100%" , sm:'100%'},
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                m:'auto'
-              }}
-            >
-              <Box sx={{ width: {md:"80%" , xs:"100%"}, maxWidth: "100%" , height:"100%" }}>
-                <DataGrid
-                  rows={data?.body?.docs ?? []}
-                  columns={columns}
-                  pageSizeOptions={[5]}
-                  paginationMode="server"
-                  autoPageSize={true}
-                 
-                  disableRowSelectionOnClick
-                  rowCount={data?.body?.totalDocs ?? 0}
-                  paginationModel={{ page, pageSize }}
-                  onPaginationModelChange={(params) => {
-                    setPage(params.page);
-                    setPageSize(params.pageSize);
-                  }}
-                  getRowId={(row) => row.id}
-                  onRowClick={handelOpenRow}
-                />
-              </Box>
-            </Box>
 
 
-          {/* </Grid> */}
+    <AddWareHouse 
+      open={open} 
+      setOpen={setOpen} 
+      setIsEditing={setIsEditing} 
+      selectedWareHouse={selectedWareHouse} 
+      setSelectedWareHouse={setSelectedWareHouse} 
+      isEditing={isEditing} 
+    />
 
-        </Grid>
-    </>
+    <Grid container sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <Box
+        sx={{
+          height: 480,
+          width: { md: "60%", xs: "100%", sm: "100%" },
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
 
+        <Box 
+          sx={{ 
+            width: "100%", 
+            display: "flex", 
+            justifyContent: "flex-start", 
+            mb: 10
+          }}
+        >
+          <Button onClick={() => setOpen(true)} variant="contained">
+            {t("Add")}
+          </Button>
+        </Box>
 
-  );
+     
+        <Box sx={{ width: { md: "100%", xs: "100%" }, maxWidth: "100%", height: "100%" }}>
+          <DataGrid
+            rows={data?.body?.docs ?? []}
+            columns={columns}
+            pageSizeOptions={[5]}
+            paginationMode="server"
+            autoPageSize={true}
+            disableRowSelectionOnClick
+            rowCount={data?.body?.totalDocs ?? 0}
+            paginationModel={{ page, pageSize }}
+            onPaginationModelChange={(params) => {
+              setPage(params.page);
+              setPageSize(params.pageSize);
+            }}
+            getRowId={(row) => row.id}
+            onRowClick={handelOpenRow}
+          />
+        </Box>
+      </Box>
+    </Grid>
+  </>
+);
 }
