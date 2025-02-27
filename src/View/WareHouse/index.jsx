@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useGetWarehouseDataQuery } from "../../redux/api/warehouse";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Container } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import moment from "moment";
 import { useTranslation } from "react-i18next";
@@ -73,7 +73,7 @@ export default function WarehouseSection() {
         isEditing={isEditing}
         onClose={closeWarehouseHandler}
       />
-
+<Container sx={{mx:20}}>
       <Box sx={{  height: 480 }}>
       <Button sx={{mb:10 , m:20  }} onClick={() => setOpen(true)} variant="contained">
         {t("Add")}
@@ -97,6 +97,8 @@ export default function WarehouseSection() {
           />
         </Box>
       </Box>
+
+</Container>
    </>
   );
 }

@@ -57,24 +57,24 @@ const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme }) => ({
   zIndex: theme.zIndex.drawer + 1,
-  transition: theme.transitions.create(['margin', 'width'], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-    marginTop: 64, 
-  }),
-  variants: [
-    {
-      props: ({ open }) => open,
-      style: {
-        width: `calc(100% - ${drawerWidth}px)`,
-        marginLeft: `${drawerWidth}px`,
-        transition: theme.transitions.create(['margin', 'width'], {
-          easing: theme.transitions.easing.easeOut,
-          duration: theme.transitions.duration.enteringScreen,
-        }),
-      },
-    },
-  ],
+  // transition: theme.transitions.create(['margin', 'width'], {
+  //   easing: theme.transitions.easing.sharp,
+  //   duration: theme.transitions.duration.leavingScreen,
+  //   marginTop: 64, 
+  // }),
+  // variants: [
+  //   {
+  //     props: ({ open }) => open,
+  //     style: {
+  //       width: `calc(100% - ${drawerWidth}px)`,
+  //       marginLeft: `${drawerWidth}px`,
+  //       transition: theme.transitions.create(['margin', 'width'], {
+  //         easing: theme.transitions.easing.easeOut,
+  //         duration: theme.transitions.duration.enteringScreen,
+  //       }),
+  //     },
+  //   },
+  // ],
 }));
 
 const DrawerHeader = styled('div')(({ theme }) => ({
@@ -112,8 +112,8 @@ export default function PersistentDrawerLeft() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open} sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Toolbar>
+      <AppBar position="fixed" open={open} >
+        <Toolbar  sx={{ display: "flex", justifyContent: "space-between" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
