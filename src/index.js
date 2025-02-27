@@ -5,7 +5,7 @@ import App from "./App";
 import "./i18n";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import store from "./Redux/Store/Store";
+import store from "./redux/store/store";
 import StyleWrapper from "./StyleWrapper";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -16,7 +16,7 @@ root.render(
         <App />
       </StyleWrapper>
     </Provider>
-  </React.StrictMode>
+  </React.StrictMode> 
 );
 
 reportWebVitals();

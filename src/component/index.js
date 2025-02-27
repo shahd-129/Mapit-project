@@ -1,0 +1,8 @@
+export {default as Home} from './home'
+export {default as About} from './about'
+export {default as Navbar} from './navbar'
+export {default as Features} from './features'
+export {default as Solutions} from './solutions'
+export {default as Supporting} from './supporting'
+export {default as FAQs} from './faqs'
+export {default as Footer} from './footer'

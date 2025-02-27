@@ -11,7 +11,7 @@ import { enUS } from '@mui/material/locale';
 import { useSelector } from "react-redux";
 import moment from "moment"; 
 import 'moment/locale/ar'; 
-import createThemeMapit from "./Theme";
+import createThemeMapit from "./theme";
 
 const StyleWrapper = (props) => {
     const { language } = useSelector(state => state?.lang)

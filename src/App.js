@@ -1,28 +1,28 @@
+import { useDispatch } from "react-redux";
 import "./App.css";
-import {
-  Supporting,
-  Features,
-  About,
-  Solutions,
-  Navbar,
-  Home,
-  FAQs,
-  Footer,
-} from "./Components";
+import Routes from "./routes";
+import { useEffect } from "react";
+import { setToken,} from "./redux/slice/tokenSlice";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
 
-  return (
-    <>
-      <Navbar />
-      <Home />
-      <Solutions />
-      <About />
-      <Features />
-      <Supporting />
-      <FAQs />
-      <Footer />
-    </>
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    const storedToken = localStorage.getItem('token');
+    if (storedToken) {
+      dispatch(setToken(storedToken));
+    }
+  }, [dispatch]);
+    
+  
+  return (<>
+  
+  <ToastContainer position="top-center" autoClose={3000} />
+  <Routes/>
+  </>
   );
 }
 
