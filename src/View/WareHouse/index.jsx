@@ -73,9 +73,9 @@ export default function WarehouseSection() {
         isEditing={isEditing}
         onClose={closeWarehouseHandler}
       />
-<Container sx={{mx:20}}>
+<Container sx={{mx:20 , my:15}}>
       <Box sx={{  height: 480 }}>
-      <Button sx={{mb:10 , m:20  }} onClick={() => setOpen(true)} variant="contained">
+      <Button sx={{mb:10 , }} onClick={() => setOpen(true)} variant="contained">
         {t("Add")}
       </Button>
         <Box sx={{ width: { md: "80%", xs: "100%" },height: "100%" }}>

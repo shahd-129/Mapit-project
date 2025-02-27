@@ -19,7 +19,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { Warehouse } from '@mui/icons-material';
-import { Button, Link, useMediaQuery } from '@mui/material';
+import { Button, Container, Link, useMediaQuery } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import IconLung from '../../component/navbar/iconLung';
 import { LogoMapit, ENImage, ARImage } from '../../assets';
@@ -77,6 +77,8 @@ const AppBar = styled(MuiAppBar, {
   // ],
 }));
 
+
+
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
@@ -112,7 +114,8 @@ export default function PersistentDrawerLeft() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open} >
+      <AppBar position="fixed" open={open} sx={{ px: { md: "3rem"}}} >
+      
         <Toolbar  sx={{ display: "flex", justifyContent: "space-between" }}>
           <IconButton
             color="inherit"
