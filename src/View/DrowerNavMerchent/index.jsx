@@ -19,13 +19,13 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { Warehouse } from '@mui/icons-material';
-import { Button, Container, Link, useMediaQuery } from '@mui/material';
+import { Button, Link, useMediaQuery } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import IconLung from '../../component/navbar/iconLung';
 import { LogoMapit, ENImage, ARImage } from '../../assets';
 import { useDispatch } from 'react-redux';
 import { clearToken } from '../../redux/slice/tokenSlice';
-
+import GroupIcon from '@mui/icons-material/Group';
 const drawerWidth = 240;
 
 
@@ -163,6 +163,7 @@ export default function PersistentDrawerLeft() {
             { text: 'Inbox', path: '/merchent/inbox', icon: <InboxIcon /> },
             { text: 'Starred', path: '/merchent/starred', icon: <MailIcon /> },
             { text: t('Warehouse'), path: '/merchent/warehouse', icon: <Warehouse /> },
+            { text: t('Users'), path: '/merchent/users', icon: <GroupIcon /> },
           ].map(({ text, path, icon }) => (
             <ListItem key={text} disablePadding>
               <ListItemButton component={Link} to={path}>
