@@ -1,4 +1,8 @@
-import {  Box, Button, Container, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
+import {
+  Autocomplete, Box, Chip,
+  Container, FormControl, InputLabel,
+  MenuItem, Select, TextField
+} from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import moment from 'moment';
 import React, { useState } from 'react'
@@ -20,13 +24,13 @@ export default function Users() {
     {
       field: "role",
       headerName: t("User role"),
-      width: 170,
+      width: 130,
       editable: true,
     },
     {
       field: "createdAt",
       headerName: t("Date"),
-      width: 170,
+      width: 130,
       editable: false,
       valueGetter: (value, row) =>
         row?.createdAt ? moment(row?.createdAt).format("DD/MM/YYYY") : "",
@@ -36,6 +40,16 @@ export default function Users() {
       headerName: t("Permissions"),
       width: 200,
       sortable: false,
+      renderCell: (params) => {
+        const permissionList = Array.isArray(params.value) ? params.value : [];
+        return (
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3.5 }}>
+            {permissionList.map((perm) => (
+              <Chip  label={perm} sx={{ backgroundColor: "lightblue", color: "black", mt: 10 }} />
+            ))}
+          </Box>
+        );
+      },
     },
     {
       field: "type",
@@ -48,39 +62,19 @@ export default function Users() {
   const [search, setSearch] = useState()
   const [role, setRole] = useState()
   const [typeRole, setTypeRole] = useState()
-  const [warehouseId, setWarehouseId] = useState()
+  const [warehouseId, setWarehouseId] = useState([])
   const [permissions, setPermissions] = useState()
-  const { data, isLoading } = useGetUsersQuery({ searchKey: search, role, type: typeRole, warehouses: warehouseId, permissions })
+  const { data, isLoading } = useGetUsersQuery({ searchKey: search, role, type: typeRole, warehouses: warehouseId.length > 0 ? warehouseId : undefined, permissions })
 
   const { data: warehuseData } = useGetWarehouseDataQuery()
-  console.log(warehuseData);
   const warehouse = warehuseData?.docs
-  function handelSearchInput(e) {
-    setSearch(e.target.value)
-  }
 
- 
+
+
   return (
     <Container sx={{ mx: 20, my: 15 }}>
 
       <Box mb={10} display={'flex'} flexDirection={'row'}>
-
-        <FormControl sx={{ m: 1, minWidth: 200 }} size="small">
-          <InputLabel id="user-role-type-label">User role type</InputLabel>
-          <Select
-            label="User role type"
-            size="small"
-            labelId="user-role-type-label"
-            id="user-role-type"
-            onChange={(e) => setTypeRole(e.target.value)}
-            value={typeRole}
-            sx={{ ml: 10 }}
-          >
-            <MenuItem value={'ADMIN'}>{t("Main")}</MenuItem>
-            <MenuItem value={'SUB_ADMIN'}>{t("Sub")}</MenuItem>
-            {role === 'WAREHOUSE' && <MenuItem value={'SUPERVISOR'}>{t("Supervisor")}</MenuItem>}
-          </Select>
-        </FormControl>
 
         <FormControl sx={{ m: 1, minWidth: 200 }} size="small">
           <InputLabel id="user-role-label">User role</InputLabel>
@@ -101,23 +95,55 @@ export default function Users() {
         </FormControl >
 
         <FormControl sx={{ m: 1, minWidth: 200 }} size="small">
-          <InputLabel id="warehouse-label">Warehouse</InputLabel>
+          <InputLabel id="user-role-type-label">User role type</InputLabel>
           <Select
-
-            label="Warehouse"
+            label="User role type"
             size="small"
-            labelId="warehouse-label"
-            id="warehouse"
-            onChange={(e) => setWarehouseId(e.target.value)}
+            labelId="user-role-type-label"
+            id="user-role-type"
+            onChange={(e) => setTypeRole(e.target.value)}
+            value={typeRole}
             sx={{ ml: 10 }}
-            value={warehouseId}
           >
-            {warehouse?.map((warehouse) => (
-              <MenuItem key={warehouse?.id} value={warehouse?.id}>{warehouse?.name}</MenuItem>
-            ))}
+            <MenuItem value={'ADMIN'}>{t("Main")}</MenuItem>
+            <MenuItem value={'SUB_ADMIN'}>{t("Sub")}</MenuItem>
+            {role === 'WAREHOUSE' && <MenuItem value={'SUPERVISOR'}>{t("Supervisor")}</MenuItem>}
           </Select>
+        </FormControl>
+
+
+        <FormControl sx={{ m: 1, minWidth: 200 }} size="small">
+          <Autocomplete
+            multiple
+            options={warehouse || []}
+            getOptionLabel={(option) => option.name || ""}
+            value={(warehouse || []).filter((w) => (warehouseId || []).includes(w.id))}
+            onChange={(event, newValue) => {
+              setWarehouseId(newValue.map((w) => w.id));
+            }}
+            renderTags={(value, getTagProps) =>
+              value.map((option, index) => (
+                <Chip
+                  key={option.id}
+                  label={option.name}
+                  {...getTagProps({ index })}
+                />
+              ))
+            }
+            renderInput={(params) => (
+              <TextField {...params} label="Warehouse" variant="outlined" size="small" />
+            )}
+            sx={{
+              width: 250,
+              maxHeight: 100,
+              overflow: "auto",
+            }}
+          />
+
+
 
         </FormControl>
+        
         {typeRole === 'SUPERVISOR' ?
           <FormControl sx={{ m: 1, minWidth: 200 }} size="small">
 
@@ -139,12 +165,12 @@ export default function Users() {
 
           : ""}
 
-        <TextField value={search} onChange={handelSearchInput} sx={{ ml: 20, width: "50" }} size='small' label='search' />
-        <Button sx={{ ml: 20 }} variant='contained'>Search</Button>
+        <TextField value={search} onChange={(e) => setSearch(e.target.value)} sx={{ ml: 20, width: "50" }} size='small' label='search' />
       </Box>
       <Box sx={{ height: 480 }}>
         <Box sx={{ width: { md: "80%", xs: "100%" }, height: "100%" }}>
           <DataGrid
+            sx={{ textTransform: "lowercase" }}
             rows={data?.docs ?? []}
             columns={columns}
             pageSizeOptions={[5]}
