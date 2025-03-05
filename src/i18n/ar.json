@@ -111,5 +111,18 @@
   "Update":"تحديث",
   "Close":"اغلاق",
   "Add":"اضافه",
-  "Delete":"حذف"
+  "Delete":"حذف",
+  "User role":"دور المستخدم",
+  "Permissions":"الصلاحيات",
+  "User role type":"نوع دور المستخدم",
+  "Search":"بحث",
+  "Both":"كلاهما",
+  "Outbound":"الوارده",
+  "Inbound":"الصادره",
+  "Supervisor":"مشرف",
+  "Sub":"فرعي",
+  "Main":"رئيسي",
+  "Warehouse admin":"مدير مستودع",
+  "Dispatcher":"مدير",
+  "Users":"المستخدمين"
 }

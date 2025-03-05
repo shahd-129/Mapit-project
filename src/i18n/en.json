@@ -110,5 +110,18 @@
   "Update":"Update",
   "Close":"Close",
   "Add":"Add",
-  "Delete":"Delete"
+  "Delete":"Delete",
+  "User role type":"User role type",
+  "Permissions":"Permissions",
+  "User role":"User role",
+  "Search":"Search",
+  "Both":"Both",
+  "Outbound":"Outbound",
+  "Inbound":"Inbound",
+  "Supervisor":"Supervisor",
+  "Sub":"Sub",
+  "Main":"Main",
+  "Warehouse admin":"Warehouse admin",
+  "Dispatcher":"Dispatcher",
+  "Users":"Users"
 }

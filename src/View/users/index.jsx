@@ -77,7 +77,7 @@ export default function Users() {
       <Box mb={10} display={'flex'} flexDirection={'row'}>
 
         <FormControl sx={{ m: 1, minWidth: 200 }} size="small">
-          <InputLabel id="user-role-label">User role</InputLabel>
+          <InputLabel id="user-role-label">{t('User role')}</InputLabel>
           <Select
             label="User role"
             size="small"
@@ -95,7 +95,7 @@ export default function Users() {
         </FormControl >
 
         <FormControl sx={{ m: 1, minWidth: 200 }} size="small">
-          <InputLabel id="user-role-type-label">User role type</InputLabel>
+          <InputLabel id="user-role-type-label">{t('User role type')}</InputLabel>
           <Select
             label="User role type"
             size="small"
@@ -119,7 +119,7 @@ export default function Users() {
             getOptionLabel={(option) => option.name || ""}
             value={(warehouse || []).filter((w) => (warehouseId || []).includes(w.id))}
             onChange={(event, newValue) => {
-              setWarehouseId(newValue.map((w) => w.id));
+              setWarehouseId(newValue.map((warehouse) => warehouse.id));
             }}
             renderTags={(value, getTagProps) =>
               value.map((option, index) => (
@@ -131,7 +131,7 @@ export default function Users() {
               ))
             }
             renderInput={(params) => (
-              <TextField {...params} label="Warehouse" variant="outlined" size="small" />
+              <TextField {...params} label={t("Warehouse")} variant="outlined" size="small" />
             )}
             sx={{
               width: 250,
@@ -147,7 +147,7 @@ export default function Users() {
         {typeRole === 'SUPERVISOR' ?
           <FormControl sx={{ m: 1, minWidth: 200 }} size="small">
 
-            <InputLabel id="Permissions">Permissions</InputLabel>
+            <InputLabel id="Permissions">{t('Permissions')}</InputLabel>
             <Select
               label="Permissions"
               size="small"
@@ -165,7 +165,7 @@ export default function Users() {
 
           : ""}
 
-        <TextField value={search} onChange={(e) => setSearch(e.target.value)} sx={{ ml: 20, width: "50" }} size='small' label='search' />
+        <TextField value={search} onChange={(e) => setSearch(e.target.value)} sx={{ ml: 20, width: "50" }} size='small' label={t('Search')} />
       </Box>
       <Box sx={{ height: 480 }}>
         <Box sx={{ width: { md: "80%", xs: "100%" }, height: "100%" }}>
